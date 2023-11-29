@@ -50,7 +50,7 @@
         Swal.fire({
           title: "Govinda!",
           text: "Recently joined twitter",
-          imageUrl: "../../dist/images/profile/user-2.jpg",
+          imageUrl: "assets/images/profile/user-2.jpg",
         });
       });
   
@@ -171,10 +171,10 @@
           title: "Custom width, padding, background.",
           width: 600,
           padding: "3em",
-          background: "#fff url(../../dist/images/backgrounds/active-bg.png)",
+          background: "#fff url(assets/images/backgrounds/active-bg.png)",
           backdrop: `
                           rgba(0,0,123,0.4)
-                          url("../../dist/images/backgrounds/nyan-cat.gif")
+                          url("assets/images/backgrounds/nyan-cat.gif")
                           center left
                           no-repeat
                       `,

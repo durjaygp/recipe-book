@@ -131,7 +131,7 @@ $(function () {
           "</td>" +
           "<td>" +
           '<div class="d-flex align-items-center">' +
-          '<img src="../../dist/images/profile/user-1.jpg" alt="avatar" class="rounded-circle" width="35">' +
+          '<img src="assets/images/profile/user-1.jpg" alt="avatar" class="rounded-circle" width="35">' +
           '<div class="ms-3">' +
           '<div class="user-meta-info">' +
           '<h6 class="user-name mb-0" data-name=' +

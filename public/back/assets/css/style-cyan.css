@@ -22826,15 +22826,15 @@ html[dir=rtl] .welcome-bg-img {
 }
 
 .warning-card {
-  background: url("../../dist/images/shaps/warning-shap.png") no-repeat top right #01c0c8;
+  background: url("assets/images/shaps/warning-shap.png") no-repeat top right #01c0c8;
 }
 
 .danger-card {
-  background: url("../../dist/images/shaps/danger-shap.png") no-repeat top right #01c0c8;
+  background: url("assets/images/shaps/danger-shap.png") no-repeat top right #01c0c8;
 }
 
 .info-card {
-  background: url("../../dist/images/shaps/info-shap.png") no-repeat top right #01c0c8;
+  background: url("assets/images/shaps/info-shap.png") no-repeat top right #01c0c8;
 }
 
 .gift-card {
@@ -23637,7 +23637,7 @@ html[dir=rtl] .welcome-bg-img {
 }
 
 .has-success .form-control-success {
-  background-image: url(../../dist/images/svgs/success.svg);
+  background-image: url(assets/images/svgs/success.svg);
 }
 
 .has-success .form-control {
@@ -23653,7 +23653,7 @@ html[dir=rtl] .welcome-bg-img {
 }
 
 .has-warning .form-control-warning {
-  background-image: url(../../dist/images/svgs/warning.svg);
+  background-image: url(assets/images/svgs/warning.svg);
 }
 
 .has-warning .form-control {
@@ -23669,7 +23669,7 @@ html[dir=rtl] .welcome-bg-img {
 }
 
 .has-danger .form-control-danger {
-  background-image: url(../../dist/images/svgs/danger.svg);
+  background-image: url(assets/images/svgs/danger.svg);
 }
 
 .has-danger .form-control {
@@ -26853,7 +26853,7 @@ table.footable thead tr.footable-filtering th ul.dropdown-menu li .checkbox labe
 }
 
 .jsgrid .jsgrid-button {
-  background-image: url(../../dist/images/backgrounds/table-jsgrid.png);
+  background-image: url(assets/images/backgrounds/table-jsgrid.png);
   background-repeat: repeat;
 }
 

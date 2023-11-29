@@ -8,20 +8,20 @@ $(function () {
         {
           title: "Party Anthemes",
           artist: "Shreya ghosal",
-          mp3: "../../dist/js/jplayer/sunrahahai.mp3",
-          poster: "../../dist/images/music/album3.jpg",
+          mp3: "assets/js/jplayer/sunrahahai.mp3",
+          poster: "assets/images/music/album3.jpg",
         },
         {
           title: "Shubhaarambh",
           artist: "Shreya ghosal",
-          mp3: "../../dist/js/jplayer/shubhaarambh.mp3",
-          poster: "../../dist/images/music/album2.jpg",
+          mp3: "assets/js/jplayer/shubhaarambh.mp3",
+          poster: "assets/images/music/album2.jpg",
         },
         {
           title: "title2",
           artist: "Shreya ghosal",
-          mp3: "../../dist/js/jplayer/sunrahahai.mp3",
-          poster: "../../dist/images/music/album1.jpg",
+          mp3: "assets/js/jplayer/sunrahahai.mp3",
+          poster: "assets/images/music/album1.jpg",
         },
       ],
       {

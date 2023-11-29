@@ -26471,7 +26471,7 @@ table.footable thead tr.footable-filtering th ul.dropdown-menu li .checkbox labe
 }
 
 .jsgrid .jsgrid-button {
-  background-image: url(../../dist/images/backgrounds/table-jsgrid.png);
+  background-image: url(assets/images/backgrounds/table-jsgrid.png);
   background-repeat: repeat;
 }
 
@@ -29541,15 +29541,15 @@ table.footable thead tr.footable-filtering th ul.dropdown-menu li .checkbox labe
 }
 
 .warning-card {
-  background: url("../../dist/images/shaps/warning-shap.png") no-repeat top right #5D87FF;
+  background: url("assets/images/shaps/warning-shap.png") no-repeat top right #5D87FF;
 }
 
 .danger-card {
-  background: url("../../dist/images/shaps/danger-shap.png") no-repeat top right #5D87FF;
+  background: url("assets/images/shaps/danger-shap.png") no-repeat top right #5D87FF;
 }
 
 .info-card {
-  background: url("../../dist/images/shaps/info-shap.png") no-repeat top right #5D87FF;
+  background: url("assets/images/shaps/info-shap.png") no-repeat top right #5D87FF;
 }
 
 .gift-card {
@@ -30352,7 +30352,7 @@ table.footable thead tr.footable-filtering th ul.dropdown-menu li .checkbox labe
 }
 
 .has-success .form-control-success {
-  background-image: url(../../dist/images/svgs/success.svg);
+  background-image: url(assets/images/svgs/success.svg);
 }
 
 .has-success .form-control {
@@ -30368,7 +30368,7 @@ table.footable thead tr.footable-filtering th ul.dropdown-menu li .checkbox labe
 }
 
 .has-warning .form-control-warning {
-  background-image: url(../../dist/images/svgs/warning.svg);
+  background-image: url(assets/images/svgs/warning.svg);
 }
 
 .has-warning .form-control {
@@ -30384,7 +30384,7 @@ table.footable thead tr.footable-filtering th ul.dropdown-menu li .checkbox labe
 }
 
 .has-danger .form-control-danger {
-  background-image: url(../../dist/images/svgs/danger.svg);
+  background-image: url(assets/images/svgs/danger.svg);
 }
 
 .has-danger .form-control {

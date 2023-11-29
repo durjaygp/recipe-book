@@ -317,7 +317,7 @@ var countries = new Bloodhound({
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   // url points to a json file that contains an array of country names, see
   // https://github.com/twitter/typeahead.js/blob/gh-pages/data/countries.json
-  prefetch: "../../dist/js/plugins/typeahead/countries.json",
+  prefetch: "assets/js/plugins/typeahead/countries.json",
 });
 
 // passing in `null` for the `options` arguments will result in the default
@@ -363,13 +363,13 @@ $("#default-suggestions .typeahead").typeahead(
 var nbaTeams = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace("team"),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
-  prefetch: "../../dist/js/plugins/typeahead/nba.json",
+  prefetch: "assets/js/plugins/typeahead/nba.json",
 });
 
 var nhlTeams = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.obj.whitespace("team"),
   queryTokenizer: Bloodhound.tokenizers.whitespace,
-  prefetch: "../../dist/js/plugins/typeahead/nhl.json",
+  prefetch: "assets/js/plugins/typeahead/nhl.json",
 });
 
 $("#multiple-datasets .typeahead").typeahead(

@@ -118,7 +118,7 @@ function format(d) {
 // -- Child rows
 //=============================================//
 var tableChildRows = $(".show-child-rows").DataTable({
-  ajax: "../../dist/js/pages/datatable/data.json",
+  ajax: "assets/js/pages/datatable/data.json",
   columns: [
     {
       className: "details-control",

@@ -120,7 +120,7 @@ $("#dom_jq_event tbody").on("click", "tr", function () {
 //=============================================//
 $("#lang_file").DataTable({
   language: {
-    url: "../../dist/js/pages/datatable/German.json",
+    url: "assets/js/pages/datatable/German.json",
   },
 });
 
