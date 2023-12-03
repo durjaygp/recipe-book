@@ -24,34 +24,20 @@
 
                         <div class="clearfix navbar-collapse show collapse" id="navbarSupportedContent">
                             <ul class="clearfix navigation">
-                                <li class="current dropdown"><a href="#">Home</a>
-                                    <ul>
-                                        <li><a href="index.html">Home Page 01</a></li>
-                                        <li><a href="index-2.html">Home Page 02</a></li>
-                                    </ul>
-                                </li>
+                                <li class="{{ (\Illuminate\Support\Facades\Request::route()->getName() == 'home') ? 'current' : '' }}"><a href="{{route('home')}}">Home</a></li>
+                                <li><a href="{{route('home.books')}}">Books</a></li>
                                 <li><a href="about-us.html">About Us</a></li>
-                                <li class="dropdown"><a href="#">Recipes</a>
+                                <li  class="{{ (\Illuminate\Support\Facades\Request::route()->getName() == 'home.recipes') ? 'current' : '' }}"><a href="{{route('home.recipes')}}">Recipes</a>
+                                </li>
+
+                                <li class="dropdown"><a href="#">Category</a>
                                     <ul>
-                                        <li><a href="recipes.html">Recipes 01</a></li>
-                                        <li><a href="recipes-2.html">Recipes 02</a></li>
-                                        <li><a href="recipes-3.html">Recipes 03</a></li>
-                                        <li><a href="recipes-video.html">Recipes Video</a></li>
-                                        <li><a href="recipes-detail.html">Recipes Detail 01</a></li>
-                                        <li><a href="recipes-detail-2.html">Recipes Detail 02</a></li>
+                                        <li><a href="blog.html">Category 01</a></li>
+                                        <li><a href="blog-single.html">Category 02</a></li>
+                                        <li><a href="not-found.html">Category 03</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="category.html">Category</a></li>
-                                <li class="dropdown"><a href="#">Blog</a>
-                                    <ul>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="blog-single.html">Blog Single</a></li>
-                                        <li><a href="not-found.html">Not Found / 404</a></li>
-                                        <li><a href="{{route('login')}}">Login</a></li>
-                                        <li><a href="signup.html">Sign Up</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li><a href="{{route('home.contact')}}">Contact us</a></li>
                             </ul>
                         </div>
 
@@ -78,8 +64,16 @@
                             </div>
                         </div>
                         <ul class="login-info">
-                            <li><a href="{{route('login')}}"><span class="icon fa fa-user"></span>Login</a></li>
-                            <li class="recipe"><a href="add-recipe.html"><span class="fa fa-plus-circle"></span>&nbsp; Add Recipe</a></li>
+                            @if(auth()->check())
+                                @if(auth()->user()->role->name === 'admin')
+                                    <li><a href="{{ route('admin.index') }}"><span class="icon fa fa-user"></span>Admin Panel</a></li>
+                                @else
+                                    <li><a href="{{ route('dashboard') }}"><span class="icon fa fa-user"></span>Dashboard</a></li>
+                                @endif
+                            @else
+                                <li><a href="{{ route('login') }}"><span class="icon fa fa-user"></span>Login</a></li>
+                                <li class="recipe"><a href="{{ route('register') }}"><span class="icon fa fa-user"></span>Register</a></li>
+                            @endif
                         </ul>
                     </div>
 

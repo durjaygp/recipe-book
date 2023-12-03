@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class RecipeController extends Controller
 {
     public function index(){
-        return view('frontEnd.home.index');
+        return view('frontEnd.recipe.index');
     }
-
 }

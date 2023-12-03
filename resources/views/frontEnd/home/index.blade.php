@@ -1,21 +1,30 @@
 @extends('frontEnd.master')
 @section('title','Home')
 @section('content')
-    <!-- Banner Section -->
-    <section class="banner-section">
+    <!-- Banner Section Two -->
+    <section class="banner-section-two">
         <div class="banner-carousel owl-theme owl-carousel">
 
             <!-- Slide Item -->
             <div class="slide-item">
-                <div class="image-layer" style="background-image:url({{asset('front')}}/images/main-slider/1.jpg)"></div>
+                <div class="image-layer" style="background-image:url({{asset('front')}}/images/background/6.jpg)"></div>
 
                 <div class="auto-container">
                     <div class="content-box">
-                        <div class="author-image">
-                            <img src="{{asset('front')}}/images/resource/author-2.jpg" alt="" />
+                        <div class="image">
+                            <img src="{{asset('front')}}/images/resource/image-1.png" alt="" />
                         </div>
-                        <div class="clearfix info-list">
-                            <div class="sales">Salad</div>
+                        <!-- Author Name -->
+                        <div class="author-name">
+                            <div class="author-inner">
+                                <div class="author-icon">
+                                    <img src="{{asset('front')}}/images/resource/author-1.jpg" alt="" />
+                                </div>
+                                by Mahfuz Riad
+                            </div>
+                        </div>
+                        <h1>Roasted beet salad with arugula, <br> feta, and garlic vinaigrette</h1>
+                        <div class="info-list clearfix">
                             <div class="rating">
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
@@ -24,18 +33,7 @@
                                 <span class="fa fa-star-half-o"></span>&ensp;
                                 8 Review
                             </div>
-                            <!-- Author Name -->
-                            <div class="author-name">
-                                <div class="author-inner">
-                                    <div class="author-icon">
-                                        <img src="{{asset('front')}}/images/resource/author-1.jpg" alt="" />
-                                    </div>
-                                    by Mahfuz Riad
-                                </div>
-                            </div>
                         </div>
-                        <h1>Roasted Pumpkin and <br> Beet Salad</h1>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetuer <br> adipiscing elit, sed tinciduntut laore dolore </div>
                         <ul class="post-meta">
                             <li><span class="icon flaticon-dish"></span>4 ingredients</li>
                             <li><span class="icon flaticon-clock-3"></span>6 Min</li>
@@ -47,15 +45,24 @@
 
             <!-- Slide Item -->
             <div class="slide-item">
-                <div class="image-layer" style="background-image:url({{asset('front')}}/images/main-slider/1.jpg)"></div>
+                <div class="image-layer" style="background-image:url({{asset('front')}}/images/background/6.jpg)"></div>
 
                 <div class="auto-container">
                     <div class="content-box">
-                        <div class="author-image">
-                            <img src="{{asset('front')}}/images/resource/author-2.jpg" alt="" />
+                        <div class="image">
+                            <img src="{{asset('front')}}/images/resource/image-1.png" alt="" />
                         </div>
-                        <div class="clearfix info-list">
-                            <div class="sales">Salad</div>
+                        <!-- Author Name -->
+                        <div class="author-name">
+                            <div class="author-inner">
+                                <div class="author-icon">
+                                    <img src="{{asset('front')}}/images/resource/author-1.jpg" alt="" />
+                                </div>
+                                by Mahfuz Riad
+                            </div>
+                        </div>
+                        <h1>Roasted beet salad with arugula, <br> feta, and garlic vinaigrette</h1>
+                        <div class="info-list clearfix">
                             <div class="rating">
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
@@ -64,18 +71,7 @@
                                 <span class="fa fa-star-half-o"></span>&ensp;
                                 8 Review
                             </div>
-                            <!-- Author Name -->
-                            <div class="author-name">
-                                <div class="author-inner">
-                                    <div class="author-icon">
-                                        <img src="{{asset('front')}}/images/resource/author-1.jpg" alt="" />
-                                    </div>
-                                    by Mahfuz Riad
-                                </div>
-                            </div>
                         </div>
-                        <h1>Roasted Pumpkin and <br> Beet Salad</h1>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetuer <br> adipiscing elit, sed tinciduntut laore dolore </div>
                         <ul class="post-meta">
                             <li><span class="icon flaticon-dish"></span>4 ingredients</li>
                             <li><span class="icon flaticon-clock-3"></span>6 Min</li>
@@ -87,15 +83,24 @@
 
             <!-- Slide Item -->
             <div class="slide-item">
-                <div class="image-layer" style="background-image:url({{asset('front')}}/images/main-slider/1.jpg)"></div>
+                <div class="image-layer" style="background-image:url({{asset('front')}}/images/background/6.jpg)"></div>
 
                 <div class="auto-container">
                     <div class="content-box">
-                        <div class="author-image">
-                            <img src="{{asset('front')}}/images/resource/author-2.jpg" alt="" />
+                        <div class="image">
+                            <img src="{{asset('front')}}/images/resource/image-1.png" alt="" />
                         </div>
-                        <div class="clearfix info-list">
-                            <div class="sales">Salad</div>
+                        <!-- Author Name -->
+                        <div class="author-name">
+                            <div class="author-inner">
+                                <div class="author-icon">
+                                    <img src="{{asset('front')}}/images/resource/author-1.jpg" alt="" />
+                                </div>
+                                by Mahfuz Riad
+                            </div>
+                        </div>
+                        <h1>Roasted beet salad with arugula, <br> feta, and garlic vinaigrette</h1>
+                        <div class="info-list clearfix">
                             <div class="rating">
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
@@ -104,18 +109,7 @@
                                 <span class="fa fa-star-half-o"></span>&ensp;
                                 8 Review
                             </div>
-                            <!-- Author Name -->
-                            <div class="author-name">
-                                <div class="author-inner">
-                                    <div class="author-icon">
-                                        <img src="{{asset('front')}}/images/resource/author-1.jpg" alt="" />
-                                    </div>
-                                    by Mahfuz Riad
-                                </div>
-                            </div>
                         </div>
-                        <h1>Roasted Pumpkin and <br> Beet Salad</h1>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetuer <br> adipiscing elit, sed tinciduntut laore dolore </div>
                         <ul class="post-meta">
                             <li><span class="icon flaticon-dish"></span>4 ingredients</li>
                             <li><span class="icon flaticon-clock-3"></span>6 Min</li>
@@ -128,7 +122,6 @@
         </div>
     </section>
     <!--End Banner Section -->
-
     <!-- Product Form Section -->
     <section class="product-form-section">
         <div class="auto-container">
@@ -167,460 +160,113 @@
         </div>
     </section>
     <!-- End Keyword Section -->
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="layer-one" style="background-image: url({{asset('front')}}/images/resource/category-pattern-1.png)"></div>
+        <div class="layer-two" style="background-image: url({{asset('front')}}/images/resource/category-pattern-1.png)"></div>
+        <div class="auto-container">
+            <div class="row clearfix">
 
-    <!-- Categories Section-->
+                <!-- Image Column -->
+                <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="image">
+                            <img src="{{asset('front')}}/images/resource/about.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Column -->
+                <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <!-- Sec Title -->
+                        <div class="sec-title">
+                            <div class="title">About us</div>
+                            <h2>Our philosophy</h2>
+                        </div>
+                        <div class="bold-text">Welcome to the wonderful world of beets! I am delighted you are here.</div>
+                        <div class="text">
+                            <p>A lot of people ask me, "Why beets?" in which I respond with a cheeky grin, "'Beets' Me!" Actually, beets intrigue me as I think they are vibrantly diverse, spectacularly nutritious, and remarkably under-utilized. Perhaps you could say that I "root" for the underdog, er vegetable.</p>
+                            <p>I was raised to appreciate fruits and vegetables. Thanks, mom and dad! Although I cannot recall the specific incidents, apparently when I was a toddler, I loved "helping" my parents in the garden by eating all the strawberries: dirt, insects, and all. Yes – to this day, I still love fruits and veggies; the beet happens to be one of the many extraordinary vegetables that I adore.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End About Section -->
+
+
+
+    <!-- Books Section-->
     <section class="categories-section">
         <div class="auto-container">
 
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <h2> Recipe Categories</h2>
+                <h2> Our Books </h2>
                 <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt ut laoreet <br> dolore magna aliquam erat volutpat lorem</div>
             </div>
 
             <!-- Categories Tabs -->
-            <div class="categories-tab">
+            <div class="related-items">
+                <div class="row clearfix">
 
-                <div class="tab-btns-box">
-                    <!--Tabs Header-->
-                    <div class="tabs-header">
-                        <ul class="clearfix product-tab-btns">
-                            <li class="p-tab-btn active-btn" data-tab="#p-tab-1">Meal Type <span class="number">14</span></li>
-                            <li class="p-tab-btn" data-tab="#p-tab-2">Diet and Health <span class="number">12</span></li>
-                            <li class="p-tab-btn" data-tab="#p-tab-3">Dish Type <span class="number">03</span></li>
-                            <li class="p-tab-btn" data-tab="#p-tab-4">Ingredient <span class="number">08</span></li>
-                            <li class="p-tab-btn" data-tab="#p-tab-5">World Cuisine <span class="number">04</span></li>
-                        </ul>
+                    <!-- Recipes Book -->
+                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image">
+                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
+                            </div>
+                            <div class="lower-content">
+                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
+                                <div class="category">CHICKEN</div>
+                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
+                                <span class="text-success h4">$80</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Tabs Content -->
-                <div class="p-tabs-content">
-
-                    <!-- Portfolio Tab / Active Tab -->
-                    <div class="p-tab active-tab" id="p-tab-1">
-                        <div class="project-carousel owl-theme owl-carousel">
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-1.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Cake recipe</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna</div>
-                                    </div>
-                                </div>
+                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image">
+                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
                             </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-2.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Christmas Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec adipiscing <br> elit. magna lentesque.</div>
-                                    </div>
-                                </div>
+                            <div class="lower-content">
+                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
+                                <div class="category">CHICKEN</div>
+                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
+                                <span class="text-success h4">$80</span>
                             </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-3.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Ground Chicken Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna lentesque.</div>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image">
+                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
                             </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-1.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Cake recipe</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna</div>
-                                    </div>
-                                </div>
+                            <div class="lower-content">
+                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
+                                <div class="category">CHICKEN</div>
+                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
+                                <span class="text-success h4">$80</span>
                             </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-2.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Christmas Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec adipiscing <br> elit. magna lentesque.</div>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image">
+                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
                             </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-3.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Ground Chicken Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna lentesque.</div>
-                                    </div>
-                                </div>
+                            <div class="lower-content">
+                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
+                                <div class="category">CHICKEN</div>
+                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
+                                <span class="text-success h4">$80</span>
                             </div>
-
                         </div>
                     </div>
 
-                    <!-- Portfolio Tab -->
-                    <div class="p-tab" id="p-tab-2">
-                        <div class="project-carousel owl-theme owl-carousel">
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-1.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Cake recipe</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-2.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Christmas Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec adipiscing <br> elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-3.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Ground Chicken Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-1.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Cake recipe</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-2.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Christmas Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec adipiscing <br> elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-3.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Ground Chicken Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Portfolio Tab -->
-                    <div class="p-tab" id="p-tab-3">
-                        <div class="project-carousel owl-theme owl-carousel">
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-1.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Cake recipe</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-2.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Christmas Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec adipiscing <br> elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-3.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Ground Chicken Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-1.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Cake recipe</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-2.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Christmas Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec adipiscing <br> elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-3.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Ground Chicken Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Portfolio Tab -->
-                    <div class="p-tab" id="p-tab-4">
-                        <div class="project-carousel owl-theme owl-carousel">
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-1.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Cake recipe</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-2.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Christmas Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec adipiscing <br> elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-3.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Ground Chicken Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-1.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Cake recipe</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-2.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Christmas Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec adipiscing <br> elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-3.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Ground Chicken Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Portfolio Tab -->
-                    <div class="p-tab" id="p-tab-5">
-                        <div class="project-carousel owl-theme owl-carousel">
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-1.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Cake recipe</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-2.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Christmas Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec adipiscing <br> elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-3.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Ground Chicken Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-1.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Cake recipe</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-2.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Christmas Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec adipiscing <br> elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Category Block -->
-                            <div class="category-block">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img src="{{asset('front')}}/images/resource/cat-3.png" alt="" />
-                                    </div>
-                                    <div class="lower-content">
-                                        <h4><a href="recipes-detail.html">Ground Chicken Recipes</a></h4>
-                                        <div class="text">Lorem ipsum dolor amet, consetec <br> adipiscing elit. magna lentesque.</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
 
                 </div>
 
@@ -852,252 +498,6 @@
     </section>
     <!-- End Trending Recipes Section -->
 
-    <!-- Call To Action Section -->
-    <section class="call-to-action-section" style="background-image:url({{asset('front')}}/images/background/2.jpg)">
-        <div class="auto-container">
-            <div class="clearfix row">
-
-                <!-- Column -->
-                <div class="column col-lg-6 col-md-12 col-sm-12">
-                    <!-- Sec Title -->
-                    <div class="sec-title light">
-                        <div class="title">Pizza</div>
-                        <h2>Your Complete Christmas <br> Dinner Planning Guide</h2>
-                        <div class="text">Special occasions call for extraordinary food. Whether your gathering is big or small, casual or formal, here's everything you need to create a crowd-pleasing holiday feast</div>
-                    </div>
-                    <a href="recipes-2.html" class="theme-btn btn-style-two"><span class="txt">Check Recipe</span></a>
-                </div>
-
-                <!-- Column -->
-                <div class="column col-lg-6 col-md-12 col-sm-12">
-                    <!-- Sec Title -->
-                    <div class="sec-title light">
-                        <div class="title">Breakfast</div>
-                        <h2>How to Meal Prep Breakfast Sandwiches for the <br> Week Ahead</h2>
-                        <div class="text">Special occasions call for extraordinary food. Whether your gathering is big or small, casual or formal, here's everything you need to create a crowd-pleasing holiday feast</div>
-                    </div>
-                    <a href="recipes-2.html" class="theme-btn btn-style-two"><span class="txt">Check Recipe</span></a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- End Call To Action Section -->
-
-    <!-- Video Section -->
-    <section class="video-section">
-        <div class="auto-container">
-            <div class="clearfix row">
-
-                <!-- Column -->
-                <div class="column col-lg-6 col-md-6 col-sm-12">
-                    <!--Video Box-->
-                    <div class="video-box">
-                        <div class="image">
-                            <h4>Pressure-Cooker Chicken <br> Enchilada Soup</h4>
-                            <img src="{{asset('front')}}/images/resource/video-1.jpg" alt="" />
-                            <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image overlay-box"><span class="flaticon-media-play-symbol"><i class="ripple"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column -->
-                <div class="column col-lg-6 col-md-6 col-sm-12">
-                    <!--Video Box-->
-                    <div class="video-box">
-                        <div class="image">
-                            <h4>Garlic Tomato Bruschetta</h4>
-                            <img src="{{asset('front')}}/images/resource/video-2.jpg" alt="" />
-                            <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image overlay-box"><span class="flaticon-media-play-symbol"><i class="ripple"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- End Video Section -->
-
-    <!-- Entertaining Section -->
-    <section class="entertaining-section">
-        <div class="auto-container">
-            <!-- Sec Title -->
-            <div class="sec-title centered">
-                <h2>Entertaining</h2>
-            </div>
-
-            <div class="clearfix row">
-
-                <!-- Entertaining Block -->
-                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-1.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <ul class="post-meta">
-                                <li><span class="icon "></span>21 Jan ,2020</li>
-                                <li><span class="icon flaticon-comment"></span>4</li>
-                                <li><span class="icon flaticon-heart"></span>5</li>
-                            </ul>
-                            <h4><a href="recipes-detail.html">Pop-Tarts Dropping New Pretzel Flavors Nationwide</a></h4>
-                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Entertaining Block -->
-                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-2.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <ul class="post-meta">
-                                <li><span class="icon "></span>21 Jan ,2020</li>
-                                <li><span class="icon flaticon-comment"></span>4</li>
-                                <li><span class="icon flaticon-heart"></span>5</li>
-                            </ul>
-                            <h4><a href="recipes-detail.html">The Cosmic Crisp Apple Is Here and We’re Already Obsessed</a></h4>
-                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Entertaining Block -->
-                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-3.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <ul class="post-meta">
-                                <li><span class="icon "></span>21 Jan ,2020</li>
-                                <li><span class="icon flaticon-comment"></span>4</li>
-                                <li><span class="icon flaticon-heart"></span>5</li>
-                            </ul>
-                            <h4><a href="recipes-detail.html">Good Grief! 9 Ideas for a Charlie Brown Christmas Party</a></h4>
-                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Entertaining Block -->
-                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-4.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <ul class="post-meta">
-                                <li><span class="icon "></span>21 Jan ,2020</li>
-                                <li><span class="icon flaticon-comment"></span>4</li>
-                                <li><span class="icon flaticon-heart"></span>5</li>
-                            </ul>
-                            <h4><a href="recipes-detail.html">How to Remove Sulfites from Wine the Easy Way</a></h4>
-                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-    <!-- End Entertaining Section -->
-
-    <!-- Treats Section -->
-    <section class="treats-section">
-        <div class="layer-one" style="background-image: url({{asset('front')}}/images/background/3.png)"></div>
-        <div class="layer-two" style="background-image: url({{asset('front')}}/images/background/4.png)"></div>
-        <div class="auto-container">
-            <!-- Sec Title -->
-            <div class="sec-title">
-                <div class="clearfix">
-                    <div class="pull-left">
-                        <h2>Winter Wonderland Treats</h2>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt ut</div>
-                    </div>
-                    <div class="pull-right">
-                        <a href="recipes.html" class="theme-btn btn-style-one"><span class="txt">See all Treats</span></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="clearfix row">
-
-                <!-- Treat Block -->
-                <div class="treat-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/treat-1.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h4><a href="recipes-detail.html">Brownie Butte scotch Trifles</a></h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Treat Block -->
-                <div class="treat-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/treat-2.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h4><a href="recipes-detail.html">Brownie Butte scotch Trifles</a></h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Treat Block -->
-                <div class="treat-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/treat-3.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h4><a href="recipes-detail.html">Brownie Butte scotch Trifles</a></h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Treat Block -->
-                <div class="treat-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/treat-4.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h4><a href="recipes-detail.html">Brownie Butte scotch Trifles</a></h4>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- End Treats Section -->
-
-    <!-- Clients Section -->
-    <section class="clients-section">
-        <div class="auto-container">
-            <div class="sponsors-outer">
-                <!--Sponsors Carousel-->
-                <ul class="sponsors-carousel owl-carousel owl-theme">
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('front')}}/images/clients/1.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('front')}}/images/clients/2.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('front')}}/images/clients/3.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('front')}}/images/clients/4.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('front')}}/images/clients/5.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('front')}}/images/clients/1.png" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset('front')}}/images/clients/2.png" alt=""></a></figure></li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-    <!-- End Clients Section -->
 
     <!-- Subscribe Section -->
     <section class="subscribe-section">
@@ -1134,201 +534,5 @@
     </section>
     <!-- End Subscribe Section -->
 
-    <!-- Instagram Section -->
-    <section class="instagram-section">
-        <div class="auto-container">
-            <!-- Title Box -->
-            <div class="title-box">
-                <div class="profile"><span class="fa fa-pinterest"></span> Follow On Pinterest </div>
-            </div>
-
-        </div>
-
-        <div class="instagram-carousel owl-carousel owl-theme">
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-1.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-1.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-2.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-2.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-3.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-3.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-4.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-4.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-5.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-5.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-6.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-6.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-1.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-1.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-2.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-2.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-3.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-3.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-4.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-4.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-5.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-5.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram Block -->
-            <div class="instagram-block">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="{{asset('front')}}/images/resource/instagram-6.jpg" alt=""></figure>
-                    <!--Overlay Box-->
-                    <div class="overlay-box">
-                        <div class="overlay-inner">
-                            <div class="content">
-                                <a href="{{asset('front')}}/images/resource/instagram-6.jpg" data-fancybox="instagram" data-caption="" class="lightbox-image option-btn" title="Image Caption Here" data-fancybox-group="example-gallery"><span class="fa fa-search"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-    <!-- End Instagram Section -->
 
 @endsection
