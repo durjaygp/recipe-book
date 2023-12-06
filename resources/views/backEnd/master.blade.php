@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!--  Title -->
-    <title>Mordenize</title>
+    <title>@yield('title')</title>
     <!--  Required Meta Tag -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,9 +15,13 @@
     <!--  Favicon -->
     <link rel="shortcut icon" type="image/png" href="{{asset('back')}}/assets/images/logos/favicon.ico" />
     <!-- Owl Carousel -->
+    @yield('style')
     <link rel="stylesheet" href="{{asset('back')}}/assets/libs/owl.carousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{asset('back')}}/assets/libs/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
     <!-- Core Css -->
     <link  id="themeColors"  rel="stylesheet" href="{{asset('back')}}/assets/css/style.min.css" />
+    <link rel="stylesheet" href="{{asset('/')}}iziToast/dist/css/iziToast.min.css">
+
 </head>
 <body>
 <!-- Preloader -->
@@ -57,5 +61,33 @@
 <script src="{{asset('back')}}/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
 <script src="{{asset('back')}}/assets/js/dashboard2.js"></script>
 <script src="{{asset('back')}}/assets/js/apps/contact.js"></script>
+<script src="{{asset('/')}}iziToast/dist/js/iziToast.min.js"></script>
+<script src="{{asset('back')}}/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="{{asset('back')}}/assets/js/datatable/datatable-basic.init.js"></script>
+@yield('script')
+@if($errors->any())
+    @foreach($errors->all() as $error)
+        <script>
+            iziToast.error({
+                title: '',
+                position:'topRight',
+                message: '{{$error}}',
+            });
+        </script>
+    @endforeach
+
+@endif
+
+@if(session()->get('success'))
+    <script>
+        iziToast.success({
+            title: '',
+            position:'topRight',
+            message: '{{session()->get('success')}}',
+        });
+
+    </script>
+
+@endif
 </body>
 </html>

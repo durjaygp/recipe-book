@@ -13,12 +13,17 @@ class AdminCategoryController extends Controller
         $categories = Category::latest()->get();
         return view('backEnd.category.index',compact('categories'));
     }
+
+    public function create(){
+        return view('backEnd.category.create');
+    }
+
     public function save(Request $request){
         $category = new Category();
         $category->name = $request->name;
         $category->slug = Str::slug($request->name,'-');
         $category->description = $request->description;
         $category->save();
-        return redirect()->back();
+        return redirect()->back()->with('success','Category Created Successfully');
     }
 }

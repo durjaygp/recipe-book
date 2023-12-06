@@ -43,7 +43,7 @@
                 <!-- Books -->
                 <!-- =================== -->
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="{{route('book.list')}}" aria-expanded="false">
                   <span>
                     <i class="ti ti-book-upload"></i>
                   </span>

@@ -38,8 +38,8 @@
                                 <i class="ti ti-trash text-danger me-1 fs-5"></i> Delete All Row
                             </a>
                         </div>
-                        <a href="javascript:void(0)" id="btn-add-contact" class="btn btn-info d-flex align-items-center">
-                            <i class="ti ti-users text-white me-1 fs-5"></i> Add Contact
+                        <a href="{{route('category.create')}}" class="btn btn-info d-flex align-items-center">
+                            <i class="ti ti-new-section text-white me-1 fs-5"></i> Add Category
                         </a>
                     </div>
                 </div>
@@ -50,7 +50,6 @@
             <!-- Modal -->
             <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="addContactModalTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-
                         <div class="modal-content">
                             <div class="modal-header d-flex align-items-center">
                                 <h5 class="modal-title">Create New Category</h5>
@@ -87,7 +86,6 @@
                             </div>
                             </form>
                         </div>
-
                 </div>
             </div>
             <div class="card card-body">
@@ -124,7 +122,7 @@
                                 <span class="usr-email-addr" data-email="adams@mail.com">{{$row->name}}</span>
                             </td>
                             <td>
-                                <span class="usr-location" data-location="Boston, USA">{{$row->description}}</span>
+                                <span class="usr-location" data-location="Boston, USA">{{\Illuminate\Support\Str::limit($row->description,15)}}</span>
                             </td>
                             <td>
                                 <div class="action-btn">

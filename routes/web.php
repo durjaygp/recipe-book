@@ -8,6 +8,7 @@ use App\Http\Controllers\Web\RecipeController;
 use App\Http\Controllers\Web\BookController;
 use App\Http\Controllers\Web\PagesController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminBookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,9 +40,18 @@ Route::middleware(['auth', 'isadmin'])->group(function(){
     Route::get('/admin',[DashboardController::class,'index'])->name('admin.index');
 
     //======== Category Routes ==========
-
     Route::get('/admin/category',[AdminCategoryController::class,'index'])->name('category.index');
+    Route::get('/admin/category/create',[AdminCategoryController::class,'create'])->name('category.create');
     Route::post('/admin/category/save',[AdminCategoryController::class,'save'])->name('category.save');
+
+    //========== Book Routes =================
+    Route::get('/admin/book/create',[AdminBookController::class,'create'])->name('book.create');
+    Route::get('/admin/book',[AdminBookController::class,'index'])->name('book.list');
+    Route::post('/admin/book/save',[AdminBookController::class,'save'])->name('book.save');
+    Route::get('admin/book/delete/{id}', [AdminBookController::class,'delete'])->name('book.delete');
+    Route::get('admin/book/edit/{id}',[AdminBookController::class,'edit'])->name('book.edit');
+    Route::post('admin/book/update', [AdminBookController::class, 'update'])->name('book.update');
+
 
 
 });

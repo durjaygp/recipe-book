@@ -2527,37 +2527,37 @@ progress {
 }
 
 .table-responsive {
-  overflow-x: auto;
+  /*overflow-x: auto;*/
   -webkit-overflow-scrolling: touch;
 }
 
 @media (max-width: 575.98px) {
   .table-responsive-sm {
-    overflow-x: auto;
+      /*overflow-x: auto;*/
     -webkit-overflow-scrolling: touch;
   }
 }
 @media (max-width: 767.98px) {
   .table-responsive-md {
-    overflow-x: auto;
+      /*overflow-x: auto;*/
     -webkit-overflow-scrolling: touch;
   }
 }
 @media (max-width: 991.98px) {
   .table-responsive-lg {
-    overflow-x: auto;
+      /*overflow-x: auto;*/
     -webkit-overflow-scrolling: touch;
   }
 }
 @media (max-width: 1299.98px) {
   .table-responsive-xl {
-    overflow-x: auto;
+      /*overflow-x: auto;*/
     -webkit-overflow-scrolling: touch;
   }
 }
 @media (max-width: 1399.98px) {
   .table-responsive-xxl {
-    overflow-x: auto;
+      /*overflow-x: auto;*/
     -webkit-overflow-scrolling: touch;
   }
 }
@@ -23469,7 +23469,7 @@ File: css
   }
 }
 /*
-    Common 
+    Common
 */
 .wizard > .actions {
   position: relative;
