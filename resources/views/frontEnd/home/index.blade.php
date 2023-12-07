@@ -214,59 +214,22 @@
                 <div class="row clearfix">
 
                     <!-- Recipes Book -->
+                    @php
+                    $books = \App\Models\Book::latest()->take(4)->get();
+                    @endphp
+                    @foreach($books as $row)
                     <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
+                                <a href="{{route('book.details',$row->slug)}}"><img src="{{asset($row->image)}}" alt="" /></a>
                             </div>
                             <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
+                                <h4><a href="{{route('book.details',$row->slug)}}">{{$row->name}}</a></h4>
+                                <span class="text-success h4">€ {{$row->price}}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
 
                 </div>
 
@@ -501,15 +464,14 @@
 
     <!-- Subscribe Section -->
     <section class="subscribe-section">
-        <div class="auto-container">
-            <div class="clearfix row">
-
+        <div class="container">
+            <div class="row">
                 <!-- Column -->
-                <div class="column col-lg-6 col-md-12 col-sm-12">
+                <div class="">
                     <h1>Subscribe to the best <br> recipes feed.</h1>
                     <!-- Subscribe Form -->
                     <div class="subscribe-form">
-                        <form method="post" action="https://gico.io/spcica/contact.html">
+                        <form method="post" action="">
                             <div class="clearfix form-group">
                                 <input type="email" name="email" value="" placeholder="Enter your email" required>
                                 <button type="submit" class="theme-btn send-btn flaticon-paper-plane-2"></button>
@@ -519,15 +481,6 @@
                     <div class="inbox">Get recipes, tips, and news delivered to your inbox.</div>
                 </div>
 
-                <!-- Column -->
-                <div class="column col-lg-6 col-md-12 col-sm-12">
-                    <h1>Visit our store</h1>
-                    <div class="bold-text">Here you’ll find a carefully chosen kitchen inventory.</div>
-                    <ul class="subscribe-list">
-                        <li>Taste of Home is America's #1 <br> cooking magazine</li>
-                        <li>Midnight Chocolate <br> Midnight Chocolate 2% <br> Very Berry Strawberry</li>
-                    </ul>
-                </div>
 
             </div>
         </div>

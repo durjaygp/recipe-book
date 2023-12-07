@@ -87,7 +87,6 @@
         });
 
     </script>
-
 @endif
 </body>
 </html>

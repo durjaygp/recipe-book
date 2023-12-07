@@ -7,6 +7,7 @@
 <link href="{{asset('front')}}/css/bootstrap.css" rel="stylesheet">
 <link href="{{asset('front')}}/css/main.css" rel="stylesheet">
 <link href="{{asset('front')}}/css/responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('/')}}iziToast/dist/css/iziToast.min.css">
 
 <link rel="shortcut icon" href="{{asset('front')}}/images/favicon.png" type="image/x-icon">
 <link rel="icon" href="{{asset('front')}}/images/favicon.png" type="image/x-icon">
@@ -50,7 +51,41 @@
 <script src="{{asset('front')}}/js/wow.js"></script>
 <script src="{{asset('front')}}/js/jquery-ui.js"></script>
 <script src="{{asset('front')}}/js/script.js"></script>
+<script src="{{asset('/')}}iziToast/dist/js/iziToast.min.js"></script>
+@if($errors->any())
+    @foreach($errors->all() as $error)
+        <script>
+            iziToast.error({
+                title: '',
+                position:'topRight',
+                message: '{{$error}}',
+            });
+        </script>
+    @endforeach
 
+@endif
+
+@if(session()->get('success'))
+    <script>
+        iziToast.success({
+            title: '',
+            position:'topRight',
+            message: '{{session()->get('success')}}',
+        });
+
+    </script>
+@endif
+
+@if(session()->get('warning'))
+    <script>
+        iziToast.warning({
+            title: '',
+            position:'topRight',
+            message: '{{session()->get('warning')}}',
+        });
+
+    </script>
+@endif
 </body>
 
 </html>

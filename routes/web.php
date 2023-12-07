@@ -9,21 +9,24 @@ use App\Http\Controllers\Web\BookController;
 use App\Http\Controllers\Web\PagesController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminBookController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\Web\CartController;
+use App\Http\Controllers\Web\OrderController;
+use App\Http\Controllers\Admin\AdminOrderController;
 
+
+
+// =============== All Routes ===============
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/recipes', [RecipeController::class,'index'])->name('home.recipes');
 Route::get('/books', [BookController::class,'index'])->name('home.books');
+Route::get('/book/{slug}', [BookController::class,'details'])->name('book.details');
 Route::get('/contact-us', [PagesController::class,'contact'])->name('home.contact');
+Route::post('/book/add-to-cart',[CartController::class,'cartToSave'])->name('cart.save');
+Route::get('/cart', [CartController::class,'index'])->name('home.cart');
+Route::get('/cart/remove/{id}', [CartController::class,'remove'])->name('cart.remove');
+
+Route::get('/checkout', [OrderController::class,'checkout'])->name('home.checkout');
+Route::post('/checkout/save', [OrderController::class,'checkoutSave'])->name('checkout.save');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -51,6 +54,10 @@ Route::middleware(['auth', 'isadmin'])->group(function(){
     Route::get('admin/book/delete/{id}', [AdminBookController::class,'delete'])->name('book.delete');
     Route::get('admin/book/edit/{id}',[AdminBookController::class,'edit'])->name('book.edit');
     Route::post('admin/book/update', [AdminBookController::class, 'update'])->name('book.update');
+
+    //========== Order List ================
+    Route::get('/admin/order',[AdminOrderController::class,'index'])->name('order.list');
+    Route::get('/admin/order/pending',[AdminOrderController::class,'pendingOrder'])->name('pendingOrder.list');
 
 
 

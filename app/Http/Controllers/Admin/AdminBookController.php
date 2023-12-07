@@ -34,7 +34,6 @@ class AdminBookController extends Controller
             ],
             'price' => 'required',
             'image' => 'required',
-            'image' => 'required',
             'status' => 'required',
         ];
 
@@ -96,14 +95,26 @@ class AdminBookController extends Controller
         return $this->imageUrl;
     }
 
-    public function deleteCourse($id){
+    public function delete($id){
         $book = Book::find($id);
+
         if (!$book) {
             return redirect()->back()->with('error', 'Book not found');
         }
+
+        if (file_exists($book->image)) {
+            unlink($book->image);
+        }
+
+        if (file_exists($book->file)) {
+            unlink($book->file);
+        }
+
         $book->delete();
+
         return redirect()->back()->with('success', 'Book deleted successfully');
     }
+
 
     public function updateCourse(Request $request, $id)
     {

@@ -50,6 +50,14 @@
                         <span class="hide-menu">Book</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{route('order.list')}}" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-shopping-cart"></i>
+                  </span>
+                        <span class="hide-menu">Order</span>
+                    </a>
+                </li>
                 <!-- =================== -->
 
                 <!-- =================== -->

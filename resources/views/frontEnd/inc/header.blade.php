@@ -24,10 +24,10 @@
 
                         <div class="clearfix navbar-collapse show collapse" id="navbarSupportedContent">
                             <ul class="clearfix navigation">
-                                <li class="{{ (\Illuminate\Support\Facades\Request::route()->getName() == 'home') ? 'current' : '' }}"><a href="{{route('home')}}">Home</a></li>
+                                <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home') ? 'current' : '' }}"><a href="{{route('home')}}">Home</a></li>
                                 <li><a href="{{route('home.books')}}">Books</a></li>
                                 <li><a href="about-us.html">About Us</a></li>
-                                <li  class="{{ (\Illuminate\Support\Facades\Request::route()->getName() == 'home.recipes') ? 'current' : '' }}"><a href="{{route('home.recipes')}}">Recipes</a>
+                                <li  class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.recipes') ? 'current' : '' }}"><a href="{{route('home.recipes')}}">Recipes</a>
                                 </li>
 
                                 <li class="dropdown"><a href="#">Category</a>
@@ -67,8 +67,10 @@
                             @if(auth()->check())
                                 @if(auth()->user()->role->name === 'admin')
                                     <li><a href="{{ route('admin.index') }}"><span class="icon fa fa-user"></span>Admin Panel</a></li>
+                                    <li class="recipe"><a href="{{ route('home.cart') }}"><span class="icon fa fa-shopping-cart"></span>Cart</a></li>
                                 @else
                                     <li><a href="{{ route('dashboard') }}"><span class="icon fa fa-user"></span>Dashboard</a></li>
+                                    <li class="recipe"><a href="{{ route('home.cart') }}"><span class="icon fa fa-shopping-cart"></span>Cart</a></li>
                                 @endif
                             @else
                                 <li><a href="{{ route('login') }}"><span class="icon fa fa-user"></span>Login</a></li>

@@ -33,15 +33,14 @@
                         <h2>Book List</h2>
                     </div>
                     <div class="col-md-8 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                        <a href="{{route('book.create')}}" class="btn btn-info d-flex align-items-center">
-                            <i class="ti ti-new-section text-white me-1 fs-5"></i> Add Book
+                        <a href="{{route('book.list')}}" class="btn btn-info d-flex align-items-center">
+                            <i class="ti ti-list-details text-white me-1 fs-5"></i> Book List
                         </a>
                     </div>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="{{route('book.save')}}">
+                    <form method="post" action="{{route('book.save')}}" enctype="multipart/form-data">
                         @csrf
-
                         <div class="row">
 
                             <div class="col-lg-6">

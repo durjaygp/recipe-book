@@ -1,5 +1,5 @@
 @extends('backEnd.master')
-@section('title','Book')
+@section('title','Order List')
 @section('content')
     <div class="container-fluid">
         <div class="card bg-light-info shadow-none position-relative overflow-hidden">
@@ -33,8 +33,8 @@
                         <h2>Book List</h2>
                     </div>
                     <div class="col-md-8 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                        <a href="{{route('book.create')}}" class="btn btn-info d-flex align-items-center">
-                            <i class="ti ti-new-section text-white me-1 fs-5"></i> Add Book
+                        <a href="{{route('pendingOrder.list')}}" class="btn btn-info d-flex align-items-center">
+                            <i class="ti ti-menu-order text-white me-1 fs-5"></i> Pending Order
                         </a>
                     </div>
                 </div>
@@ -57,35 +57,39 @@
                                     <!-- end row -->
                                     </thead>
                                     <tbody>
-                                    @foreach($books as $row)
-                                    <!-- start row -->
-                                    <tr>
-                                        <td>{{$loop->iteration}}</td>
-                                        <td><img src="{{asset($row->image)}}" alt="" class="img-fluid"></td>
-                                        <td>{{$row->name}}</td>
-                                        <td>{{$row->price}}</td>
-                                        <td>{{\Illuminate\Support\Str::limit($row->description,20)}}</td>
-                                        <td>
-                                            <div class="action-btn">
-                                                <a href="javascript:void(0)" class="btn btn-sm btn-primary">
-                                                    <i class="ti ti-pencil fs-5"></i>
-                                                </a>
-                                                <a href="{{ route('book.delete', $row->id) }}"
-                                                   onclick="event.preventDefault();
-                                                       if (confirm('Are you sure you want to delete?'))
-                                                       document.getElementById('delete-form-{{ $row->id }}').submit();"
-                                                   class="btn btn-sm btn-danger text-white delete ms-2">
-                                                    <i class="ti ti-trash fs-5"></i>
-                                                </a>
+                                    @foreach($orders as $row)
+                                        <!-- start row -->
+                                        <tr>
+                                            <td>{{$loop->iteration}}</td>
+                                            <td><img src="{{asset($row->books->image)}}" alt="" class="img-fluid w-50"></td>
+                                            <td>{{$row->books->name}}</td>
+                                            <td>{{$row->books->price}}</td>
+                                            <td> @if($row->status == 0)
+                                                    <span class="text-success">Approved</span>
+                                                @elseif($row->status == 1)
+                                                    <span class="text-warning">Pending</span>
+                                            @endif
+                                            <td>
+                                                <div class="action-btn">
+                                                    <a href="javascript:void(0)" class="btn btn-sm btn-primary">
+                                                        <i class="ti ti-pencil fs-5"></i>
+                                                    </a>
+                                                    <a href="{{ route('book.delete', $row->id) }}"
+                                                       onclick="event.preventDefault();
+                                                           if (confirm('Are you sure you want to delete?'))
+                                                           document.getElementById('delete-form-{{ $row->id }}').submit();"
+                                                       class="btn btn-sm btn-danger text-white delete ms-2">
+                                                        <i class="ti ti-trash fs-5"></i>
+                                                    </a>
 
-                                                <form id="delete-form-{{ $row->id }}" action="{{ route('book.delete', $row->id) }}" method="get" style="display: none;">
-                                                    @csrf
-                                                </form>
+                                                    <form id="delete-form-{{ $row->id }}" action="{{ route('book.delete', $row->id) }}" method="get" style="display: none;">
+                                                        @csrf
+                                                    </form>
 
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <!-- end row -->
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!-- end row -->
                                     @endforeach
                                     </tbody>
                                 </table>

@@ -23,10 +23,6 @@
                             <div class="form-group col-lg-3 col-md-6 col-sm-12">
                                 <select class="custom-select-box">
                                     <option>Books</option>
-                                    <option>01</option>
-                                    <option>02</option>
-                                    <option>03</option>
-                                    <option>04</option>
                                 </select>
                             </div>
 
@@ -62,123 +58,22 @@
             <!-- Categories Tabs -->
             <div class="related-items">
                 <div class="row clearfix">
-
-                    <!-- Recipes Book -->
-                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
+                    @php
+                        $books = \App\Models\Book::latest()->take(4)->get();
+                    @endphp
+                    @foreach($books as $row)
+                        <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <a href="{{route('book.details',$row->slug)}}"><img src="{{asset($row->image)}}" alt="" /></a>
+                                </div>
+                                <div class="lower-content">
+                                    <h4><a href="{{route('book.details',$row->slug)}}">{{$row->name}}</a></h4>
+                                    <span class="text-success h4">€ {{$row->price}}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-            <div class="related-items">
-                <div class="row clearfix">
-
-                    <!-- Recipes Book -->
-                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="image">
-                                <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-23.jpg" alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                                <div class="category">CHICKEN</div>
-                                <h4><a href="recipes-detail.html">Pressure Cooker Beef Short Ribs with Chutney</a></h4>
-                                <span class="text-success h4">$80</span>
-                            </div>
-                        </div>
-                    </div>
-
-
+                @endforeach
                 </div>
 
             </div>
