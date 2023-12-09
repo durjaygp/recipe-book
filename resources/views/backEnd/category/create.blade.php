@@ -47,21 +47,25 @@
                  <form method="post" action="{{route('category.save')}}">
                      @csrf
                      <div class="row">
-                         <div class="col-md-12">
-                             <div class="form-floating mb-3">
-                                 <input
-                                     type="text" name="name"
-                                     class="form-control"
-                                     id="tb-fname"
-                                     placeholder="Enter Category"
-                                 />
-                                 <label for="tb-fname">Enter Category</label>
+                         <div class="col-lg-6">
+                             <div class="mb-4">
+                                 <label for="exampleInputPassword1" class="form-label fw-semibold">Category Name</label>
+                                 <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Book Name">
                              </div>
                          </div>
-                         <div class="col-md-12">
-                             <div class="form-floating">
-                                 <textarea name="description" id="tb-fname" cols="30" rows="10" class="form-control"></textarea>
-                                 <label for="tb-cpwd">Category Description</label>
+                         <div class="col-lg-6">
+                             <div class="mb-4">
+                                 <label for="exampleInputPassword1" class="form-label fw-semibold">Status</label>
+                                 <select name="status" id="" class="form-select">
+                                     <option value="1">Publish</option>
+                                     <option value="2">Unpublished</option>
+                                 </select>
+                             </div>
+                         </div>
+                         <div class="col-lg-12">
+                             <div class="mb-4">
+                                 <label for="exampleInputPassword1" class="form-label fw-semibold">Description</label>
+                                 <textarea type="text" name="description" class="form-control" placeholder="Short Description"></textarea>
                              </div>
                          </div>
                          <div class="col-12 mt-2">

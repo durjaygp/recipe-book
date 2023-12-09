@@ -24,6 +24,8 @@ return new class extends Migration
             $table->text('image')->nullable();
             $table->text('description')->nullable();
             $table->string('total_price')->nullable();
+            $table->text('country')->nullable();
+            $table->text('address')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
         });

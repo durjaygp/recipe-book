@@ -23,6 +23,7 @@ class AdminCategoryController extends Controller
         $category->name = $request->name;
         $category->slug = Str::slug($request->name,'-');
         $category->description = $request->description;
+        $category->status = $request->status;
         $category->save();
         return redirect()->back()->with('success','Category Created Successfully');
     }

@@ -46,7 +46,7 @@
 {{--    </form>--}}
 {{--</x-guest-layout>--}}
 @extends('frontEnd.master')
-@section('title','Home')
+@section('title','Login')
 @section('content')
     <!-- Page Title -->
     <section class="page-title" style="background-image:url({{asset('front')}}/images/background/17.png)">
@@ -70,7 +70,7 @@
                     <div class="login-form">
                         <div class="pattern-layer" style="background-image:url({{asset('front')}}/images/background/18.png)"></div>
                         <div class="pattern-layer-2" style="background-image:url({{asset('front')}}/images/background/19.png)"></div>
-                        <a href="#" class="facebook-login"><span class="fa fa-facebook-f"></span>&nbsp; Login In with Facebook</a>
+                        <a href="{{route('register')}}" class="facebook-login"> Register </a>
                         <div class="fill">or fill the form</div>
 
                         <!-- Register Form -->
@@ -91,11 +91,11 @@
 
                             <div class="form-group">
                                 <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">Login</span></button>
-                                Don't have an account? <a href="login.html">Sign Up</a>
+
                             </div>
 
                         </form>
-
+                        <a class=""></a>
                     </div>
                     <!-- End Register Form -->
 

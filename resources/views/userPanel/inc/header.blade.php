@@ -144,11 +144,7 @@
                                 <div class="d-grid py-4 px-7 pt-8">
                                     <a href="{{route('logout')}}"
                                        onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();" class="btn btn-outline-primary">Log Out</a>
-                                    <form method="POST" action="{{ route('logout') }}" class="d-none" id="logout-form">
-                                        @csrf
-
-                                        </form>
+                                        this.closest('form').submit();" class="btn btn-outline-primary">Log Out</a>
                                 </div>
                             </div>
                         </div>

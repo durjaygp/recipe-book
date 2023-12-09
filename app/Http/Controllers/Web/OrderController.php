@@ -22,6 +22,7 @@ class OrderController extends Controller
     }
 
     public function checkoutSave(Request $request){
+        //$request
         $totalPrice = Cart::where('user_id', Auth()->user()->id)->sum('total_price');
         $carts = Cart::where('user_id', Auth()->user()->id)->get();
 
@@ -35,6 +36,8 @@ class OrderController extends Controller
             $order->reference = $request->reference;
             $order->description = $request->description;
             $order->total_price = $request->total_price;
+            $order->country = $request->country;
+            $order->address = $request->address;
             $order->status = 1;
             if ($request->file('image')) {
                 $order->image = $this->saveImage($request);
@@ -44,28 +47,6 @@ class OrderController extends Controller
         }
         Cart::where('user_id',Auth::user()->id)->delete();
         return redirect(route('dashboard'))->with('success','Payment Recorded');
-
-      // $carts = Cart::where('user_id',Auth::user()->id)->get();
-      // $inv = New Invoice();
-      // $inv->user_id =Auth::user()->id;
-      // $inv->item = $carts->count();
-      // $inv->amount = $carts->sum('amount');
-      // $inv->save();
-
-      // foreach($carts as $cart){
-      //     $order = New Order();
-      //     $order->invoice_id=$inv->id;
-      //     $order->user_id=$cart->user_id;
-      //     $order->product_id=$cart->product_id;
-      //     $order->product_name = $cart->product_name;
-      //     $order->qty=$cart->qty;
-      //     $order->price=$cart->price;
-      //     $order->amount=$cart->amount;
-      //     $order->save();
-      // }
-      // $carts = Cart::where('user_id',Auth::user()->id)->delete();
-      // Session::flash('success', 'Payment successful!');
-
 
     }
     public $image, $imageName, $imageUrl, $directory;

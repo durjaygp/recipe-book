@@ -40,24 +40,23 @@
                 </div>
                 <div class="card-body">
                     @php
-                        $person = \App\Models\User::find(auth()->user()->id);
+                    $person = \App\Models\User::find(auth()->user()->id);
                     @endphp
 
-                    <form method="post" action="{{ route('profile.update') }}">
+                    <form method="post" action="{{route('book.save')}}" enctype="multipart/form-data">
                         @csrf
-                        @method('patch')
                         <div class="row">
 
                             <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Name</label>
-                                    <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Name" value="{{$person->name}}">
+                                    <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Book Name" value="{{$person->name}}">
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Email</label>
-                                    <input type="text" name="email" class="form-control" id="exampleInputtext"  value="{{$person->email}}">
+                                    <input type="text" name="email" class="form-control" id="exampleInputtext" placeholder="20.10" value="{{$person->email}}">
                                 </div>
                             </div>
 
@@ -73,29 +72,14 @@
                 </div>
                 <div class="card-body">
                     <h3>Update Password</h3>
-                    <form method="post" action="{{ route('password.update') }}">
+                    <form method="post" action="{{route('book.save')}}" enctype="multipart/form-data">
                         @csrf
-                        @method('put')
-
                         <div class="row">
 
                             <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Current Password</label>
-                                    <input type="password" name="current_password" class="form-control" id="exampleInputtext" >
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">New Password</label>
-                                    <input type="password" name="password" class="form-control" id="exampleInputtext" >
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Confirm Password</label>
-                                    <input type="password" name="password_confirmation" class="form-control" id="exampleInputtext">
+                                    <input type="password" name="password" class="form-control" id="exampleInputtext" placeholder="Book Name" value="{{$person->name}}">
                                 </div>
                             </div>
 

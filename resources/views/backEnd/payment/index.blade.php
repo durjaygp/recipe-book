@@ -74,10 +74,11 @@
                                             <td>
                                                 <div class="action-btn">
 
-                                                    <a href="javascript:void(0)" id="btn-add-contact" class="btn btn-sm btn-warning">
+                                                    <a href="javascript:void(0)" id="btn-add-contact" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#addContactModal{{$row->id}}">
                                                         <i class="ti ti-eye text-white me-1 fs-5"></i>
                                                     </a>
-                                                    <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="addContactModalTitle" aria-hidden="true">
+
+                                                    <div class="modal fade" id="addContactModal{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="addContactModalTitle" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header d-flex align-items-center">
@@ -87,39 +88,24 @@
                                                                 <div class="modal-body">
                                                                     <div class="add-contact-box">
                                                                         <div class="add-contact-content">
-                                                                            <form id="addContactModalTitle">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="mb-3 contact-name">
-                                                                                            <label for="">Name</label>
-                                                                                            <input type="text" id="c-name" class="form-control" placeholder="Name" />
-                                                                                            <span class="validation-text text-danger"></span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="mb-3 contact-email">
-                                                                                            <input type="text" id="c-email" class="form-control" placeholder="Email" />
-                                                                                            <span class="validation-text text-danger"></span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="row">
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="mb-3 contact-occupation">
-                                                                                            <input type="text" id="c-occupation" class="form-control" placeholder="Occupation" />
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="mb-3 contact-phone">
-                                                                                            <input type="text" id="c-phone" class="form-control" placeholder="Phone" />
-                                                                                            <span class="validation-text text-danger"></span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
+                                                                            <form>
                                                                                 <div class="row">
                                                                                     <div class="col-md-12">
-                                                                                        <div class="mb-3 contact-location">
-                                                                                            <input type="text" id="c-location" class="form-control" placeholder="Location" />
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-name">Name</label>
+                                                                                            <input type="text" id="c-name" class="form-control" value="{{ $row->name }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-account">Account Number</label>
+                                                                                            <input type="text" id="c-account" class="form-control" value="{{ $row->account }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Reference</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->reference }}" disabled />
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -133,10 +119,18 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <a href="javascript:void(0)" class="btn btn-sm btn-success">
+                                                    <a href="{{ route('order.approve', $row->id) }}"
+                                                       onclick="event.preventDefault();
+                                                           if (confirm('Are you sure you want to Approve?'))
+                                                           document.getElementById('update-form-{{ $row->id }}').submit();"
+                                                       class="btn btn-sm btn-success">
                                                         <i class="ti ti-thumb-up fs-5"></i>
                                                     </a>
-                                                    <a href="{{ route('book.delete', $row->id) }}"
+                                                    <form id="update-form-{{ $row->id }}" action="{{ route('order.approve', $row->id) }}" method="get" style="display: none;">
+                                                        @csrf
+                                                    </form>
+
+                                                    <a href="{{ route('order.delete', $row->id) }}"
                                                        onclick="event.preventDefault();
                                                            if (confirm('Are you sure you want to delete?'))
                                                            document.getElementById('delete-form-{{ $row->id }}').submit();"
@@ -144,7 +138,7 @@
                                                         <i class="ti ti-trash fs-5"></i>
                                                     </a>
 
-                                                    <form id="delete-form-{{ $row->id }}" action="{{ route('book.delete', $row->id) }}" method="get" style="display: none;">
+                                                    <form id="delete-form-{{ $row->id }}" action="{{ route('order.delete', $row->id) }}" method="get" style="display: none;">
                                                         @csrf
                                                     </form>
 

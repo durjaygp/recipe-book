@@ -3,47 +3,47 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Book;
-use App\Models\Cart;
-use App\Models\Order;
+use App\Models\Category;
+use App\Models\Recipe;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Validator;
-use Str;
+use Illuminate\Validation\Validator;
+use Illuminate\Support\Str;
 
-class AdminBookController extends Controller
+class AdminRecipeController extends Controller
 {
     public function index(){
-        $books = Book::latest()->get();
-        return view('backEnd.book.index',compact('books'));
+        $recipes = Recipe::latest()->get();
+        return view('backEnd.recipe.index',compact('recipes'));
     }
 
     public function create(){
-        return view('backEnd.book.create');
+        $categories = Category::latest()->where('status',1)->get();
+        return view('backEnd.recipe.create',compact('categories'));
     }
 
     public function edit($id){
-        $course = Book::find($id);
-        return view('course.edit',compact('course'));
+        $recipe = Recipe::find($id);
+        return view('course.edit',compact('recipe'));
     }
 
     public function save(Request $request){
+        //return $request;
         // Validation rules
         $rules = [
             'name' => [
                 'required',
-                Rule::unique('books', 'name'),
+                Rule::unique('recipes', 'name'),
             ],
-            'price' => 'required',
             'image' => 'required',
             'status' => 'required',
         ];
 
         // Validation messages (customize these as needed)
         $messages = [
-            'name.required' => 'Book name is required.',
-            'crs_name.unique' => 'The Book is already available.',
-            'price.required' => 'Price is required.',
+            'name.required' => 'Recipe name is required.',
+            'name.unique' => 'This Recipe is already available.',
             'image.required' => 'Image is required.',
             'status.required' => 'Status is required.',
         ];
@@ -55,25 +55,24 @@ class AdminBookController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $book = new Book();
-        $book->name = $request->name;
-        $book->slug = Str::slug($request->name, '-');
-        $book->price = $request->price;
-        $book->publish_date = $request->publish_date;
-        $book->pages = $request->pages;
-        $book->total_recipe = $request->total_recipe;
-        $book->description = $request->description;
-        $book->body = $request->body;
-        $book->status = $request->status;
-        // $course->image = $this->saveImage($request);
+        $recipe = new Recipe();
+        $recipe->name = $request->name;
+        $recipe->slug = Str::slug($request->name, '-');
+        $recipe->user_id = auth()->user()->id;
+        $recipe->category_id = $request->category_id;
+        $recipe->ingredients = $request->ingredients;
+        $recipe->description = $request->description;
+        $recipe->peoples = $request->peoples;
+        $recipe->duration = $request->duration;
+        $recipe->video = $request->video;
+        $recipe->recipe = $request->recipe;
+        $recipe->status = $request->status;
+        // $book->image = $this->saveImage($request);
         if ($request->file('image')) {
-            $book->image = $this->saveImage($request);
+            $recipe->image = $this->saveImage($request);
         }
-        if ($request->file('file')) {
-            $book->file = $this->saveFile($request);
-        }
-        $book->save();
-        return redirect()->route('book.list')->with('success','Book Created Successfully');
+        $recipe->save();
+        return redirect()->route('recipe.list')->with('success','Recipe Created Successfully');
     }
 
     public $image, $imageName, $imageUrl, $directory;
@@ -87,40 +86,20 @@ class AdminBookController extends Controller
         return $this->imageUrl;
     }
 
-    public function saveFile($request)
-    {
-        $this->image = $request->file('file');
-        $this->imageName = rand().'.'.$this->image->getClientOriginalExtension();
-        $this->directory = 'uploads/';
-        $this->imageUrl = $this->directory . $this->imageName;
-        $this->image->move($this->directory, $this->imageName);
-        return $this->imageUrl;
-    }
-
     public function delete($id){
-        $book = Book::find($id);
-
-        if (!$book) {
-            return redirect()->back()->with('error', 'Book not found');
+        $recipe = Recipe::find($id);
+        if (!$recipe) {
+            return redirect()->back()->with('error', 'Recipe not found');
         }
-        Cart::where('book_id', $book->id)->delete();
-        Order::where('book_id', $book->id)->delete();
-
-        if (file_exists($book->image)) {
-            unlink($book->image);
+        if (file_exists($recipe->image)) {
+            unlink($recipe->image);
         }
-
-        if (file_exists($book->file)) {
-            unlink($book->file);
-        }
-
-        $book->delete();
-
-        return redirect()->back()->with('success', 'Book deleted successfully');
+        $recipe->delete();
+        return redirect()->back()->with('success', 'Recipe deleted successfully');
     }
 
 
-    public function updateCourse(Request $request, $id)
+    public function update(Request $request, $id)
     {
 
         // Validation rules
