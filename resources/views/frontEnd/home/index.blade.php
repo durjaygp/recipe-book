@@ -198,7 +198,6 @@
     <!-- End About Section -->
 
 
-
     <!-- Books Section-->
     <section class="categories-section">
         <div class="auto-container">
@@ -237,41 +236,6 @@
         </div>
     </section>
     <!-- End Categories Section-->
-
-    <!-- Trending Section -->
-    <section class="trending-section">
-        <div class="auto-container">
-            <div class="layer-one" style="background-image: url({{asset('front')}}/images/resource/category-pattern-1.png)"></div>
-            <div class="layer-two" style="background-image: url({{asset('front')}}/images/resource/category-pattern-1.png)"></div>
-            <div class="clearfix row">
-
-                <!-- Content Column -->
-                <div class="content-column col-lg-7 col-md-12 col-sm-12">
-                    <div class="inner-column">
-                        <!-- Sec Title -->
-                        <div class="sec-title">
-                            <div class="title">TRENDING</div>
-                            <h2>Standing Rib Roast</h2>
-                            <div class="text">Preheat oven to 325°. In a small bowl, mix the first 5 ingredients. Place roast in a roasting pan, fat side up; rub with seasoning mixture.Roast 2-1/4 to 2-3/4 hours or until meat reaches desired doneness (for medium-rare, a thermometer should read 135°; medium, 140°; medium-well, 145°). Remove roast from oven; tent with foil. Let stand 15 minutes before carving.</div>
-                        </div>
-                        <div class="bold-text">To separate the fat from the drippings with ease, try this tool from OXO ($14).</div>
-                    </div>
-                </div>
-
-                <!-- Image Column -->
-                <div class="image-column col-lg-5 col-md-12 col-sm-12">
-                    <div class="inner-column">
-                        <div class="image">
-                            <img src="{{asset('front')}}/images/resource/category.png" alt="" />
-                            <div class="mints">15 Min</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- End Trending Section -->
 
     <!-- Popular Recipes Section -->
     <section class="popular-recipes-section">
@@ -461,6 +425,91 @@
     </section>
     <!-- End Trending Recipes Section -->
 
+    <section class="entertaining-section">
+        <div class="auto-container">
+            <!-- Sec Title -->
+            <div class="sec-title centered">
+                <h2>Blogs</h2>
+            </div>
+
+            <div class="row clearfix">
+
+                <!-- Entertaining Block -->
+                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="image">
+                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-1.jpg" alt=""></a>
+                        </div>
+                        <div class="lower-content">
+                            <ul class="post-meta">
+                                <li><span class="icon "></span>21 Jan ,2020</li>
+                                <li><span class="icon flaticon-comment"></span>4</li>
+                                <li><span class="icon flaticon-heart"></span>5</li>
+                            </ul>
+                            <h4><a href="recipes-detail.html">Pop-Tarts Dropping New Pretzel Flavors Nationwide</a></h4>
+                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entertaining Block -->
+                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="image">
+                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-2.jpg" alt=""></a>
+                        </div>
+                        <div class="lower-content">
+                            <ul class="post-meta">
+                                <li><span class="icon "></span>21 Jan ,2020</li>
+                                <li><span class="icon flaticon-comment"></span>4</li>
+                                <li><span class="icon flaticon-heart"></span>5</li>
+                            </ul>
+                            <h4><a href="recipes-detail.html">The Cosmic Crisp Apple Is Here and We’re Already Obsessed</a></h4>
+                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entertaining Block -->
+                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="image">
+                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-3.jpg" alt=""></a>
+                        </div>
+                        <div class="lower-content">
+                            <ul class="post-meta">
+                                <li><span class="icon "></span>21 Jan ,2020</li>
+                                <li><span class="icon flaticon-comment"></span>4</li>
+                                <li><span class="icon flaticon-heart"></span>5</li>
+                            </ul>
+                            <h4><a href="recipes-detail.html">Good Grief! 9 Ideas for a Charlie Brown Christmas Party</a></h4>
+                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entertaining Block -->
+                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="image">
+                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-4.jpg" alt=""></a>
+                        </div>
+                        <div class="lower-content">
+                            <ul class="post-meta">
+                                <li><span class="icon "></span>21 Jan ,2020</li>
+                                <li><span class="icon flaticon-comment"></span>4</li>
+                                <li><span class="icon flaticon-heart"></span>5</li>
+                            </ul>
+                            <h4><a href="recipes-detail.html">How to Remove Sulfites from Wine the Easy Way</a></h4>
+                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 
     <!-- Subscribe Section -->
     <section class="subscribe-section">
