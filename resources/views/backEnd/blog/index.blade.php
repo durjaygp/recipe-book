@@ -1,5 +1,5 @@
 @extends('backEnd.master')
-@section('title','Recipe')
+@section('title','Blog')
 @section('content')
     <div class="container-fluid">
         <div class="card bg-light-info shadow-none position-relative overflow-hidden">
@@ -10,7 +10,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a class="text-muted " href="{{route('admin.index')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item" aria-current="page">Recipe</li>
+                                <li class="breadcrumb-item" aria-current="page">Blog</li>
                             </ol>
                         </nav>
                     </div>
@@ -24,22 +24,19 @@
         </div>
         <div class="widget-content searchable-container list">
             <!-- --------------------- start Contact ---------------- -->
-            <div class="card card-body">
-
-            </div>
             <div class="card">
-               <div class="card-header">
-                   <div class="row">
-                       <div class="col-md-4 ">
-                           <h2>Recipe List</h2>
-                       </div>
-                       <div class="col-md-8 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                           <a href="{{route('recipe.create')}}" class="btn btn-info d-flex align-items-center">
-                               <i class="ti ti-new-section text-white me-1 fs-5"></i> Add Recipe
-                           </a>
-                       </div>
-                   </div>
-               </div>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            <h2>Blog List</h2>
+                        </div>
+                        <div class="col-md-8 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
+                            <a href="{{route('blog.create')}}" class="btn btn-info d-flex align-items-center">
+                                <i class="ti ti-new-section text-white me-1 fs-5"></i> Add Blog
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
@@ -52,23 +49,21 @@
                                         <th>#</th>
                                         <th>Image</th>
                                         <th>Name</th>
-                                        <th>Category</th>
-                                        <th>Duration</th>
                                         <th>Description</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                     <!-- end row -->
                                     </thead>
                                     <tbody>
-                                    @foreach($recipes as $row)
+                                    @foreach($blogs as $row)
                                     <!-- start row -->
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td><img src="{{asset($row->image)}}" alt="" class="img-fluid"></td>
                                         <td>{{$row->name}}</td>
-                                        <td>{{$row->category->name}}</td>
-                                        <td>{{$row->duration}}</td>
                                         <td>{{\Illuminate\Support\Str::limit($row->description,20)}}</td>
+                                        <td>{{$row->status}}</td>
                                         <td>
                                             <div class="action-btn">
                                                 <a href="javascript:void(0)" class="btn btn-sm btn-primary">

@@ -1,5 +1,5 @@
 @extends('backEnd.master')
-@section('title','Create New Recipe')
+@section('title','Create New Blog')
 @section('content')
     <div class="container-fluid">
         <div class="card bg-light-info shadow-none position-relative overflow-hidden">
@@ -10,7 +10,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a class="text-muted " href="{{route('admin.index')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item" aria-current="page">Category</li>
+                                <li class="breadcrumb-item" aria-current="page">Blog</li>
                             </ol>
                         </nav>
                     </div>
@@ -25,60 +25,30 @@
         <div class="widget-content searchable-container list">
             <!-- --------------------- start Contact ---------------- -->
             <div class="card">
-               <div class="card-header">
-                   <div class="row">
-                       <div class="col-md-4 ">
-                           <h2>Book List</h2>
-                       </div>
-                       <div class="col-md-8 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                           <a href="{{route('recipe.list')}}" class="btn btn-info d-flex align-items-center">
-                               <i class="ti ti-list-details text-white me-1 fs-5"></i> Recipe List
-                           </a>
-                       </div>
-                   </div>
-               </div>
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            <h2>Add Blog</h2>
+                        </div>
+                        <div class="col-md-8 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
+                            <a href="{{route('blog.list')}}" class="btn btn-info d-flex align-items-center">
+                                <i class="ti ti-list-details text-white me-1 fs-5"></i> Blog List
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="card-body">
-                    <form method="post" action="{{route('recipe.save')}}" enctype="multipart/form-data">
+                    <form method="post" action="{{route('blog.save')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
 
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Recipe Name</label>
-                                    <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Book Name">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Blog Name</label>
+                                    <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Blog Name">
                                 </div>
                             </div>
-
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Category</label>
-                                    <select name="category_id" id="" class="form-select">
-                                        <option value="">Select</option>
-                                        @foreach($categories as $row)
-                                        <option value="{{$row->id}}">{{$row->name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Ingredients</label>
-                                    <input type="text" name="ingredients" class="form-control" id="exampleInputtext" placeholder="10 Ingredients">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Peoples</label>
-                                    <input type="text" name="peoples" class="form-control" id="exampleInputtext" placeholder="10 Peoples">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Duration</label>
-                                    <input type="text" name="duration" class="form-control" id="exampleInputtext" placeholder="10 Minutes">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Short description</label>
                                     <textarea name="description" id="" class="form-control"  cols="2" rows="3" placeholder="short description"></textarea>
@@ -93,16 +63,8 @@
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Ingredients description</label>
-                                    <div id="editor" name="ingredients_content"></div>
-{{--                                    <textarea name="description" id="editor" cols="10" rows="5" class="form-control"></textarea>--}}
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Main Recipe Content</label>
-                                    <textarea name="recipe" id="summernote" cols="30" rows="10"></textarea>
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Main Blog Content</label>
+                                    <textarea name="main_content" id="summernote" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6">

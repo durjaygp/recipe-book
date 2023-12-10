@@ -15,7 +15,7 @@ use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\UserPanelController;
 use App\Http\Controllers\Admin\AdminRecipeController;
-
+use App\Http\Controllers\Admin\BlogController;
 
 
 
@@ -74,6 +74,14 @@ Route::middleware(['auth', 'isadmin'])->group(function(){
     Route::get('admin/book/delete/{id}', [AdminBookController::class,'delete'])->name('book.delete');
     Route::get('admin/book/edit/{id}',[AdminBookController::class,'edit'])->name('book.edit');
     Route::post('admin/book/update', [AdminBookController::class, 'update'])->name('book.update');
+
+    //========== Blog Routes =================
+    Route::get('admin/blog/create',[BlogController::class,'create'])->name('blog.create');
+    Route::get('admin/blog',[BlogController::class,'index'])->name('blog.list');
+    Route::post('admin/blog/save',[BlogController::class,'save'])->name('blog.save');
+    Route::get('admin/blog/delete/{id}', [BlogController::class,'delete'])->name('blog.delete');
+    Route::get('admin/blog/edit/{id}',[BlogController::class,'edit'])->name('blog.edit');
+    Route::post('admin/blog/update', [BlogController::class, 'update'])->name('blog.update');
 
     //========== Recipe Routes =================
     Route::get('/admin/recipe/create',[AdminRecipeController::class,'create'])->name('recipe.create');
