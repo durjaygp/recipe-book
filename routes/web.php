@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\UserPanelController;
 use App\Http\Controllers\Admin\AdminRecipeController;
 use App\Http\Controllers\Admin\BlogController;
-
+use App\Http\Controllers\Admin\SettingController;
 
 
 
@@ -101,6 +101,10 @@ Route::middleware(['auth', 'isadmin'])->group(function(){
 
     // ============ Personal Update ==========
     Route::get('admin/personal-details',[AdminController::class,'index'])->name('personal.details');
+
+    //================ Website Setting =====================
+    Route::get('admin/website/settings/', [SettingController::class, 'index'])->name('admin.setting');
+    Route::post('admin/website/settings/update', [SettingController::class, 'update'])->name('update.setting');
 
 
 

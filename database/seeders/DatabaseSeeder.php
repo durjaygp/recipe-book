@@ -52,5 +52,19 @@ class DatabaseSeeder extends Seeder
             'remember_token' => Str::random(10),
             'role_id' => 1
         ]);
+
+        \App\Models\Setting::create([
+            'id' => 1,
+            'name' => 'Website Name',
+            'description' => 'user@gmail.com',
+            'footer' => 'footer Text',
+            'google' => 'footer Text',
+            'author' => 'author Name',
+            'keywords' => 'author Name',
+            'tags' => 'author Name',
+            'url' => 'author Name',
+            'website_logo' => 'website_logo.jpg',
+            'fav_icon' => 'fav_icon.jpg',
+        ]);
     }
 }
