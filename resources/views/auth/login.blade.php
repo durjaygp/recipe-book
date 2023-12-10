@@ -64,7 +64,7 @@
             <div class="inner-container">
 
                 <div class="image">
-                    <img src="{{asset('front')}}/images/resource/login.jpg" alt="" />
+                    <img src="{{asset('front')}}/images/resource/contact.jpg" alt="" />
 
                     <!-- Login Form -->
                     <div class="login-form">

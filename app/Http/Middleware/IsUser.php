@@ -18,7 +18,7 @@ class IsUser
         if (auth()->user()->role->name ==='user'){
             return $next($request);
         }else{
-            return redirect()->route('dashboard');
+            return redirect()->route('admin.index');
         }
     }
 }

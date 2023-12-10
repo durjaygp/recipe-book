@@ -37,20 +37,56 @@ class LoginRequest extends FormRequest
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function authenticate(): void
+//    public function authenticate(): void
+//    {
+//        $this->ensureIsNotRateLimited();
+//
+//        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+//            RateLimiter::hit($this->throttleKey());
+//
+//            throw ValidationException::withMessages([
+//                'email' => trans('auth.failed'),
+//            ]);
+//        }
+//
+//        RateLimiter::clear($this->throttleKey());
+//    }
+    public function authenticate()
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
-            RateLimiter::hit($this->throttleKey());
+        $credentials = $this->only('email', 'password');
 
-            throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
-            ]);
+        if (Auth::attempt($credentials, $this->boolean('remember'))) {
+            // Check the user's status after successful login.
+            $user = Auth::user();
+
+            if ($user->status == 1) {
+                RateLimiter::clear($this->throttleKey());
+                // Redirect based on the user's role_id
+                if ($user->role_id == 2) {
+                    return redirect()->route('admin.index'); // Redirect to the dashboard for role_id 1.
+                } elseif ($user->role_id == 1) {
+                    return redirect()->route('dashboard'); // Redirect to the student profile for role_id 2.
+                }
+            } else {
+                Auth::logout(); // Log the user out because their status is not 1.
+//                session()->flash('error', 'We will let you know when you are Approved');
+                throw ValidationException::withMessages([
+                    'email' => 'Your account is not Approved Yet!',
+                ]);
+//                return redirect()->back();
+            }
         }
 
-        RateLimiter::clear($this->throttleKey());
+        RateLimiter::hit($this->throttleKey());
+
+        throw ValidationException::withMessages([
+            'email' => trans('auth.failed'),
+        ]);
     }
+
+
 
     /**
      * Ensure the login request is not rate limited.
