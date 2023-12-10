@@ -26,6 +26,7 @@ use App\Http\Controllers\Admin\BlogController;
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/recipes', [RecipeController::class,'index'])->name('home.recipes');
 Route::get('/books', [BookController::class,'index'])->name('home.books');
+Route::get('/blog/{slug}', [HomeController::class,'blogDetails'])->name('home.blogDetails');
 Route::get('/book/{slug}', [BookController::class,'details'])->name('book.details');
 Route::get('/contact-us', [PagesController::class,'contact'])->name('home.contact');
 Route::post('/book/add-to-cart',[CartController::class,'cartToSave'])->name('cart.save');

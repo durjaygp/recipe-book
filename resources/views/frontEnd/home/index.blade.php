@@ -348,193 +348,43 @@
             <div class="sec-title">
                 <div class="clearfix">
                     <div class="pull-left">
-                        <h2>Trending Recipes</h2>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt ut</div>
+                        <h2>Blogs</h2>
                     </div>
                     <div class="pull-right">
-                        <a href="recipes.html" class="theme-btn btn-style-one"><span class="txt">See all Post</span></a>
+                        <a href="recipes.html" class="theme-btn btn-style-one"><span class="txt">See all Blog</span></a>
                     </div>
                 </div>
             </div>
 
             <div class="clearfix row">
 
-                <!-- Recipes Block -->
-                <div class="recipes-block style-two col-lg-4 col-md-6 col-sm-12">
+                <!-- Blog Block -->
+                @php
+                $blogs = \App\Models\Blog::latest()->where('status',1)->take(4)->get();
+                @endphp
+                @foreach($blogs as $row)
+                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-5.jpg" alt="" /></a>
+                            <a href="{{route('home.blogDetails',$row->slug)}}"><img src="{{asset($row->image)}}" alt=""></a>
                         </div>
                         <div class="lower-content">
-                            <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                            <div class="category">CHICKEN</div>
-                            <h4><a href="recipes-detail.html">Pressure-Cooker Beef Short <br> Ribs with Chutney</a></h4>
-                            <div class="text">Discover a sleighload of tasty snacks that are just right for holiday feasting.</div>
                             <ul class="post-meta">
-                                <li><span class="icon flaticon-dish"></span>4 ingredients</li>
-                                <li><span class="icon flaticon-clock-3"></span>6 Min</li>
-                                <li><span class="icon flaticon-business-and-finance"></span>4 People</li>
+                                <li><span class="icon "></span>21 Jan ,2020</li>
+                                <li><span class="icon flaticon-comment"></span>4</li>
+                                <li><span class="icon flaticon-heart"></span>5</li>
                             </ul>
+                            <h4><a href="{{route('home.blogDetails',$row->slug)}}">{{$row->name}}</a></h4>
+                            <a href="{{route('home.blogDetails',$row->slug)}}" class="theme-btn read-more">Read More</a>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-                <!-- Recipes Block -->
-                <div class="recipes-block style-two col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-6.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                            <div class="category">CHICKEN</div>
-                            <h4><a href="recipes-detail.html">Pressure-Cooker Beef Short <br> Ribs with Chutney</a></h4>
-                            <div class="text">Discover a sleighload of tasty snacks that are just right for holiday feasting.</div>
-                            <ul class="post-meta">
-                                <li><span class="icon flaticon-dish"></span>4 ingredients</li>
-                                <li><span class="icon flaticon-clock-3"></span>6 Min</li>
-                                <li><span class="icon flaticon-business-and-finance"></span>4 People</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recipes Block -->
-                <div class="recipes-block style-two col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-7.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                            <div class="category">CHICKEN</div>
-                            <h4><a href="recipes-detail.html">Pressure-Cooker Beef Short <br> Ribs with Chutney</a></h4>
-                            <div class="text">Discover a sleighload of tasty snacks that are just right for holiday feasting.</div>
-                            <ul class="post-meta">
-                                <li><span class="icon flaticon-dish"></span>4 ingredients</li>
-                                <li><span class="icon flaticon-clock-3"></span>6 Min</li>
-                                <li><span class="icon flaticon-business-and-finance"></span>4 People</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
         </div>
     </section>
     <!-- End Trending Recipes Section -->
-
-    <section class="entertaining-section">
-        <div class="auto-container">
-            <!-- Sec Title -->
-            <div class="sec-title centered">
-                <h2>Blogs</h2>
-            </div>
-
-            <div class="row clearfix">
-
-                <!-- Entertaining Block -->
-                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-1.jpg" alt=""></a>
-                        </div>
-                        <div class="lower-content">
-                            <ul class="post-meta">
-                                <li><span class="icon "></span>21 Jan ,2020</li>
-                                <li><span class="icon flaticon-comment"></span>4</li>
-                                <li><span class="icon flaticon-heart"></span>5</li>
-                            </ul>
-                            <h4><a href="recipes-detail.html">Pop-Tarts Dropping New Pretzel Flavors Nationwide</a></h4>
-                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Entertaining Block -->
-                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-2.jpg" alt=""></a>
-                        </div>
-                        <div class="lower-content">
-                            <ul class="post-meta">
-                                <li><span class="icon "></span>21 Jan ,2020</li>
-                                <li><span class="icon flaticon-comment"></span>4</li>
-                                <li><span class="icon flaticon-heart"></span>5</li>
-                            </ul>
-                            <h4><a href="recipes-detail.html">The Cosmic Crisp Apple Is Here and We’re Already Obsessed</a></h4>
-                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Entertaining Block -->
-                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-3.jpg" alt=""></a>
-                        </div>
-                        <div class="lower-content">
-                            <ul class="post-meta">
-                                <li><span class="icon "></span>21 Jan ,2020</li>
-                                <li><span class="icon flaticon-comment"></span>4</li>
-                                <li><span class="icon flaticon-heart"></span>5</li>
-                            </ul>
-                            <h4><a href="recipes-detail.html">Good Grief! 9 Ideas for a Charlie Brown Christmas Party</a></h4>
-                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Entertaining Block -->
-                <div class="entertaining-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/entertaining-4.jpg" alt=""></a>
-                        </div>
-                        <div class="lower-content">
-                            <ul class="post-meta">
-                                <li><span class="icon "></span>21 Jan ,2020</li>
-                                <li><span class="icon flaticon-comment"></span>4</li>
-                                <li><span class="icon flaticon-heart"></span>5</li>
-                            </ul>
-                            <h4><a href="recipes-detail.html">How to Remove Sulfites from Wine the Easy Way</a></h4>
-                            <a href="recipes-detail.html" class="theme-btn read-more">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Subscribe Section -->
-    <section class="subscribe-section">
-        <div class="container">
-            <div class="row">
-                <!-- Column -->
-                <div class="">
-                    <h1>Subscribe to the best <br> recipes feed.</h1>
-                    <!-- Subscribe Form -->
-                    <div class="subscribe-form">
-                        <form method="post" action="">
-                            <div class="clearfix form-group">
-                                <input type="email" name="email" value="" placeholder="Enter your email" required>
-                                <button type="submit" class="theme-btn send-btn flaticon-paper-plane-2"></button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="inbox">Get recipes, tips, and news delivered to your inbox.</div>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-    <!-- End Subscribe Section -->
-
-
 @endsection
