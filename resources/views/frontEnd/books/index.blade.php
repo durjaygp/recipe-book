@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="lower-content">
                                     <h4><a href="{{route('book.details',$row->slug)}}">{{$row->name}}</a></h4>
-                                    <span class="text-success h4">€ {{$row->price}}</span>
+                                    <span class="text-success h4">R {{$row->price}}</span>
                                 </div>
                             </div>
                         </div>

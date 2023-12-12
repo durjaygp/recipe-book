@@ -41,83 +41,81 @@
                     <form method="post" action="{{route('update.setting')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="form-group">
+                            <div class="col-lg-12">
                                 <div class="mb-4">
-                                    <label for="exampleInputEmail1">Website Name/Title</label>
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Recipe Name</label>
+                                    <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Book Name">
+                                </div>
+                            </div>
+                       <div class="col-lg-12">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Website Name/Title</label>
                                     <input type="text" name="name" class="form-control" placeholder="Enter Website Name" value="{{$row->name}}">
                                 </div>
 
                             </div>
-                            <div class="form-group">
+                       <div class="col-lg-12">
                                 <div class="mb-4">
-                                    <label for="exampleInputEmail1">Website Footer Text</label>
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Website Footer Text</label>
                                     <input type="text" name="footer" class="form-control" placeholder="All Rights Reserved Powered by websiteowner" value="{{$row->footer}}">
                                 </div>
                             </div>
-                            <div class="form-group">
+                       <div class="col-lg-12">
                                 <div class="mb-4">
-                                    <label for="exampleInputEmail1">Website Author Name<small class="text-sm text-gray-400">(Optional)</small></label>
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Website Author Name<small class="text-sm text-gray-400">(Optional)</small></label>
                                     <input type="text" name="author" class="form-control" placeholder="Website Author Name" value="{{$row->author}}">
                                 </div>
                             </div>
-                            <div class="form-group">
+                       <div class="col-lg-12">
                                 <div class="mb-4">
-                                    <label for="exampleInputEmail1">Website URL</label>
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Website URL</label>
                                     <input type="text" name="url" class="form-control" placeholder="Website URL" value="{{$row->url}}">
                                 </div>
                             </div>
-                            <div class="form-group">
+                       <div class="col-lg-12">
                                 <div class="mb-4">
-                                    <label for="exampleInputEmail1">Website Keywords</label>
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Website Keywords</label>
                                     <input type="text" name="keywords" class="form-control" placeholder="Website Keywords" value="{{$row->keywords}}">
                                 </div>
                             </div>
-                            <div class="form-group">
+                       <div class="col-lg-12">
                                 <div class="mb-4">
-                                    <label for="exampleInputEmail1">Website Tags</label>
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Website Tags</label>
                                     <input type="text" name="tags" class="form-control" placeholder="Website Tags" value="{{$row->tags}}">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Website Description <small>(It also appear in Footer About Us)</small></label>
+                       <div class="col-lg-12">
+                                <label for="exampleInputPassword1" class="form-label fw-semibold">Website Description <small>(It also appear in Footer About Us)</small></label>
                                 <textarea name="description" id="" cols="10" rows="5" class="form-control" placeholder="Write a short Description">{{$row->description}}</textarea>
                             </div>
-                            <div class="form-group">
+                       <div class="col-lg-12">
                                 <div class="mb-4">
-                                    <label for="exampleInputEmail1">Google Verification Code <small class="text-sm text-gray-400">(Optional)</small></label>
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Google Verification Code <small class="text-sm text-gray-400">(Optional)</small></label>
                                     <input type="text" name="google" class="form-control" placeholder="Enter Category Title" value="{{$row->google}}">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="mb-4">
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Website Image, LOGO <small>(Width 150px X Height 50px)</small></label>
+                                           <label for="exampleInputPassword1" class="form-label fw-semibold">Website Image, LOGO <small>(Width 150px X Height 50px)</small></label>
                                             <input class="dropify" type="file" name="website_logo" accept="image/*">
-                                        </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Existing Image</label> <br>
+                                    <div class="col-md-6">
+                                           <label for="exampleInputPassword1" class="form-label fw-semibold">Existing LOGO</label> <br>
                                             <img src="{{asset($row->website_logo)}}" class="img-fluid"  width="80px" height="80px">
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="mb-4">
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Website FavIcon <small> (Width 80px X Height 80px)</small></label>
+                                           <label for="exampleInputPassword1" class="form-label fw-semibold">Website FavIcon <small> (Width 80px X Height 80px)</small></label>
                                             <input class="dropify" type="file" name="fav_icon" accept="image/*">
                                         </div>
-                                    </div>
                                     <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label>Existing Image</label> <br>
+                                           <label for="exampleInputPassword1" class="form-label fw-semibold">Existing FavIcon</label> <br>
                                             <img src="{{asset($row->fav_icon)}}" alt="" width="80px" height="80px">
                                         </div>
-                                    </div>
                                 </div>
                             </div>
 
@@ -129,4 +127,37 @@
 
         </div>
     </div>
+@endsection
+@section('style')
+    <link rel="stylesheet" href="{{asset('/')}}dropify/dist/css/dropify.min.css">
+    <link rel="stylesheet" href="{{asset('back')}}/assets/libs/summernote/dist/summernote-lite.min.css">
+
+    <link rel="stylesheet" href="{{asset('back')}}/assets/libs/quill/dist/quill.snow.css">
+@endsection
+@section('script')
+
+    <script src="{{asset('/')}}dropify/dist/js/dropify.min.js"></script>
+    <script src="{{asset('back')}}/assets/libs/summernote/dist/summernote-lite.min.js"></script>
+    <script src="{{asset('back')}}/assets/libs/quill/dist/quill.min.js"></script>
+    <script>
+        $("#summernote").summernote({
+            height: 350, // set editor height
+            minHeight: null, // set minimum height of editor
+            maxHeight: null, // set maximum height of editor
+            focus: false, // set focus to editable area after initializing summernote
+        });
+        $('.dropify').dropify({
+            messages: {
+                'default': 'Drag and drop a file here or click',
+                'replace': 'Drag and drop or click to replace',
+                'remove':  'Remove',
+                'error':   'Ooops, something wrong happended.'
+            }
+        });
+    </script>
+    <script>
+        var quill = new Quill("#editor", {
+            theme: "snow",
+        });
+    </script>
 @endsection

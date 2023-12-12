@@ -27,4 +27,16 @@ class AdminCategoryController extends Controller
         $category->save();
         return redirect()->back()->with('success','Category Created Successfully');
     }
+
+    public function delete($id){
+        $category_default_id = Category::where('name','Uncategorized')->first()->id;
+        $this->category = Category::find($id);
+        if ($this->category-> name === 'Uncategorized')
+            abort(404);
+
+        $this->category->posts()->update(['category_id'=>$category_default_id]);
+        $this->category->delete();
+        return redirect()->back()->with('success', 'Category Has been deleted.');
+    }
+
 }

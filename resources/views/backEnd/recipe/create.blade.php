@@ -94,15 +94,21 @@
                             <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Ingredients description</label>
-                                    <div id="editor" name="ingredients_content"></div>
-{{--                                    <textarea name="description" id="editor" cols="10" rows="5" class="form-control"></textarea>--}}
+{{--                                    <div id="editor" name="ingredients_content"></div>--}}
+                                    <textarea name="ingredients_content" id="summernote1" cols="10" rows="5" class="form-control" placeholder="test"></textarea>
                                 </div>
                             </div>
 
                             <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Main Recipe Content</label>
-                                    <textarea name="recipe" id="summernote" cols="30" rows="10"></textarea>
+                                    <textarea name="recipe" id="summernote" cols="30" rows="10" placeholder="test"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Video Link</label>
+                                    <input type="text" name="video"  class="form-control"  placeholder="https://youtu.be/oz38UcNI-sI">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -111,6 +117,15 @@
                                     <select name="status" id="" class="form-select">
                                         <option value="1">Publish</option>
                                         <option value="2">Draft/Unpublished</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Featured Section</label>
+                                    <select name="position" id="" class="form-select">
+                                        <option value="1">Slider / Featured</option>
+                                        <option value="2">Basic Normal Post</option>
                                     </select>
                                 </div>
                             </div>
@@ -142,6 +157,13 @@
     <script src="{{asset('back')}}/assets/libs/quill/dist/quill.min.js"></script>
     <script>
         $("#summernote").summernote({
+            height: 350, // set editor height
+            minHeight: null, // set minimum height of editor
+            maxHeight: null, // set maximum height of editor
+            focus: false,
+           // placeholder: Test,// set focus to editable area after initializing summernote
+        });
+        $("#summernote1").summernote({
             height: 350, // set editor height
             minHeight: null, // set minimum height of editor
             maxHeight: null, // set maximum height of editor

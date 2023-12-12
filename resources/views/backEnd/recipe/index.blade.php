@@ -24,9 +24,6 @@
         </div>
         <div class="widget-content searchable-container list">
             <!-- --------------------- start Contact ---------------- -->
-            <div class="card card-body">
-
-            </div>
             <div class="card">
                <div class="card-header">
                    <div class="row">
@@ -74,7 +71,7 @@
                                                 <a href="javascript:void(0)" class="btn btn-sm btn-primary">
                                                     <i class="ti ti-pencil fs-5"></i>
                                                 </a>
-                                                <a href="{{ route('book.delete', $row->id) }}"
+                                                <a href="#"
                                                    onclick="event.preventDefault();
                                                        if (confirm('Are you sure you want to delete?'))
                                                        document.getElementById('delete-form-{{ $row->id }}').submit();"
@@ -82,7 +79,7 @@
                                                     <i class="ti ti-trash fs-5"></i>
                                                 </a>
 
-                                                <form id="delete-form-{{ $row->id }}" action="{{ route('book.delete', $row->id) }}" method="get" style="display: none;">
+                                                <form id="delete-form-{{ $row->id }}" action="{{ route('recipe.delete', $row->id) }}" method="get" style="display: none;">
                                                     @csrf
                                                 </form>
 

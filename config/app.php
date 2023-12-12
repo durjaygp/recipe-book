@@ -168,7 +168,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+       // \zfhassaan\Payfast\Provider\PayFastServiceProvider::class,
         Davcpas1234\LaravelPdfViewer\LaravelPdfViewerServiceProvider::class,
+
+
+
 
     ])->toArray(),
 
@@ -185,6 +189,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+      //  'Payfast' => \zfhassaan\Payfast\Payfastfacade::class,
     ])->toArray(),
 
 ];

@@ -31,7 +31,7 @@
                             <li><i class="fa fa-pagelines" aria-hidden="true"></i> {{$book->pages}}</li>
                             <li><i class="fa fa-calendar" aria-hidden="true"></i> {{$book->publish_date}}</li>
                         </ul>
-                        <span class="text-success h4">€ {{$book->price}}</span>
+                        <span class="text-success h4">R {{$book->price}}</span>
                         <p></p>
 
                         <a href="#" onclick="event.preventDefault(); document.getElementById('addToCart{{$book->id}}').submit();" class="btn btn-success">Buy</a>

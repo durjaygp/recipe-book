@@ -34,7 +34,15 @@
                                     <th scope="row">{{$loop->iteration}}</th>
                                     <td>{{$row->book_name}}</td>
                                     <td>{{$row->total_price}}</td>
-                                    <td><a href="{{route('cart.remove',$row->id)}}" class="btn btn-danger"><i class="fa fa-trash"></i> Remove</a></td>
+                                    <td><a href="#" onclick="event.preventDefault();
+                                            if (confirm('Are you sure you want to Remove?'))
+                                            document.getElementById('delete-form-{{ $row->id }}').submit();" class="btn btn-danger"><i class="fa fa-trash"></i> Remove</a>
+
+                                        <form id="delete-form-{{ $row->id }}" action="{{ route('cart.remove', $row->id) }}" method="get" style="display: none;">
+                                            @csrf
+                                        </form>
+
+                                    </td>
                                 </tr>
                                 @endforeach
                                 </tbody>

@@ -20,13 +20,14 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->nullable();
             $table->string('ingredients')->nullable();
-            $table->string('ingredients_content')->nullable();
+            $table->longText('ingredients_content')->nullable();
             $table->string('peoples')->nullable();
             $table->string('duration')->nullable();
-            $table->text('description')->nullable();
+            $table->longText('description')->nullable();
             $table->text('image')->nullable();
             $table->text('video')->nullable();
             $table->longText('recipe')->nullable();
+            $table->string('position')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
         });

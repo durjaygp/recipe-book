@@ -8,7 +8,7 @@ use App\Models\Recipe;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Illuminate\Validation\Validator;
+use Validator;
 use Illuminate\Support\Str;
 
 class AdminRecipeController extends Controller
@@ -62,10 +62,12 @@ class AdminRecipeController extends Controller
         $recipe->category_id = $request->category_id;
         $recipe->ingredients = $request->ingredients;
         $recipe->description = $request->description;
+        $recipe->ingredients_content = $request->ingredients_content;
         $recipe->peoples = $request->peoples;
         $recipe->duration = $request->duration;
         $recipe->video = $request->video;
         $recipe->recipe = $request->recipe;
+        $recipe->position = $request->position;
         $recipe->status = $request->status;
         // $book->image = $this->saveImage($request);
         if ($request->file('image')) {
