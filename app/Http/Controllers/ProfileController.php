@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+
 class ProfileController extends Controller
 {
     /**
@@ -26,16 +27,56 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        try {
+            $user = $request->user();
+            $user->fill($request->validated());
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+            if ($user->isDirty('email')) {
+                $user->email_verified_at = null;
+            }
+
+            if ($request->hasFile('image')) {
+                $existingImage = $user->image;
+                $newImage = $this->saveImage($request);
+
+                // Delete the existing image after saving the new one
+                $this->deleteExistingImage($existingImage);
+
+                $user->image = $newImage;
+            }
+
+            $user->save();
+
+            return redirect()->route('profile.edit')->with('status', 'profile-updated');
+        } catch (\Exception $e) {
+            // Log the error
+            \Log::error('Profile update error: ' . $e->getMessage());
+
+            // Redirect back with an error message
+            return redirect()->back()->with('error', 'An error occurred during profile update.');
         }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
+
+    public function saveImage($request)
+    {
+        $image = $request->file('image');
+        $imageName = rand() . '.' . $image->getClientOriginalExtension();
+        $directory = 'uploads/';
+        $imageUrl = $directory . $imageName;
+
+        $image->move($directory, $imageName);
+
+        return $imageUrl;
+    }
+
+
+    public function deleteExistingImage($imagePath)
+    {
+        if ($imagePath && file_exists(public_path($imagePath))) {
+            unlink(public_path($imagePath));
+        }
+    }
+
 
     /**
      * Delete the user's account.

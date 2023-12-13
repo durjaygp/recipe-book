@@ -13,7 +13,7 @@
     <meta name="keywords" content="Mordenize" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!--  Favicon -->
-    <link rel="shortcut icon" type="image/png" href="{{asset('back')}}/assets/images/logos/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="{{asset($website->fav_icon)}}" />
     <!-- Owl Carousel -->
     @yield('style')
     <link rel="stylesheet" href="{{asset('back')}}/assets/libs/owl.carousel/dist/assets/owl.carousel.min.css">
@@ -26,11 +26,11 @@
 <body>
 <!-- Preloader -->
 <div class="preloader">
-    <img src="{{asset('back')}}/assets/images/logos/favicon.ico" alt="loader" class="lds-ripple img-fluid" />
+    <img src="{{asset($website->fav_icon)}}" alt="loader" class="lds-ripple img-fluid" />
 </div>
 <!-- Preloader -->
 <div class="preloader">
-    <img src="{{asset('back')}}/assets/images/logos/favicon.ico" alt="loader" class="lds-ripple img-fluid" />
+    <img src="{{asset($website->fav_icon)}}" alt="loader" class="lds-ripple img-fluid" />
 </div>
 <!-- Body Wrapper -->
 <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">

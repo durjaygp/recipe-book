@@ -23,6 +23,9 @@ return new class extends Migration
             $table->text('url')->nullable();
             $table->text('website_logo')->nullable();
             $table->text('fav_icon')->nullable();
+            $table->text('address')->nullable();
+            $table->text('email')->nullable();
+            $table->text('phone')->nullable();
             $table->timestamps();
         });
     }

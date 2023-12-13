@@ -38,7 +38,7 @@
                         <div class="col-12">
                             <div class="text-center">
 {{--                                <iframe src ="{{ asset('uploads') }}/1163199197.pdf" width="1000px" height="600px"></iframe>--}}
-                                <iframe src ="{{ asset('uploads/books.pdf') }}" width="1000px" height="600px"></iframe>
+                                <iframe src ="{{ asset($mybook->books->file) }}" width="1000px" height="600px"></iframe>
 
 
                             </div>

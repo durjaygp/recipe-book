@@ -49,16 +49,33 @@ class OrderController extends Controller
         return redirect(route('dashboard'))->with('success','Payment Recorded');
 
     }
+
     public $image, $imageName, $imageUrl, $directory;
     public function saveImage($request)
     {
         $this->image = $request->file('image');
-        $this->imageName = rand().'.'.$this->image->getClientOriginalExtension();
+
+        // Check if a file is uploaded
+        if (!$this->image) {
+            return 'No file uploaded';
+        }
+
+        // Generate a unique image name using time instead of rand()
+        $this->imageName = time().'.'.$this->image->getClientOriginalExtension();
+
         $this->directory = 'uploads/';
+
         $this->imageUrl = $this->directory . $this->imageName;
-        $this->image->move($this->directory, $this->imageName);
-        return $this->imageUrl;
+
+        // Move the uploaded file to the specified directory
+        try {
+            $this->image->move(public_path($this->directory), $this->imageName);
+            return $this->imageUrl;
+        } catch (\Exception $e) {
+            return 'Error uploading file: ' . $e->getMessage();
+        }
     }
+
 
 
 

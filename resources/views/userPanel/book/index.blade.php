@@ -68,9 +68,10 @@
                                             </td>
                                             <td>
                                                 <div class="action-btn">
-                                                    <a href="{{route('myBooks.read')}}"  class="btn btn-sm btn-warning">
+                                                    <a href="{{ route('myBooks.read', ['encryptedId' => encrypt($row->id)]) }}" class="btn btn-sm btn-warning">
                                                         <i class="ti ti-eye text-white me-1 fs-5"></i>
                                                     </a>
+
                                                 </div>
                                             </td>
                                         </tr>

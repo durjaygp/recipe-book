@@ -43,7 +43,7 @@
                         $person = \App\Models\User::find(auth()->user()->id);
                     @endphp
 
-                    <form method="post" action="{{ route('profile.update') }}">
+                    <form method="post" action="{{ route('profile.update') }}" enctype="multipart/form-data">
                         @csrf
                         @method('patch')
                         <div class="row">
@@ -60,6 +60,14 @@
                                     <input type="text" name="email" class="form-control" id="exampleInputtext"  value="{{$person->email}}">
                                 </div>
                             </div>
+
+                            <div class="col-lg-12">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Image</label>
+                                    <input type="file" name="image" class="form-control" id="exampleInputtext">
+                                </div>
+                            </div>
+
 
                             <div class="col-12">
                                 <div class="d-flex align-items-center gap-3">

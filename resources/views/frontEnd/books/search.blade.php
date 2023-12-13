@@ -1,5 +1,7 @@
 @extends('frontEnd.master')
-@section('title','Books')
+@section('title')
+{{$search}}
+@endsection
 @section('content')
     <!--Page Title-->
     <section class="page-title" style="background-image:url({{asset('front')}}/images/background/10.jpg)">
@@ -22,12 +24,6 @@
                             <div class="form-group col-lg-3 col-md-6 col-sm-12">
                                 <select class="custom-select-box">
                                     <option>Books</option>
-                                    @php
-                                        $cates = \App\Models\Book::latest()->get();
-                                    @endphp
-                                    @foreach($cates as $row)
-                                        <option>{{$row->name}}</option>
-                                    @endforeach
                                 </select>
                             </div>
 
@@ -56,17 +52,13 @@
 
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <h2> Our Books </h2>
-                <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt ut laoreet <br> dolore magna aliquam erat volutpat lorem</div>
+                <h2> Your Search Results </h2>
             </div>
 
             <!-- Categories Tabs -->
             <div class="related-items">
                 <div class="row clearfix">
-                    @php
-                        $books = \App\Models\Book::latest()->take(4)->get();
-                    @endphp
-                    @foreach($books as $row)
+                    @forelse($books as $row)
                         <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image">
@@ -78,7 +70,11 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @empty
+                        <div class="text-center">
+                            <h2 class="text-danger">Not Found!</h2>
+                        </div>
+                    @endforelse
                 </div>
 
             </div>

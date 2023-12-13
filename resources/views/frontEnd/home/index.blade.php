@@ -1,79 +1,33 @@
 @extends('frontEnd.master')
 @section('title','Home')
 @section('content')
-    <!-- Banner Section -->
-    <section class="banner-section">
-        <div class="banner-carousel owl-theme owl-carousel">
-            @php
-                $slider = \App\Models\Recipe::latest()->get();
-            @endphp
-            @foreach($slider as $row)
-            <div class="slide-item">
-                <div class="image-layer" style="background-image:url({{asset($row->image)}})"></div>
-                <div class="auto-container">
-                    <div class="content-box">
-
-                        <div class="clearfix info-list">
-                            <div class="sales">Salad</div>
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star-half-o"></span>&ensp;
-                                8 Review
-                            </div>
-                            <!-- Author Name -->
-                            <div class="author-name">
-                                <div class="author-inner">
-                                    <div class="author-icon">
-                                        <img src="images/resource/author-1.jpg" alt="" />
-                                    </div>
-                                    by Mahfuz Riad
-                                </div>
-                            </div>
-                        </div>
-                        <h1>Roasted Pumpkin and <br> Beet Salad</h1>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetuer <br> adipiscing elit, sed tinciduntut laore dolore </div>
-                        <ul class="post-meta">
-                            <li><span class="icon flaticon-dish"></span>4 ingredients</li>
-                            <li><span class="icon flaticon-clock-3"></span>6 Min</li>
-                            <li><span class="icon flaticon-business-and-finance"></span>4 People</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-            @endforeach
-
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url({{asset('front')}}/images/background/10.jpg)">
+        <div class="auto-container">
+            <h1>Cindy's Simple Plates</h1>
         </div>
     </section>
-    <!--End Banner Section -->
+    <!--End Page Title-->
 
     <!-- Product Form Section -->
-    <section class="product-form-section">
+    <section class="product-form-section style-two">
         <div class="auto-container">
             <div class="inner-container margin-top">
 
                 <!-- Default Form -->
                 <div class="default-form">
-                    <form method="post" action="https://gico.io/spcica/contact.html">
+                    <form method="get" action="{{route('search.book')}}">
                         <div class="clearfix">
-
                             <!-- Form Group -->
                             <div class="form-group col-lg-3 col-md-6 col-sm-12">
                                 <select class="custom-select-box">
-                                    <option>Categories</option>
-                                    <option>01</option>
-                                    <option>02</option>
-                                    <option>03</option>
-                                    <option>04</option>
+                                    <option>Books</option>
                                 </select>
                             </div>
 
                             <!-- Form Group -->
                             <div class="form-group col-lg-7 col-md-6 col-sm-12">
-                                <input type="text" name="text" placeholder="Recipe Kayword" required>
+                                <input type="text" name="search" placeholder="Books Name" required>
                             </div>
 
                             <div class="form-group col-lg-2 col-md-12 col-sm-12">
@@ -87,6 +41,8 @@
             </div>
         </div>
     </section>
+    <!-- End Keyword Section -->
+
     <!-- End Keyword Section -->
     <!-- About Section -->
     <section class="about-section">
@@ -150,7 +106,7 @@
                             </div>
                             <div class="lower-content">
                                 <h4><a href="{{route('book.details',$row->slug)}}">{{$row->name}}</a></h4>
-                                <span class="text-success h4">€ {{$row->price}}</span>
+                                <span class="text-success h4">R {{$row->price}}</span>
                             </div>
                         </div>
                     </div>
@@ -170,11 +126,11 @@
             <div class="sec-title">
                 <div class="clearfix">
                     <div class="pull-left">
-                        <h2>Populer Recipes Posts</h2>
+                        <h2>Popular Recipes Posts</h2>
 
                     </div>
                     <div class="pull-right">
-                        <a href="recipes.html" class="theme-btn btn-style-one"><span class="txt">See all Post</span></a>
+                        <a href="{{route('home.recipes')}}" class="theme-btn btn-style-one"><span class="txt">See all Post</span></a>
                     </div>
                 </div>
             </div>
@@ -189,12 +145,12 @@
                 <div class="recipes-block col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset($row->image)}}" alt="" /></a>
+                            <a href="{{route('recipe.details',['id'=>$row->id,'slug'=>$row->slug,])}}"><img src="{{asset($row->image)}}" alt="{{$row->name}}" /></a>
                         </div>
                         <div class="lower-content">
-                            <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
+                            <div class="author-image"><a href="#"><img src="{{$row->user->image}}" alt="" /></a></div>
                             <div class="category">{{$row->category->name}}</div>
-                            <h4><a href="{{route('recipe.details',$row->slug)}}l">{{$row->name}}</a></h4>
+                            <h4><a href="{{route('recipe.details',['id'=>$row->id,'slug'=>$row->slug,])}}">{{$row->name}}</a></h4>
                             <div class="text">{{$row->description}}</div>
                             <ul class="post-meta">
                                 <li><span class="icon flaticon-dish"></span>{{$row->ingredients}} ingredients</li>
@@ -222,7 +178,7 @@
                         <h2>Blogs</h2>
                     </div>
                     <div class="pull-right">
-                        <a href="recipes.html" class="theme-btn btn-style-one"><span class="txt">See all Blog</span></a>
+                        <a href="{{route('home.blogs')}}" class="theme-btn btn-style-one"><span class="txt">See all Blog</span></a>
                     </div>
                 </div>
             </div>

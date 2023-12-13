@@ -27,9 +27,9 @@
                         <h2>{{$book->name}}</h2>
                         <p>{{$book->description}}</p>
                         <ul class="author-info">
-                            <li><i class="fa fa-coffee" aria-hidden="true"></i> {{$book->total_recipe}}</li>
-                            <li><i class="fa fa-pagelines" aria-hidden="true"></i> {{$book->pages}}</li>
-                            <li><i class="fa fa-calendar" aria-hidden="true"></i> {{$book->publish_date}}</li>
+                            <li><i class="fa fa-coffee" aria-hidden="true"></i> {{$book->total_recipe}} Recipes</li>
+                            <li><i class="fa fa-pagelines" aria-hidden="true"></i> {{$book->pages}} Pages</li>
+                            <li><i class="fa fa-calendar" aria-hidden="true"></i> Published Date: {{$book->publish_date}}</li>
                         </ul>
                         <span class="text-success h4">R {{$book->price}}</span>
                         <p></p>
@@ -44,13 +44,13 @@
 
 
 
-                        <ul class="social-links">
-                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>
-                            <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
-                            <li><a href="#"><span class="fa fa-instagram"></span></a></li>
-                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fa fa-youtube-play"></span></a></li>
-                        </ul>
+{{--                        <ul class="social-links">--}}
+{{--                            <li><a href="#"><span class="fa fa-pinterest-p"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="fa fa-instagram"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="fa fa-youtube-play"></span></a></li>--}}
+{{--                        </ul>--}}
                     </div>
                 </div>
             </div>

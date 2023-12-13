@@ -1,10 +1,12 @@
 @extends('frontEnd.master')
-@section('title','Recipes')
+@section('title')
+    {{$search}}
+@endsection
 @section('content')
     <!--Page Title-->
     <section class="page-title" style="background-image:url({{asset('front')}}/images/background/10.jpg)">
         <div class="auto-container">
-            <h1>Recipes</h1>
+            <h1>Recipe</h1>
         </div>
     </section>
     <!--End Page Title-->
@@ -63,7 +65,7 @@
         </div>
         <div class="outer-container">
             <div class="row clearfix">
-                @foreach($recipes as $row)
+                @forelse($recipes as $row)
                     <div class="recipes-block col-lg-3 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image">
@@ -82,7 +84,11 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="text-center">
+                        <h2 class="text-danger">Not Found!</h2>
+                    </div>
+                @endforelse
             </div>
         </div>
     </section>

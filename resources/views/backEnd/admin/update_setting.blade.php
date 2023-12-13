@@ -43,52 +43,46 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Recipe Name</label>
-                                    <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Book Name">
-                                </div>
-                            </div>
-                       <div class="col-lg-12">
-                                <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Website Name/Title</label>
                                     <input type="text" name="name" class="form-control" placeholder="Enter Website Name" value="{{$row->name}}">
                                 </div>
 
                             </div>
-                       <div class="col-lg-12">
+                            <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Website Footer Text</label>
                                     <input type="text" name="footer" class="form-control" placeholder="All Rights Reserved Powered by websiteowner" value="{{$row->footer}}">
                                 </div>
                             </div>
-                       <div class="col-lg-12">
+                            <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Website Author Name<small class="text-sm text-gray-400">(Optional)</small></label>
                                     <input type="text" name="author" class="form-control" placeholder="Website Author Name" value="{{$row->author}}">
                                 </div>
                             </div>
-                       <div class="col-lg-12">
+                            <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Website URL</label>
                                     <input type="text" name="url" class="form-control" placeholder="Website URL" value="{{$row->url}}">
                                 </div>
                             </div>
-                       <div class="col-lg-12">
+                            <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Website Keywords</label>
                                     <input type="text" name="keywords" class="form-control" placeholder="Website Keywords" value="{{$row->keywords}}">
                                 </div>
                             </div>
-                       <div class="col-lg-12">
+                            <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Website Tags</label>
                                     <input type="text" name="tags" class="form-control" placeholder="Website Tags" value="{{$row->tags}}">
                                 </div>
                             </div>
-                       <div class="col-lg-12">
+                            <div class="col-lg-12">
                                 <label for="exampleInputPassword1" class="form-label fw-semibold">Website Description <small>(It also appear in Footer About Us)</small></label>
                                 <textarea name="description" id="" cols="10" rows="5" class="form-control" placeholder="Write a short Description">{{$row->description}}</textarea>
                             </div>
-                       <div class="col-lg-12">
+                            <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Google Verification Code <small class="text-sm text-gray-400">(Optional)</small></label>
                                     <input type="text" name="google" class="form-control" placeholder="Enter Category Title" value="{{$row->google}}">
@@ -97,25 +91,25 @@
                             <div class="row">
                                 <div class="mb-4">
                                     <div class="col-md-6">
-                                           <label for="exampleInputPassword1" class="form-label fw-semibold">Website Image, LOGO <small>(Width 150px X Height 50px)</small></label>
-                                            <input class="dropify" type="file" name="website_logo" accept="image/*">
+                                        <label for="exampleInputPassword1" class="form-label fw-semibold">Website Image, LOGO <small>(Width 150px X Height 50px)</small></label>
+                                        <input class="dropify" type="file" name="website_logo" accept="image/*">
                                     </div>
                                     <div class="col-md-6">
-                                           <label for="exampleInputPassword1" class="form-label fw-semibold">Existing LOGO</label> <br>
-                                            <img src="{{asset($row->website_logo)}}" class="img-fluid"  width="80px" height="80px">
-                                        </div>
+                                        <label for="exampleInputPassword1" class="form-label fw-semibold">Existing LOGO</label> <br>
+                                        <img src="{{asset($row->website_logo)}}" class="img-fluid"  width="80px" height="80px">
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="mb-4">
                                     <div class="col-md-6">
-                                           <label for="exampleInputPassword1" class="form-label fw-semibold">Website FavIcon <small> (Width 80px X Height 80px)</small></label>
-                                            <input class="dropify" type="file" name="fav_icon" accept="image/*">
-                                        </div>
+                                        <label for="exampleInputPassword1" class="form-label fw-semibold">Website FavIcon <small> (Width 80px X Height 80px)</small></label>
+                                        <input class="dropify" type="file" name="fav_icon" accept="image/*">
+                                    </div>
                                     <div class="col-md-4">
-                                           <label for="exampleInputPassword1" class="form-label fw-semibold">Existing FavIcon</label> <br>
-                                            <img src="{{asset($row->fav_icon)}}" alt="" width="80px" height="80px">
-                                        </div>
+                                        <label for="exampleInputPassword1" class="form-label fw-semibold">Existing FavIcon</label> <br>
+                                        <img src="{{asset($row->fav_icon)}}" alt="" width="80px" height="80px">
+                                    </div>
                                 </div>
                             </div>
 

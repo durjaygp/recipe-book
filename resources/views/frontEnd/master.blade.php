@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>@yield('title')</title>
-<!-- Stylesheets -->
-<link href="{{asset('front')}}/css/bootstrap.css" rel="stylesheet">
-<link href="{{asset('front')}}/css/main.css" rel="stylesheet">
-<link href="{{asset('front')}}/css/responsive.css" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('/')}}iziToast/dist/css/iziToast.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>@yield('title')</title>
+    <meta name="description" content="A description of the page">
+    <meta name="robots" content="index,follow"><!-- All Search Engines -->
+    <meta name="googlebot" content="index,follow"><!-- Google Specific -->
+    <meta name="author" content="{{$website->author}}"/>
+    <meta name="keywords" content="{{$website->keywords}}" />
+    <meta name="url" content="{{$website->url}}" />
+    <meta name="google-site-verification" content="{{$website->google}}">
+    <meta name="tags" content="{{$website->tags}}" />
+    <meta name="description" content="{{$website->description}}" />
+    <!-- Stylesheets -->
+    <link href="{{asset('front')}}/css/bootstrap.css" rel="stylesheet">
+    <link href="{{asset('front')}}/css/main.css" rel="stylesheet">
+    <link href="{{asset('front')}}/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('/')}}iziToast/dist/css/iziToast.min.css">
 
-<link rel="shortcut icon" href="{{asset('front')}}/images/favicon.png" type="image/x-icon">
-<link rel="icon" href="{{asset('front')}}/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset($website->fav_icon)}}" type="image/x-icon">
+    <link rel="icon" href="{{asset($website->fav_icon)}}" type="image/x-icon">
 
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- Responsive -->
 
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="{{asset('front')}}/js/respond.js"></script><![endif]-->
+
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="{{asset('front')}}/js/respond.js"></script><![endif]-->
 </head>
 <body>
 

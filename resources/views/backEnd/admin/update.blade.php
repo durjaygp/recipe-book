@@ -24,38 +24,46 @@
         </div>
         <div class="widget-content searchable-container list">
             <!-- --------------------- start Contact ---------------- -->
+            <div class="card card-body">
+
+            </div>
             <div class="card">
-                <div class="card-header">
-                    <div class="row">
-                        <div class="col-md-4 ">
-                            <h2>Update Personal Details</h2>
-                        </div>
-                        <div class="col-md-8 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                            <a href="{{route('book.list')}}" class="btn btn-info d-flex align-items-center">
-                                <i class="ti ti-list-details text-white me-1 fs-5"></i> Book List
-                            </a>
-                        </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <h2>Update Personal Details</h2>
+                    </div>
+                    <div class="col-md-8 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
+                        <a href="{{route('book.list')}}" class="btn btn-info d-flex align-items-center">
+                            <i class="ti ti-list-details text-white me-1 fs-5"></i> Book List
+                        </a>
                     </div>
                 </div>
                 <div class="card-body">
                     @php
-                    $person = \App\Models\User::find(auth()->user()->id);
+                        $person = \App\Models\User::find(auth()->user()->id);
                     @endphp
 
-                    <form method="post" action="{{route('book.save')}}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('profile.update') }}">
                         @csrf
+                        @method('patch')
                         <div class="row">
 
                             <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Name</label>
-                                    <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Book Name" value="{{$person->name}}">
+                                    <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Name" value="{{$person->name}}">
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Email</label>
-                                    <input type="text" name="email" class="form-control" id="exampleInputtext" placeholder="20.10" value="{{$person->email}}">
+                                    <input type="text" name="email" class="form-control" id="exampleInputtext"  value="{{$person->email}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Image</label>
+                                    <input type="file" name="image" class="form-control" id="exampleInputtext">
                                 </div>
                             </div>
 
@@ -71,14 +79,29 @@
                 </div>
                 <div class="card-body">
                     <h3>Update Password</h3>
-                    <form method="post" action="{{route('book.save')}}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('password.update') }}">
                         @csrf
+                        @method('put')
+
                         <div class="row">
 
                             <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Current Password</label>
-                                    <input type="password" name="password" class="form-control" id="exampleInputtext" placeholder="Book Name" value="{{$person->name}}">
+                                    <input type="password" name="current_password" class="form-control" id="exampleInputtext" >
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">New Password</label>
+                                    <input type="password" name="password" class="form-control" id="exampleInputtext" >
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Confirm Password</label>
+                                    <input type="password" name="password_confirmation" class="form-control" id="exampleInputtext">
                                 </div>
                             </div>
 

@@ -6,7 +6,7 @@
             <div class="clearfix">
 
                 <div class="pull-left logo-box">
-                    <div class="logo"><a href="{{route('home')}}"><img src="{{asset('front')}}/images/logo.png" alt="" title=""></a></div>
+                    <div class="logo"><a href="{{route('home')}}"><img src="{{asset($website->website_logo)}}" class="img-fluid" alt="{{asset($website->name)}}" title="{{asset($website->name)}}"></a></div>
                 </div>
 
                 <div class="clearfix nav-outer">
@@ -25,19 +25,22 @@
                         <div class="clearfix navbar-collapse show collapse" id="navbarSupportedContent">
                             <ul class="clearfix navigation">
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home') ? 'current' : '' }}"><a href="{{route('home')}}">Home</a></li>
-                                <li><a href="{{route('home.books')}}">Books</a></li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li  class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.recipes') ? 'current' : '' }}"><a href="{{route('home.recipes')}}">Recipes</a>
-                                </li>
+                                <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.books') ? 'current' : '' }}"><a href="{{route('home.books')}}">Books</a></li>
+                                <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.recipes') ? 'current' : '' }}"><a href="{{route('home.recipes')}}">Recipes</a></li>
 
                                 <li class="dropdown"><a href="#">Category</a>
                                     <ul>
-                                        <li><a href="blog.html">Category 01</a></li>
-                                        <li><a href="blog-single.html">Category 02</a></li>
-                                        <li><a href="not-found.html">Category 03</a></li>
+                                        @php
+                                            $categories = \App\Models\Category::latest()->take(7)->get();
+                                        @endphp
+                                        @foreach($categories as $row)
+                                            <li><a href="{{route('home.category',$row->slug)}}">{{$row->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="{{route('home.contact')}}">Contact us</a></li>
+                                <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.blogs') ? 'current' : '' }}"><a href="{{route('home.blogs')}}">Blogs</a></li>
+
+                                <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.contact') ? 'current' : '' }}"><a href="{{route('home.contact')}}">Contact us</a></li>
                             </ul>
                         </div>
 
@@ -52,9 +55,9 @@
                                 <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
                                     <li class="panel-outer">
                                         <div class="form-container">
-                                            <form method="post" action="https://gico.io/spcica/blog.html">
+                                            <form method="get" action="{{route('search.book')}}">
                                                 <div class="form-group">
-                                                    <input type="search" name="field-name" value="" placeholder="Search Here" required>
+                                                    <input type="search" name="search" value="" placeholder="Search Here" required>
                                                     <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
                                                 </div>
                                             </form>
@@ -92,7 +95,7 @@
         <div class="close-btn"><span class="icon fa fa-remove"></span></div>
 
         <nav class="menu-box">
-            <div class="nav-logo"><a href="index.html"><img src="{{asset('front')}}/images/logo-2.png" alt="" title=""></a></div>
+            <div class="nav-logo"><a href="{{route('home')}}"><img src="{{asset($website->website_logo)}}" alt="" title=""></a></div>
             <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
         </nav>
     </div><!-- End Mobile Menu -->

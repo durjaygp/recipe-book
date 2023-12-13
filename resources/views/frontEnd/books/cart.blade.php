@@ -51,7 +51,7 @@
                         <div class="card-footer">
                             <div class="text-center">
                                 <div class="text-primary">
-                                    <h3>Total Price: € {{$totalPrice}}</h3>
+                                    <h3>Total Price: R {{$totalPrice}}</h3>
                                 </div>
                                 <a href="{{route('home.checkout')}}" class="btn btn-success">Checkout</a>
                             </div>

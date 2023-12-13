@@ -1,10 +1,12 @@
 @extends('frontEnd.master')
-@section('title','Recipes')
+@section('title')
+    {{$category->name}}
+@endsection
 @section('content')
     <!--Page Title-->
     <section class="page-title" style="background-image:url({{asset('front')}}/images/background/10.jpg)">
         <div class="auto-container">
-            <h1>Recipes</h1>
+            <h1>Category: {{$category->name}}</h1>
         </div>
     </section>
     <!--End Page Title-->
@@ -23,10 +25,10 @@
                                 <select class="custom-select-box">
                                     <option>Categories</option>
                                     @php
-                                    $cates = \App\Models\Category::latest()->get();
+                                        $cates = \App\Models\Category::latest()->get();
                                     @endphp
                                     @foreach($cates as $row)
-                                    <option>{{$row->name}}</option>
+                                        <option>{{$row->name}}</option>
                                     @endforeach
                                 </select>
                             </div>

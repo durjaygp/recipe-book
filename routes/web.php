@@ -22,17 +22,22 @@ use App\Http\Controllers\Admin\PageController;
 
 
 
-// =============== All Routes ===============
+// =============== Home Routes ===============
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/recipes', [RecipeController::class,'index'])->name('home.recipes');
-Route::get('/recipe/{slug}', [RecipeController::class,'details'])->name('recipe.details');
+Route::get('/recipe/{id}/{slug}', [RecipeController::class,'details'])->name('recipe.details');
 Route::get('/books', [BookController::class,'index'])->name('home.books');
 Route::get('/blog/{slug}', [HomeController::class,'blogDetails'])->name('home.blogDetails');
+Route::get('/category/{slug}', [HomeController::class,'category'])->name('home.category');
+Route::get('/blog', [HomeController::class,'blog'])->name('home.blogs');
+
 Route::get('/book/{slug}', [BookController::class,'details'])->name('book.details');
 Route::get('/contact-us', [PagesController::class,'contact'])->name('home.contact');
 Route::post('/book/add-to-cart',[CartController::class,'cartToSave'])->name('cart.save');
 Route::get('/cart', [CartController::class,'index'])->name('home.cart');
 Route::get('/cart/remove/{id}', [CartController::class,'remove'])->name('cart.remove');
+Route::get('/search/book',[HomeController::class,'searchBooks'])->name('search.book');
+Route::get('/search/recipe',[HomeController::class,'searchRecipe'])->name('search.recipe');
 
 Route::get('/checkout', [OrderController::class,'checkout'])->name('home.checkout');
 Route::post('/checkout/save', [OrderController::class,'checkoutSave'])->name('checkout.save');
@@ -43,8 +48,10 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard/my-books',[UserPanelController::class,'index'])->name('user.myBooks');
-    Route::get('/dashboard/book/read',[UserPanelController::class,'read'])->name('myBooks.read');
-
+  //  Route::get('/dashboard/book/read/{id}',[UserPanelController::class,'read'])->name('myBooks.read');
+    Route::get('/dashboard/book/read/{encryptedId}', [UserPanelController::class, 'read'])
+        ->name('myBooks.read')
+        ->where('encryptedId', '[A-Za-z0-9]+'); // Adjust the pattern based on your use case
 
 
 

@@ -10,7 +10,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a class="text-muted " href="{{route('admin.index')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item" aria-current="page">Category</li>
+                                <li class="breadcrumb-item" aria-current="page">Order Payment</li>
                             </ol>
                         </nav>
                     </div>
@@ -24,9 +24,6 @@
         </div>
         <div class="widget-content searchable-container list">
             <!-- --------------------- start Contact ---------------- -->
-            <div class="card card-body">
-
-            </div>
             <div class="card">
                 <div class="row">
                     <div class="col-md-4 ">

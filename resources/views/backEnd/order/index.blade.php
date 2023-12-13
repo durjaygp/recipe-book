@@ -24,13 +24,11 @@
         </div>
         <div class="widget-content searchable-container list">
             <!-- --------------------- start Contact ---------------- -->
-            <div class="card card-body">
-
-            </div>
             <div class="card">
                 <div class="row">
                     <div class="col-md-4 ">
-                        <h2>Book List</h2>
+                        <h2>Order List
+                        </h2>
                     </div>
                     <div class="col-md-8 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
                         <a href="{{route('pendingOrder.list')}}" class="btn btn-info d-flex align-items-center">

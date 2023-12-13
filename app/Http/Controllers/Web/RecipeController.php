@@ -9,12 +9,13 @@ use Illuminate\Http\Request;
 class RecipeController extends Controller
 {
     public function index(){
-        return view('frontEnd.recipe.index');
+        $recipes = Recipe::latest()->where('status',1)->get();
+        return view('frontEnd.recipe.index',compact('recipes'));
     }
 
-    public function details($slug){
+    public function details($id){
         //$recipe = Recipe::where('slug', $slug)->first();
-        $recipe = Recipe::whereSlug($slug)->first();
+        $recipe = Recipe::find($id);
        // return $recipe;
         return view('frontEnd.recipe.show',compact('recipe'));
     }
