@@ -37,6 +37,12 @@
                             </div>
                         </div>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a href="{{route('home')}}" class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item" target="_blank">
+                            <i class="ti ti-world fs-7"></i>
+                        </a>
+                    </li>
+
                     <li class="nav-item dropdown d-none">
                         <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="ti ti-bell-ringing"></i>

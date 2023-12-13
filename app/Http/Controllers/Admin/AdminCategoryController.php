@@ -14,28 +14,48 @@ class AdminCategoryController extends Controller
         return view('backEnd.category.index',compact('categories'));
     }
 
+    public function edit($id){
+        $category = Category::find($id);
+        return view('backEnd.category.edit',compact('category'));
+    }
+
     public function create(){
         return view('backEnd.category.create');
     }
 
     public function save(Request $request){
+        $request->validate([
+            'name'=>'required|unique:categories'
+        ]);
         $category = new Category();
         $category->name = $request->name;
         $category->slug = Str::slug($request->name,'-');
         $category->description = $request->description;
         $category->status = $request->status;
         $category->save();
-        return redirect()->back()->with('success','Category Created Successfully');
+        return redirect()->route('category.index')->with('success','Category Created Successfully');
+    }
+    public function update(Request $request){
+        $request->validate([
+            'name'=>'required'
+        ]);
+        $category = Category::find($request->id);
+        $category->name = $request->name;
+        $category->slug = Str::slug($request->name,'-');
+        $category->description = $request->description;
+        $category->status = $request->status;
+        $category->save();
+        return redirect()->route('category.index')->with('success','Category Created Successfully');
     }
 
     public function delete($id){
         $category_default_id = Category::where('name','Uncategorized')->first()->id;
-        $this->category = Category::find($id);
-        if ($this->category-> name === 'Uncategorized')
+        $category = Category::find($id);
+        if ($category->name === 'Uncategorized')
             abort(404);
 
-        $this->category->posts()->update(['category_id'=>$category_default_id]);
-        $this->category->delete();
+        $category->recipe()->update(['category_id'=>$category_default_id]);
+        $category->delete();
         return redirect()->back()->with('success', 'Category Has been deleted.');
     }
 

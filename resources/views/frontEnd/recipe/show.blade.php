@@ -1,5 +1,7 @@
 @extends('frontEnd.master')
-@section('title','dsdsd')
+@section('title')
+    {{$recipe->name}}
+@endsection
 @section('content')
     <!-- Page Title -->
     <section class="page-title" style="background-image:url({{asset('front')}}/images/background/12.png)">

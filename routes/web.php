@@ -17,7 +17,7 @@ use App\Http\Controllers\UserPanelController;
 use App\Http\Controllers\Admin\AdminRecipeController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\SettingController;
-
+use App\Http\Controllers\Admin\PageController;
 
 
 
@@ -25,6 +25,7 @@ use App\Http\Controllers\Admin\SettingController;
 // =============== All Routes ===============
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/recipes', [RecipeController::class,'index'])->name('home.recipes');
+Route::get('/recipe/{slug}', [RecipeController::class,'details'])->name('recipe.details');
 Route::get('/books', [BookController::class,'index'])->name('home.books');
 Route::get('/blog/{slug}', [HomeController::class,'blogDetails'])->name('home.blogDetails');
 Route::get('/book/{slug}', [BookController::class,'details'])->name('book.details');
@@ -67,6 +68,9 @@ Route::middleware(['auth', 'isadmin'])->group(function(){
     Route::get('/admin/category',[AdminCategoryController::class,'index'])->name('category.index');
     Route::get('/admin/category/create',[AdminCategoryController::class,'create'])->name('category.create');
     Route::post('/admin/category/save',[AdminCategoryController::class,'save'])->name('category.save');
+    Route::get('/admin/category/delete/{id}',[AdminCategoryController::class,'delete'])->name('category.delete');
+    Route::get('admin/category/edit/{id}',[AdminCategoryController::class,'edit'])->name('category.edit');
+    Route::post('admin/category/update', [AdminCategoryController::class, 'update'])->name('category.update');
 
     //========== Book Routes =================
     Route::get('/admin/book/create',[AdminBookController::class,'create'])->name('book.create');
@@ -105,6 +109,10 @@ Route::middleware(['auth', 'isadmin'])->group(function(){
     //================ Website Setting =====================
     Route::get('admin/website/settings/', [SettingController::class, 'index'])->name('admin.setting');
     Route::post('admin/website/settings/update', [SettingController::class, 'update'])->name('update.setting');
+
+    //================ Page Routes =====================
+    Route::get('admin/page/contact/', [PageController::class, 'about'])->name('page.about');
+  //  Route::post('admin/website/settings/update', [SettingController::class, 'update'])->name('update.setting');
 
 
 

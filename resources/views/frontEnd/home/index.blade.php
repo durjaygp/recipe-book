@@ -1,30 +1,20 @@
 @extends('frontEnd.master')
 @section('title','Home')
 @section('content')
-    <!-- Banner Section Two -->
-    <section class="banner-section-two">
+    <!-- Banner Section -->
+    <section class="banner-section">
         <div class="banner-carousel owl-theme owl-carousel">
-
-            <!-- Slide Item -->
+            @php
+                $slider = \App\Models\Recipe::latest()->get();
+            @endphp
+            @foreach($slider as $row)
             <div class="slide-item">
-                <div class="image-layer" style="background-image:url({{asset('front')}}/images/background/6.jpg)"></div>
-
+                <div class="image-layer" style="background-image:url({{asset($row->image)}})"></div>
                 <div class="auto-container">
                     <div class="content-box">
-                        <div class="image">
-                            <img src="{{asset('front')}}/images/resource/image-1.png" alt="" />
-                        </div>
-                        <!-- Author Name -->
-                        <div class="author-name">
-                            <div class="author-inner">
-                                <div class="author-icon">
-                                    <img src="{{asset('front')}}/images/resource/author-1.jpg" alt="" />
-                                </div>
-                                by Mahfuz Riad
-                            </div>
-                        </div>
-                        <h1>Roasted beet salad with arugula, <br> feta, and garlic vinaigrette</h1>
-                        <div class="info-list clearfix">
+
+                        <div class="clearfix info-list">
+                            <div class="sales">Salad</div>
                             <div class="rating">
                                 <span class="fa fa-star"></span>
                                 <span class="fa fa-star"></span>
@@ -33,45 +23,18 @@
                                 <span class="fa fa-star-half-o"></span>&ensp;
                                 8 Review
                             </div>
-                        </div>
-                        <ul class="post-meta">
-                            <li><span class="icon flaticon-dish"></span>4 ingredients</li>
-                            <li><span class="icon flaticon-clock-3"></span>6 Min</li>
-                            <li><span class="icon flaticon-business-and-finance"></span>4 People</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide Item -->
-            <div class="slide-item">
-                <div class="image-layer" style="background-image:url({{asset('front')}}/images/background/6.jpg)"></div>
-
-                <div class="auto-container">
-                    <div class="content-box">
-                        <div class="image">
-                            <img src="{{asset('front')}}/images/resource/image-1.png" alt="" />
-                        </div>
-                        <!-- Author Name -->
-                        <div class="author-name">
-                            <div class="author-inner">
-                                <div class="author-icon">
-                                    <img src="{{asset('front')}}/images/resource/author-1.jpg" alt="" />
+                            <!-- Author Name -->
+                            <div class="author-name">
+                                <div class="author-inner">
+                                    <div class="author-icon">
+                                        <img src="images/resource/author-1.jpg" alt="" />
+                                    </div>
+                                    by Mahfuz Riad
                                 </div>
-                                by Mahfuz Riad
                             </div>
                         </div>
-                        <h1>Roasted beet salad with arugula, <br> feta, and garlic vinaigrette</h1>
-                        <div class="info-list clearfix">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star-half-o"></span>&ensp;
-                                8 Review
-                            </div>
-                        </div>
+                        <h1>Roasted Pumpkin and <br> Beet Salad</h1>
+                        <div class="text">Lorem ipsum dolor sit amet, consectetuer <br> adipiscing elit, sed tinciduntut laore dolore </div>
                         <ul class="post-meta">
                             <li><span class="icon flaticon-dish"></span>4 ingredients</li>
                             <li><span class="icon flaticon-clock-3"></span>6 Min</li>
@@ -79,49 +42,14 @@
                         </ul>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide Item -->
-            <div class="slide-item">
-                <div class="image-layer" style="background-image:url({{asset('front')}}/images/background/6.jpg)"></div>
-
-                <div class="auto-container">
-                    <div class="content-box">
-                        <div class="image">
-                            <img src="{{asset('front')}}/images/resource/image-1.png" alt="" />
-                        </div>
-                        <!-- Author Name -->
-                        <div class="author-name">
-                            <div class="author-inner">
-                                <div class="author-icon">
-                                    <img src="{{asset('front')}}/images/resource/author-1.jpg" alt="" />
-                                </div>
-                                by Mahfuz Riad
-                            </div>
-                        </div>
-                        <h1>Roasted beet salad with arugula, <br> feta, and garlic vinaigrette</h1>
-                        <div class="info-list clearfix">
-                            <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star-half-o"></span>&ensp;
-                                8 Review
-                            </div>
-                        </div>
-                        <ul class="post-meta">
-                            <li><span class="icon flaticon-dish"></span>4 ingredients</li>
-                            <li><span class="icon flaticon-clock-3"></span>6 Min</li>
-                            <li><span class="icon flaticon-business-and-finance"></span>4 People</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
+            @endforeach
 
         </div>
     </section>
     <!--End Banner Section -->
+
     <!-- Product Form Section -->
     <section class="product-form-section">
         <div class="auto-container">
@@ -205,13 +133,11 @@
             <!-- Sec Title -->
             <div class="sec-title centered">
                 <h2> Our Books </h2>
-                <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt ut laoreet <br> dolore magna aliquam erat volutpat lorem</div>
             </div>
 
             <!-- Categories Tabs -->
             <div class="related-items">
                 <div class="row clearfix">
-
                     <!-- Recipes Book -->
                     @php
                     $books = \App\Models\Book::latest()->take(4)->get();
@@ -245,7 +171,7 @@
                 <div class="clearfix">
                     <div class="pull-left">
                         <h2>Populer Recipes Posts</h2>
-                        <div class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed tincidunt ut</div>
+
                     </div>
                     <div class="pull-right">
                         <a href="recipes.html" class="theme-btn btn-style-one"><span class="txt">See all Post</span></a>
@@ -255,86 +181,31 @@
         </div>
         <div class="outer-container">
             <div class="clearfix row">
-
+            @php
+                $recipes = \App\Models\Recipe::latest()->get();
+            @endphp
+            @foreach($recipes as $row)
                 <!-- Recipes Block -->
                 <div class="recipes-block col-lg-3 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-1.jpg" alt="" /></a>
+                            <a href="recipes-detail.html"><img src="{{asset($row->image)}}" alt="" /></a>
                         </div>
                         <div class="lower-content">
                             <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                            <div class="category">CHICKEN</div>
-                            <h4><a href="recipes-detail.html">Pressure-Cooker Beef Short Ribs with Chutney</a></h4>
-                            <div class="text">Discover a sleighload of tasty snacks that are just right for holiday feasting.</div>
+                            <div class="category">{{$row->category->name}}</div>
+                            <h4><a href="{{route('recipe.details',$row->slug)}}l">{{$row->name}}</a></h4>
+                            <div class="text">{{$row->description}}</div>
                             <ul class="post-meta">
-                                <li><span class="icon flaticon-dish"></span>4 ingredients</li>
-                                <li><span class="icon flaticon-clock-3"></span>6 Min</li>
-                                <li><span class="icon flaticon-business-and-finance"></span>4 People</li>
+                                <li><span class="icon flaticon-dish"></span>{{$row->ingredients}} ingredients</li>
+                                <li><span class="icon flaticon-clock-3"></span>{{$row->duration}} Min</li>
+                                <li><span class="icon flaticon-business-and-finance"></span>{{$row->peoples}} People</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+            @endforeach
 
-                <!-- Recipes Block -->
-                <div class="recipes-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-2.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                            <div class="category">FEATURED COLLECTION</div>
-                            <h4><a href="recipes-detail.html">Cold-Weather Weeknight <br> Dinners</a></h4>
-                            <div class="text">Discover a sleighload of tasty snacks that are just right for holiday feasting.</div>
-                            <ul class="post-meta">
-                                <li><span class="icon flaticon-dish"></span>4 ingredients</li>
-                                <li><span class="icon flaticon-clock-3"></span>6 Min</li>
-                                <li><span class="icon flaticon-business-and-finance"></span>4 People</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recipes Block -->
-                <div class="recipes-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-3.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                            <div class="category">Dinner</div>
-                            <h4><a href="recipes-detail.html">Hamburger Steak with Onions and Gravy</a></h4>
-                            <div class="text">Discover a sleighload of tasty snacks that are just right for holiday feasting.</div>
-                            <ul class="post-meta">
-                                <li><span class="icon flaticon-dish"></span>4 ingredients</li>
-                                <li><span class="icon flaticon-clock-3"></span>6 Min</li>
-                                <li><span class="icon flaticon-business-and-finance"></span>4 People</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recipes Block -->
-                <div class="recipes-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="recipes-detail.html"><img src="{{asset('front')}}/images/resource/recipe-4.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="author-image"><a href="author-details.html"><img src="{{asset('front')}}/images/resource/author-3.jpg" alt="" /></a></div>
-                            <div class="category">Recipe</div>
-                            <h4><a href="recipes-detail.html">Pressure-Cooker Beef Short <br> Ribs with Chutney</a></h4>
-                            <div class="text">Discover a sleighload of tasty snacks that are just right for holiday feasting.</div>
-                            <ul class="post-meta">
-                                <li><span class="icon flaticon-dish"></span>4 ingredients</li>
-                                <li><span class="icon flaticon-clock-3"></span>6 Min</li>
-                                <li><span class="icon flaticon-business-and-finance"></span>4 People</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>

@@ -23,8 +23,8 @@ class AdminBookController extends Controller
     }
 
     public function edit($id){
-        $course = Book::find($id);
-        return view('course.edit',compact('course'));
+        $book = Book::find($id);
+        return view('backEnd.book.edit',compact('book'));
     }
 
     public function save(Request $request){
@@ -120,29 +120,21 @@ class AdminBookController extends Controller
     }
 
 
-    public function updateCourse(Request $request, $id)
+    public function update(Request $request)
     {
 
-        // Validation rules
         $rules = [
-            'crs_name' => [
-                'required',
-                Rule::unique('courses', 'crs_name')->ignore($id),
-            ],
-            'crs_code' => 'required',
-            'crs_fee' => 'required',
+            'name' => 'required',
+            'price' => 'required',
             'status' => 'required',
         ];
 
         // Validation messages (customize these as needed)
         $messages = [
-            'crs_name.required' => 'Course is required.',
-            'crs_name.unique' => 'The course is already available.',
-            'crs_code.required' => 'Course Code is required.',
-            'crs_fee.required' => 'Course Fee is required.',
+            'name.required' => 'Book name is required.',
+            'price.required' => 'Price is required.',
             'status.required' => 'Status is required.',
         ];
-
         // Validate the request
         $validator = Validator::make($request->all(), $rules, $messages);
 
@@ -151,25 +143,38 @@ class AdminBookController extends Controller
         }
 
         // If validation passes, update the student
-        $course = Course::find($id);
-        $course->crs_name = $request->crs_name;
-        $course->slug = Str::slug($request->crs_name, '-');
-        $course->crs_code = $request->crs_code;
-        $course->crs_fee = $request->crs_fee;
-        $course->crs_description = $request->crs_description;
-        $course->status = $request->status;
-
-
-        if ($request->file('crs_image')) {
-            if (file_exists($course->crs_image)) {
-                unlink($course->crs_image);
+        $book = Book::find($request->id);
+        $book->name = $request->name;
+        $book->slug = Str::slug($request->name, '-');
+        $book->price = $request->price;
+        $book->publish_date = $request->publish_date;
+        $book->pages = $request->pages;
+        $book->total_recipe = $request->total_recipe;
+        $book->description = $request->description;
+        $book->body = $request->body;
+        $book->status = $request->status;
+//        // $course->image = $this->saveImage($request);
+//        if ($request->file('image')) {
+//            $book->image = $this->saveImage($request);
+//        }
+//        if ($request->file('file')) {
+//            $book->file = $this->saveFile($request);
+//        }
+        if ($request->file('image')) {
+            if (file_exists($book->image)) {
+                unlink($book->image);
             }
-            $course->crs_image = $this->saveImage($request);
+            $book->image = $this->saveImage($request);
         }
+        if ($request->file('file')) {
+            if (file_exists($book->file)) {
+                unlink($book->file);
+            }
+            $book->file = $this->saveFile($request);
+        }
+        $book->save();
 
-        $course->save();
-
-        return redirect()->route('course.list')->with('success', 'Update Successfully');
+        return redirect()->route('book.list')->with('success', 'Update Successfully');
     }
 
 

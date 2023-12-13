@@ -24,123 +24,80 @@
         </div>
         <div class="widget-content searchable-container list">
             <!-- --------------------- start Contact ---------------- -->
-            <div class="card card-body">
-                <div class="row">
-                    <div class="col-md-4 col-xl-3">
-                        <form class="position-relative">
-                            <input type="text" class="form-control product-search ps-5" id="input-search" placeholder="Search..." />
-                            <i class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
-                        </form>
-                    </div>
-                    <div class="col-md-8 col-xl-9 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                        <div class="action-btn show-btn" style="display: none">
-                            <a href="javascript:void(0)" class="delete-multiple btn-light-danger btn me-2 text-danger d-flex align-items-center font-medium">
-                                <i class="ti ti-trash text-danger me-1 fs-5"></i> Delete All Row
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-4 ">
+                            <h2>Category List</h2>
+                        </div>
+                        <div class="col-md-8 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
+                            <a href="{{route('category.create')}}" class="btn btn-info d-flex align-items-center">
+                                <i class="ti ti-new-section text-white me-1 fs-5"></i> Add Category
                             </a>
                         </div>
-                        <a href="{{route('category.create')}}" class="btn btn-info d-flex align-items-center">
-                            <i class="ti ti-new-section text-white me-1 fs-5"></i> Add Category
-                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table id="zero_config"
+                                       class="table border table-striped table-bordered text-nowrap">
+                                    <thead>
+                                    <!-- start row -->
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <!-- end row -->
+                                    </thead>
+                                    <tbody>
+                                    @foreach($categories as $row)
+                                        <!-- start row -->
+                                        <tr>
+                                            <td>{{$loop->iteration}}</td>
+                                            <td>{{$row->name}}</td>
+                                            <td>{{\Illuminate\Support\Str::limit($row->description,20)}}</td>
+                                            <td>
+                                                @if($row->status == 1)
+                                                    <span class="badge bg-secondary">Active</span>
+                                                @elseif($row->status == 2)
+                                                     <span class="badge bg-danger">Inactive</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <div class="action-btn">
+                                                    <a href="{{route('category.edit',$row->id)}}" class="btn btn-sm btn-primary">
+                                                        <i class="ti ti-pencil fs-5"></i>
+                                                    </a>
+                                                    <a href="{{ route('category.delete', $row->id) }}"
+                                                       onclick="event.preventDefault();
+                                                           if (confirm('Are you sure you want to delete?'))
+                                                           document.getElementById('delete-form-{{ $row->id }}').submit();"
+                                                       class="btn btn-sm btn-danger text-white delete ms-2">
+                                                        <i class="ti ti-trash fs-5"></i>
+                                                    </a>
+
+                                                    <form id="delete-form-{{ $row->id }}" action="{{ route('category.delete', $row->id) }}" method="get" style="display: none;">
+                                                        @csrf
+                                                    </form>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!-- end row -->
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- ---------------------
-                            end Contact
-                        ---------------- -->
-            <!-- Modal -->
-            <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="addContactModalTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header d-flex align-items-center">
-                                <h5 class="modal-title">Create New Category</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <form action="{{route('category.save')}}" method="post">
-                                @csrf
-                            <div class="modal-body">
-                                <div class="add-contact-box">
-                                    <div class="add-contact-content">
-                                        <form id="addContactModalTitle">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="mb-3 contact-name">
-                                                        <input type="text" name="name" id="c-name" class="form-control" placeholder="Category Name" />
-                                                        <span class="validation-text text-danger"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="mb-3 contact-location">
-                                                        <textarea name="description" id="" cols="30" class="form-control" rows="10"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success rounded-pill px-4">Save</button>
-                                <button class="btn btn-danger rounded-pill px-4" data-bs-dismiss="modal"> Discard </button>
-                            </div>
-                            </form>
-                        </div>
-                </div>
-            </div>
-            <div class="card card-body">
-                <div class="table-responsive">
-                    <table class="table search-table align-middle text-nowrap">
-                        <thead class="header-item">
-                        <th>
-                            <div class="n-chk align-self-center text-center">
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input primary" id="contact-check-all" />
-                                    <label class="form-check-label" for="contact-check-all"></label>
-                                    <span class="new-control-indicator"></span>
-                                </div>
-                            </div>
-                        </th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Action</th>
-                        </thead>
-                        <tbody>
-                        @foreach($categories as $row)
-                        <!-- start row -->
-                        <tr class="search-items">
-                            <td>
-                                <div class="n-chk align-self-center text-center">
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input contact-chkbox primary" id="checkbox1" />
-                                        <label class="form-check-label" for="checkbox1"></label>
-                                    </div>
-                                </div>
-                            </td>
 
-                            <td>
-                                <span class="usr-email-addr" data-email="adams@mail.com">{{$row->name}}</span>
-                            </td>
-                            <td>
-                                <span class="usr-location" data-location="Boston, USA">{{\Illuminate\Support\Str::limit($row->description,15)}}</span>
-                            </td>
-                            <td>
-                                <div class="action-btn">
-                                    <a href="javascript:void(0)" class="text-info edit">
-                                        <i class="ti ti-eye fs-5"></i>
-                                    </a>
-                                    <a href="javascript:void(0)" class="text-dark delete ms-2">
-                                        <i class="ti ti-trash fs-5"></i>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- end row -->
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </div>
     </div>
 @endsection

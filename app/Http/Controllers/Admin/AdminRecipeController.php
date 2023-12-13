@@ -25,7 +25,8 @@ class AdminRecipeController extends Controller
 
     public function edit($id){
         $recipe = Recipe::find($id);
-        return view('course.edit',compact('recipe'));
+        $categories = Category::latest()->where('status',1)->get();
+        return view('backEnd.recipe.edit',compact('recipe','categories'));
     }
 
     public function save(Request $request){
@@ -101,26 +102,16 @@ class AdminRecipeController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-
-        // Validation rules
         $rules = [
-            'crs_name' => [
-                'required',
-                Rule::unique('courses', 'crs_name')->ignore($id),
-            ],
-            'crs_code' => 'required',
-            'crs_fee' => 'required',
+            'name' => 'required',
             'status' => 'required',
         ];
 
         // Validation messages (customize these as needed)
         $messages = [
-            'crs_name.required' => 'Course is required.',
-            'crs_name.unique' => 'The course is already available.',
-            'crs_code.required' => 'Course Code is required.',
-            'crs_fee.required' => 'Course Fee is required.',
+            'name.required' => 'Recipe name is required.',
             'status.required' => 'Status is required.',
         ];
 
@@ -132,25 +123,31 @@ class AdminRecipeController extends Controller
         }
 
         // If validation passes, update the student
-        $course = Course::find($id);
-        $course->crs_name = $request->crs_name;
-        $course->slug = Str::slug($request->crs_name, '-');
-        $course->crs_code = $request->crs_code;
-        $course->crs_fee = $request->crs_fee;
-        $course->crs_description = $request->crs_description;
-        $course->status = $request->status;
+        $recipe = Recipe::find($request->id);
+        $recipe->name = $request->name;
+        $recipe->slug = Str::slug($request->name, '-');
+        $recipe->user_id = auth()->user()->id;
+        $recipe->category_id = $request->category_id;
+        $recipe->ingredients = $request->ingredients;
+        $recipe->description = $request->description;
+        $recipe->ingredients_content = $request->ingredients_content;
+        $recipe->peoples = $request->peoples;
+        $recipe->duration = $request->duration;
+        $recipe->video = $request->video;
+        $recipe->recipe = $request->recipe;
+        $recipe->position = $request->position;
+        $recipe->status = $request->status;
 
-
-        if ($request->file('crs_image')) {
-            if (file_exists($course->crs_image)) {
-                unlink($course->crs_image);
+        if ($request->file('image')) {
+            if (file_exists($recipe->image)) {
+                unlink($recipe->image);
             }
-            $course->crs_image = $this->saveImage($request);
+            $recipe->image = $this->saveImage($request);
         }
 
-        $course->save();
+        $recipe->save();
 
-        return redirect()->route('course.list')->with('success', 'Update Successfully');
+        return redirect()->route('recipe.list')->with('success', 'Update Successfully');
     }
 
 

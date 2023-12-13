@@ -10,7 +10,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a class="text-muted " href="{{route('admin.index')}}">Dashboard</a></li>
-                                <li class="breadcrumb-item" aria-current="page">Category</li>
+                                <li class="breadcrumb-item" aria-current="page">Recipe</li>
                             </ol>
                         </nav>
                     </div>
@@ -28,7 +28,7 @@
                <div class="card-header">
                    <div class="row">
                        <div class="col-md-4 ">
-                           <h2>Book List</h2>
+                           <h2>@yield('title')</h2>
                        </div>
                        <div class="col-md-8 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
                            <a href="{{route('recipe.list')}}" class="btn btn-info d-flex align-items-center">
@@ -45,7 +45,7 @@
                             <div class="col-lg-6">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Recipe Name</label>
-                                    <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Book Name">
+                                    <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Recipe Name">
                                 </div>
                             </div>
 
@@ -63,19 +63,19 @@
                             <div class="col-lg-6">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Ingredients</label>
-                                    <input type="text" name="ingredients" class="form-control" id="exampleInputtext" placeholder="10 Ingredients">
+                                    <input type="number" name="ingredients" class="form-control" id="exampleInputtext" placeholder="10 Ingredients">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Peoples</label>
-                                    <input type="text" name="peoples" class="form-control" id="exampleInputtext" placeholder="10 Peoples">
+                                    <input type="number" name="peoples" class="form-control" id="exampleInputtext" placeholder="10 Peoples">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Duration</label>
-                                    <input type="text" name="duration" class="form-control" id="exampleInputtext" placeholder="10 Minutes">
+                                    <input type="number" name="duration" class="form-control" id="exampleInputtext" placeholder="10 Minutes">
                                 </div>
                             </div>
                             <div class="col-lg-6">

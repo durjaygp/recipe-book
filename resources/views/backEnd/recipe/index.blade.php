@@ -68,7 +68,7 @@
                                         <td>{{\Illuminate\Support\Str::limit($row->description,20)}}</td>
                                         <td>
                                             <div class="action-btn">
-                                                <a href="javascript:void(0)" class="btn btn-sm btn-primary">
+                                                <a href="{{route('recipe.edit',$row->id)}}" class="btn btn-sm btn-primary">
                                                     <i class="ti ti-pencil fs-5"></i>
                                                 </a>
                                                 <a href="#"

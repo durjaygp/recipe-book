@@ -24,13 +24,12 @@ class BlogController extends Controller
     }
 
     public function edit($id){
-        $recipe = Blog::find($id);
-        return view('course.edit',compact('recipe'));
+        $blog = Blog::find($id);
+        return view('backEnd.blog.edit',compact('blog'));
     }
 
     public function save(Request $request){
-        //return $request;
-        // Validation rules
+
         $rules = [
             'name' => [
                 'required',
@@ -84,38 +83,30 @@ class BlogController extends Controller
     }
 
     public function delete($id){
-        $recipe = Recipe::find($id);
-        if (!$recipe) {
-            return redirect()->back()->with('error', 'Recipe not found');
+        $blog = Blog::find($id);
+        if (!$blog) {
+            return redirect()->back()->with('error', 'Book not found');
         }
-        if (file_exists($recipe->image)) {
-            unlink($recipe->image);
+        if (file_exists($blog->image)) {
+            unlink($blog->image);
         }
-        $recipe->delete();
-        return redirect()->back()->with('success', 'Recipe deleted successfully');
+        $blog->delete();
+        return redirect()->back()->with('success', 'Book deleted successfully');
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-
-        // Validation rules
         $rules = [
-            'crs_name' => [
-                'required',
-                Rule::unique('courses', 'crs_name')->ignore($id),
-            ],
-            'crs_code' => 'required',
-            'crs_fee' => 'required',
+            'name' => 'required',
             'status' => 'required',
+            'description' => 'required',
         ];
 
         // Validation messages (customize these as needed)
         $messages = [
-            'crs_name.required' => 'Course is required.',
-            'crs_name.unique' => 'The course is already available.',
-            'crs_code.required' => 'Course Code is required.',
-            'crs_fee.required' => 'Course Fee is required.',
+            'name.required' => 'Blog name is required.',
+            'description.required' => 'Description is required.',
             'status.required' => 'Status is required.',
         ];
 
@@ -127,25 +118,22 @@ class BlogController extends Controller
         }
 
         // If validation passes, update the student
-        $course = Course::find($id);
-        $course->crs_name = $request->crs_name;
-        $course->slug = Str::slug($request->crs_name, '-');
-        $course->crs_code = $request->crs_code;
-        $course->crs_fee = $request->crs_fee;
-        $course->crs_description = $request->crs_description;
-        $course->status = $request->status;
+        $blog = Blog::find($request->id);
+        $blog->name = $request->name;
+        $blog->slug = Str::slug($request->name, '-');
+        $blog->user_id = auth()->user()->id;
+        $blog->description = $request->description;
+        $blog->main_content = $request->main_content;
+        $blog->status = $request->status;
 
-
-        if ($request->file('crs_image')) {
-            if (file_exists($course->crs_image)) {
-                unlink($course->crs_image);
+        if ($request->file('image')) {
+            if (file_exists($blog->image)) {
+                unlink($blog->image);
             }
-            $course->crs_image = $this->saveImage($request);
+            $blog->image = $this->saveImage($request);
         }
-
-        $course->save();
-
-        return redirect()->route('course.list')->with('success', 'Update Successfully');
+        $blog->save();
+        return redirect()->route('blog.list')->with('success', 'Update Successfully');
     }
 
 }
