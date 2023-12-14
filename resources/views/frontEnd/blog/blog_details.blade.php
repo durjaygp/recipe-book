@@ -3,14 +3,6 @@
     {{$blog->name}}
 @endsection
 @section('content')
-    <!-- Page Title -->
-    <section class="page-title" style="background-image:url({{asset('front')}}/images/background/14.jpg)">
-        <div class="auto-container">
-            <h1>    {{$blog->name}}</h1>
-        </div>
-    </section>
-    <!--End Page Title-->
-
     <!--Sidebar Page Container-->
     <div class="sidebar-page-container">
         <div class="auto-container">
@@ -48,6 +40,4 @@
             </div>
         </div>
     </div>
-
-
 @endsection

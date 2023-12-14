@@ -1,14 +1,6 @@
 @extends('frontEnd.master')
 @section('title','Cart')
 @section('content')
-    <!--Page Title-->
-    <section class="page-title" style="background-image:url({{asset('front')}}/images/background/10.jpg)">
-        <div class="auto-container">
-            <h1>My Cart</h1>
-        </div>
-    </section>
-    <!--End Page Title-->
-
     <!-- cart Section-->
     <section class="categories-section">
         <div class="auto-container">

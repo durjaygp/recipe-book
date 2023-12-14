@@ -1,8 +1,8 @@
-<header class="main-header header-style-one">
+<header class="main-header header-style-one bg-light">
 
     <!--Header-Upper-->
     <div class="header-upper">
-        <div class="auto-container">
+        <div class="auto-container ">
             <div class="clearfix">
 
                 <div class="pull-left logo-box">
@@ -26,17 +26,6 @@
                             <ul class="clearfix navigation">
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home') ? 'current' : '' }}"><a href="{{route('home')}}">Home</a></li>
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.books') ? 'current' : '' }}"><a href="{{route('home.books')}}">Books</a></li>
-{{--                                <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.recipes') ? 'current' : '' }}"><a href="{{route('home.recipes')}}">Recipes</a></li>--}}
-{{--                                <li class="dropdown"><a href="#">Category</a>--}}
-{{--                                    <ul>--}}
-{{--                                        @php--}}
-{{--                                            $categories = \App\Models\Category::latest()->take(7)->get();--}}
-{{--                                        @endphp--}}
-{{--                                        @foreach($categories as $row)--}}
-{{--                                            <li><a href="{{route('home.category',$row->slug)}}">{{$row->name}}</a></li>--}}
-{{--                                        @endforeach--}}
-{{--                                    </ul>--}}
-{{--                                </li>--}}
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.blogs') ? 'current' : '' }}"><a href="{{route('home.blogs')}}">Blogs</a></li>
 
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.contact') ? 'current' : '' }}"><a href="{{route('home.contact')}}">Contact us</a></li>
@@ -50,7 +39,7 @@
                         <!-- Search Box -->
                         <div class="search-box-outer">
                             <div class="dropdown">
-                                <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
+                                <button class="search-box-btn dropdown-toggle text-black btn-primary" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search text-black"></span></button>
                                 <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
                                     <li class="panel-outer">
                                         <div class="form-container">

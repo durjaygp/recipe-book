@@ -64,13 +64,13 @@
                             <div class="col-lg-6">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Pages</label>
-                                    <input type="text" name="pages" class="form-control" id="exampleInputtext" placeholder="105 Pages" value="{{$book->pages}}">
+                                    <input type="number" name="pages" class="form-control" id="exampleInputtext" placeholder="105" value="{{$book->pages}}">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Total Recipe</label>
-                                    <input type="text" name="total_recipe" class="form-control" id="exampleInputtext" placeholder="10 Recipe" value="{{$book->total_recipe}}">
+                                    <input type="number" name="total_recipe" class="form-control" id="exampleInputtext" placeholder="10" value="{{$book->total_recipe}}">
                                 </div>
                             </div>
                             <div class="col-lg-6">

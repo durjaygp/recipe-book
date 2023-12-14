@@ -3,14 +3,6 @@
     {{$book->name}}
 @endsection
 @section('content')
-    <!--Page Title-->
-    <section class="page-title" style="background-image:url({{asset('front')}}/images/background/10.jpg)">
-        <div class="auto-container">
-            <h1>Book details</h1>
-        </div>
-    </section>
-    <!--End Page Title-->
-
     <!-- Author Details Start -->
     <section class="author-details-area">
         <div class="container">

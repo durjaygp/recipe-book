@@ -38,7 +38,9 @@
                         <div class="col-12">
                             <div class="text-center">
 {{--                                <iframe src ="{{ asset('uploads') }}/1163199197.pdf" width="1000px" height="600px"></iframe>--}}
-                                <iframe src ="{{ asset($mybook->books->file) }}" width="1000px" height="600px"></iframe>
+{{--                                <iframe src ="{{ asset($mybook->books->file) }}" width="1000px" height="600px"></iframe>--}}
+                                <iframe src="https://docs.google.com/gview?url={{ asset($mybook->books->file) }}&embedded=true" style="width:100%; height:600px;" frameborder="0"></iframe>
+
 
 
                             </div>

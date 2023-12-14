@@ -1,19 +1,14 @@
 @extends('frontEnd.master')
 @section('title','Contact Us')
 @section('content')
-    <!-- Page Title -->
-    <section class="page-title" style="background-image:url({{asset('front')}}/images/background/14.jpg)">
-        <div class="auto-container">
-            <h1>Contact us</h1>
-        </div>
-    </section>
-    <!--End Page Title-->
+
 
     <!-- Contact Page Container -->
     <div class="contact-page-container">
+        <div class="d" style="margin-top: 50px"></div>
         <div class="pattern-layer" style="background-image:url({{asset('front')}}/images/background/16.png)"></div>
         <div class="auto-container">
-            <div class="row clearfix">
+            <div class="row clearfix" >
 
                 <!-- Info Column -->
                 <div class="info-column col-lg-6 col-md-12 col-sm-12">

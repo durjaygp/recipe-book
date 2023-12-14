@@ -19,14 +19,11 @@ return new class extends Migration
             $table->foreign('book_id')->references('id')->on('books')->nullable();
             $table->string('price')->nullable();
             $table->string('name')->nullable();
-            $table->string('account')->nullable();
-            $table->string('reference')->nullable();
-            $table->text('image')->nullable();
             $table->text('description')->nullable();
             $table->string('total_price')->nullable();
             $table->text('country')->nullable();
             $table->text('address')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->nullable()->comment('0 = Active, 1 = Deactivate');
             $table->timestamps();
         });
     }

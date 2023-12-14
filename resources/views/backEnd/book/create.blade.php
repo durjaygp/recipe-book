@@ -63,13 +63,13 @@
                             <div class="col-lg-6">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Pages</label>
-                                    <input type="text" name="pages" class="form-control" id="exampleInputtext" placeholder="105 Pages">
+                                    <input type="number" name="pages" class="form-control" id="exampleInputtext" placeholder="105">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Total Recipe</label>
-                                    <input type="text" name="total_recipe" class="form-control" id="exampleInputtext" placeholder="10 Recipe">
+                                    <input type="number" name="total_recipe" class="form-control" id="exampleInputtext" placeholder="10">
                                 </div>
                             </div>
                             <div class="col-lg-6">

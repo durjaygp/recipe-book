@@ -20,6 +20,10 @@ class HomeController extends Controller
         return view('payfast');
     }
 
+    public function success(){
+        return 'Done';
+    }
+
     public function blogDetails($slug){
         $blog = Blog::where('slug',$slug)->first();
         return view('frontEnd.blog.blog_details',compact('blog'));

@@ -40,14 +40,14 @@
 37. Blog Detail Section
 38. Sidebar Widgets
 39. Contact Info Section
-40. Map Section 
+40. Map Section
 
 **********************************************/
 
 @import url('https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:300,400,600,700,800|Playfair+Display:400,700,900|Work+Sans:300,400,500,600,700,800&amp;display=swap');
 
 /*
-	
+
 	font-family: 'Work Sans', sans-serif;
 	font-family: 'Playfair Display', serif;
 	font-family: 'Open Sans', sans-serif;
@@ -64,14 +64,14 @@
 @import url('jquery.fancybox.min.css');
 @import url('jquery.mCustomScrollbar.min.css');
 
-/*** 
+/***
 
 ====================================================================
 	Reset
 ====================================================================
 
  ***/
- 
+
 * {
 	margin:0px;
 	padding:0px;
@@ -79,7 +79,7 @@
 	outline:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Global Settings
@@ -100,7 +100,7 @@ body {
 @media (min-width: 1200px){
 	.container {
 	    max-width: 1170px;
-	}	
+	}
 }
 
 .bordered-layout .page-wrapper{
@@ -155,7 +155,7 @@ h6{
 }
 
 input,button,select,textarea{
-	
+
 }
 
 textarea{
@@ -164,7 +164,7 @@ textarea{
 
 p{
 	position:relative;
-	line-height:1.8em;	
+	line-height:1.8em;
 }
 
 .auto-container{
@@ -188,7 +188,7 @@ p{
 ul,li{
 	list-style:none;
 	padding:0px;
-	margin:0px;	
+	margin:0px;
 }
 
 img{
@@ -206,7 +206,7 @@ img{
 }
 
 .centered{
-	text-align:center;	
+	text-align:center;
 }
 
 /*Btn Style One*/
@@ -271,7 +271,7 @@ img{
 	overflow: hidden;
 	overflow:hidden;
 	cursor:pointer;
-	background-color: #ff8667;	
+	background-color: #ff8667;
 }
 
 .btn-style-two:before{
@@ -468,10 +468,10 @@ img{
 img{
 	display:inline-block;
 	max-width:100%;
-	height:auto;	
+	height:auto;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Scroll To Top style
@@ -498,7 +498,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;		
+	transition:all 300ms ease;
 }
 
 .scroll-to-top:hover{
@@ -506,7 +506,7 @@ img{
 	background:#ff7d5f;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Section Title
@@ -564,7 +564,7 @@ img{
 
 .list-style-one li{
 	position:relative;
-	color:#ffffff;
+	color: #000000;
 	font-size:14px;
 	font-weight:400;
 	margin-bottom:15px;
@@ -589,7 +589,7 @@ img{
 	font-size:20px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Header style
@@ -642,7 +642,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .main-header .header-upper{
@@ -688,7 +688,7 @@ img{
 
 .main-header .header-upper .outer-box .login-info li a{
 	position:relative;
-	color:#ffffff;
+	color: #000000;
 	font-size:16px;
 }
 
@@ -696,7 +696,7 @@ img{
 	position:relative;
 	width:22px;
 	height:26px;
-	color:#ffffff;
+	color: #000000;
 	line-height:26px;
 	text-align:center;
 	margin-right:4px;
@@ -848,7 +848,7 @@ img{
 	display:block;
 	width:100%;
 	font-size:16px;
-	color:#ffffff;
+	color:#000;
 	line-height:20px !important;
 	cursor:pointer;
 	background:none;
@@ -867,7 +867,7 @@ img{
 	top:59px !important;
 	right:0px;
 	padding:0px;
-	width:280px;	
+	width:280px;
 	left: auto !important;
 	border-radius:0px;
 	border-top:3px solid #ff7d5f;
@@ -884,12 +884,12 @@ img{
 }
 
 .main-header .header-upper .search-panel .form-container{
-	padding:25px 20px;	
+	padding:25px 20px;
 }
 
 .main-header .header-upper .search-panel .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .main-header .header-upper .search-panel input[type="text"],
@@ -902,7 +902,7 @@ img{
 	color:#000000;
 	font-size: 14px;
 	line-height:24px;
-	background:#ffffff;	
+	background:#ffffff;
 	border:1px solid #e0e0e0;
 	padding:7px 40px 7px 15px;
 	-webkit-transition:all 300ms ease;
@@ -914,7 +914,7 @@ img{
 
 .main-header .header-upper .search-panel input:focus,
 .main-header .header-upper .search-panel select:focus{
-	border-color:#ff7d5f;	
+	border-color:#ff7d5f;
 }
 
 .main-header .header-upper .search-panel .search-btn{
@@ -976,12 +976,12 @@ img{
 	-moz-animation-iteration-count: 1;
 	-op-animation-iteration-count: 1;
 	-webkit-animation-iteration-count: 1;
-	animation-iteration-count: 1;	
+	animation-iteration-count: 1;
 }
 
 .sticky-header .main-menu .navigation > li > a{
 	padding:23px 0px  !important;
-	color:#ffffff !important;
+	color:#000 !important;
 }
 
 .sticky-header .main-menu .navigation > li > a:after{
@@ -1089,7 +1089,7 @@ img{
 .main-menu .navigation > li > a{
 	position:relative;
 	display:block;
-	color:#ffffff;
+	color:#000;
 	text-align:center;
 	line-height:30px;
 	text-transform:uppercase;
@@ -1162,7 +1162,7 @@ img{
 
 .main-menu .navigation > li > ul.from-right{
 	left:auto;
-	right:0px;	
+	right:0px;
 }
 
 .main-menu .navigation > li > ul > li{
@@ -1189,7 +1189,7 @@ img{
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
-	
+
 }
 
 .main-menu .navigation > li > ul > li:hover > a{
@@ -1212,7 +1212,7 @@ img{
 	font-size:16px;
 	font-weight:normal;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul > li.dropdown:hover > a:after{
@@ -1243,7 +1243,7 @@ img{
 
 .main-menu .navigation > li > ul > li > ul.from-right{
 	left:auto;
-	right:0px;	
+	right:0px;
 }
 
 .main-menu .navigation > li > ul > li > ul > li{
@@ -1253,7 +1253,7 @@ img{
 }
 
 .main-menu .navigation > li > ul > li > ul > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li > ul > li > a{
@@ -1270,7 +1270,7 @@ img{
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
-	
+
 }
 
 .main-menu .navigation > li > ul > li > ul > li:hover > a{
@@ -1293,11 +1293,11 @@ img{
 	font-size:16px;
 	font-weight:normal;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul > li > ul > li.dropdown:hover > a:after{
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 .main-menu .navigation > li.dropdown:hover > ul{
@@ -1324,7 +1324,7 @@ img{
 	-moz-transition:all 300ms ease;
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 300ms ease;
-	-o-transition:all 300ms ease;	
+	-o-transition:all 300ms ease;
 }
 
 .main-menu .navbar-collapse > ul li.dropdown .dropdown-btn{
@@ -1394,7 +1394,7 @@ img{
 	background-color:#05db56;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Banner Section
@@ -1575,7 +1575,7 @@ img{
 	line-height: 1.6em;
 	color: #161616;
 	font-weight: 400;
-	margin-bottom: 15px;	
+	margin-bottom: 15px;
 }
 
 .banner-section .banner-carousel .content-box .post-meta{
@@ -1615,7 +1615,7 @@ img{
 }
 
 .banner-section:hover .owl-nav{
-	opacity:1;	
+	opacity:1;
 }
 
 .banner-section .owl-nav .owl-prev{
@@ -1625,7 +1625,7 @@ img{
 	height: 80px;
 	width: 40px;
 	border-radius: 0;
-	border: 2px solid #ffffff; 
+	border: 2px solid #ffffff;
 	text-align: center;
 	line-height: 80px;
 	color: #020202;
@@ -1646,7 +1646,7 @@ img{
 	height: 80px;
 	width: 40px;
 	border-radius: 0;
-	border: 2px solid #ffffff; 
+	border: 2px solid #ffffff;
 	text-align: center;
 	line-height: 80px;
 	color: #020202;
@@ -1660,7 +1660,7 @@ img{
 	transition: all 300ms ease;
 }
 
-.banner-section .owl-nav .owl-prev:hover, 
+.banner-section .owl-nav .owl-prev:hover,
 .banner-section .owl-nav .owl-next:hover{
 	opacity: 1;
 }
@@ -1697,7 +1697,7 @@ img{
 	border-color: #ff8667;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Mobile Menu
@@ -1711,7 +1711,7 @@ img{
 	font-size: 40px;
 	line-height: 50px;
 	cursor: pointer;
-	color:#ffffff;
+	color:#000;
 	display: none;
 }
 
@@ -1735,7 +1735,7 @@ img{
 .mobile-menu .nav-logo{
 	position:relative;
 	padding:20px 20px;
-	text-align:left;	
+	text-align:left;
 }
 
 .mobile-menu .nav-logo img{
@@ -1873,7 +1873,7 @@ img{
 
 .mobile-menu .navigation li:hover > a,
 .mobile-menu .navigation li.current > a{
-	color:#ff7d5f;	
+	color:#ff7d5f;
 }
 
 .mobile-menu .navigation li.dropdown .dropdown-btn{
@@ -1934,7 +1934,7 @@ img{
 	position:relative;
 	top:2px;
 	text-indent:0px;
-	color:#333333;	
+	color:#333333;
 }
 
 .form-group .ui-button .ui-icon:before{
@@ -1961,7 +1961,7 @@ img{
 }
 
 .ui-menu .ui-menu-item:last-child{
-	border:none;	
+	border:none;
 }
 
 .ui-state-active, .ui-widget-content .ui-state-active{
@@ -1981,7 +1981,7 @@ img{
 	background-color:#ff8667;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Product Form Section
@@ -2103,7 +2103,7 @@ img{
 	border:1px solid #ff8667;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Categories Section
@@ -2117,7 +2117,7 @@ img{
 }
 
 .categories-tab{
-	position:relative;	
+	position:relative;
 }
 
 .categories-tab .tabs-header{
@@ -2193,7 +2193,7 @@ img{
 
 .categories-tab .p-tabs-content{
 	position:relative;
-	display:block;	
+	display:block;
 }
 
 .categories-tab .p-tab{
@@ -2202,7 +2202,7 @@ img{
 	top:0px;
 	width:100%;
 	height:auto;
-	visibility:hidden;	
+	visibility:hidden;
 }
 
 .categories-tab .p-tab.active-tab{
@@ -2229,7 +2229,7 @@ img{
 	-ms-transform:scaleY(0);
 	-o-transform:scaleY(0);
 	-moz-transform:scaleY(0);
-	transform:scaleY(0);	
+	transform:scaleY(0);
 }
 
 .categories-section .owl-nav{
@@ -2332,7 +2332,7 @@ img{
 	margin-top:15px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Trending Section
@@ -2443,7 +2443,7 @@ img{
 	background:url(../images/icons/category-icon.png) no-repeat;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Popular Recipes Section
@@ -2640,7 +2640,7 @@ img{
 
 
 
-/*** 
+/***
 
 ====================================================================
 	Trending Recipes Section
@@ -2723,7 +2723,7 @@ img{
 
 
 
-/*** 
+/***
 
 ====================================================================
 	Call To Action Section
@@ -2748,7 +2748,7 @@ img{
 	font-family: 'Playfair Display', serif;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Video Section
@@ -2922,7 +2922,7 @@ img{
     100% {box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);}
 }
 
-/*** 
+/***
 
 ====================================================================
 	Entertaining Section
@@ -3130,7 +3130,7 @@ img{
 	display:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Subscribe Section
@@ -3249,7 +3249,7 @@ img{
 	border-left:1px solid #ede2e0;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Instagram Section
@@ -3407,10 +3407,10 @@ img{
 
 .instagram-block .overlay-inner .option-btn:hover{
 	background:#1c1c1c;
-	color:#ffffff;	
+	color:#ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Footer
@@ -3490,7 +3490,7 @@ img{
 	border-top:1px solid #e6e3e2;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Banner Section Two
@@ -3635,7 +3635,7 @@ img{
 	line-height: 1.6em;
 	color: #161616;
 	font-weight: 400;
-	margin-bottom: 15px;	
+	margin-bottom: 15px;
 }
 
 .banner-section-two .content-box .post-meta{
@@ -3676,7 +3676,7 @@ img{
 }
 
 .banner-section-two:hover .owl-nav{
-	opacity:1;	
+	opacity:1;
 }
 
 .banner-section-two .owl-nav .owl-prev{
@@ -3686,7 +3686,7 @@ img{
 	height: 80px;
 	width: 40px;
 	border-radius: 0;
-	border: 2px solid #ffffff; 
+	border: 2px solid #ffffff;
 	text-align: center;
 	line-height: 80px;
 	color: #020202;
@@ -3707,7 +3707,7 @@ img{
 	height: 80px;
 	width: 40px;
 	border-radius: 0;
-	border: 2px solid #ffffff; 
+	border: 2px solid #ffffff;
 	text-align: center;
 	line-height: 80px;
 	color: #020202;
@@ -3721,7 +3721,7 @@ img{
 	transition: all 300ms ease;
 }
 
-.banner-section-two .owl-nav .owl-prev:hover, 
+.banner-section-two .owl-nav .owl-prev:hover,
 .banner-section-two .owl-nav .owl-next:hover{
 	opacity: 1;
 }
@@ -3758,7 +3758,7 @@ img{
 	border-color: #ff8667;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Categories Section Two
@@ -3820,7 +3820,7 @@ img{
 	opacity:1;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Authors Section
@@ -3892,7 +3892,7 @@ img{
 	margin-top:8px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Page Title
@@ -3921,7 +3921,7 @@ img{
 	text-transform:capitalize;
 }
 
-/*** 
+/***
 
 ====================================================================
 	About Section
@@ -4002,7 +4002,7 @@ img{
 	line-height:1.6em;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Founder Section
@@ -4089,7 +4089,7 @@ img{
 	display:block;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Sidebar Page Container
@@ -4922,7 +4922,7 @@ img{
 }
 
 .comment-box .comment .comment-info strong{
-	
+
 }
 
 .comment-box .comment .post-date{
@@ -5262,7 +5262,7 @@ img{
 	z-index: 2;
 }
 .add-recipe-col table tr td{
-	padding-right: 15px;		
+	padding-right: 15px;
 }
 .load-more__btn {
 	background: #FF7D5F;
@@ -5277,7 +5277,7 @@ img{
 
 
 
-/*** 
+/***
 
 ====================================================================
 	Styled Pagination
@@ -5552,7 +5552,7 @@ img{
 }
 
 .comment-box-two .comment .comment-info strong{
-	
+
 }
 
 .comment-box-two .comment .post-date{
@@ -5612,7 +5612,7 @@ img{
 	text-transform:capitalize;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Comment Form
@@ -5631,7 +5631,7 @@ img{
 }
 
 .comment-form-two .group-title h2{
-	margin-bottom:50px;	
+	margin-bottom:50px;
 	color:#222222;
 }
 
@@ -5695,7 +5695,7 @@ img{
 	text-transform:capitalize;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Contact Page Section
@@ -5818,7 +5818,7 @@ img{
 .contact-form input.error,
 .contact-form select.error,
 .contact-form textarea.error{
-	border-color:#ff0000 !important;	
+	border-color:#ff0000 !important;
 }
 
 .contact-form label.error{
@@ -5829,7 +5829,7 @@ img{
 	text-transform:uppercase;
 	font-size:12px;
 	color:#ff0000;
-	font-weight:500;	
+	font-weight:500;
 }
 
 /* Register Container */

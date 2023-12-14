@@ -3,13 +3,6 @@
 {{$search}}
 @endsection
 @section('content')
-    <!--Page Title-->
-    <section class="page-title" style="background-image:url({{asset('front')}}/images/background/10.jpg)">
-        <div class="auto-container">
-            <h1>Books</h1>
-        </div>
-    </section>
-    <!--End Page Title-->
 
     <!-- Product Form Section -->
     <section class="product-form-section style-two">

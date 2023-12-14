@@ -31,6 +31,7 @@ Route::get('/blog/{slug}', [HomeController::class,'blogDetails'])->name('home.bl
 Route::get('/category/{slug}', [HomeController::class,'category'])->name('home.category');
 Route::get('/blog', [HomeController::class,'blog'])->name('home.blogs');
 Route::get('/payfast', [HomeController::class,'pay'])->name('home.pay');
+Route::get('/success', [HomeController::class,'success'])->name('home.success');
 
 Route::get('/book/{slug}', [BookController::class,'details'])->name('book.details');
 Route::get('/contact-us', [PagesController::class,'contact'])->name('home.contact');
@@ -43,6 +44,8 @@ Route::get('/search/recipe',[HomeController::class,'searchRecipe'])->name('searc
 
 Route::get('/checkout', [OrderController::class,'checkout'])->name('home.checkout');
 Route::post('/checkout/save', [OrderController::class,'checkoutSave'])->name('checkout.save');
+Route::get('/payment/response', [OrderController::class, 'handlePaymentResponse'])->name('payment.response');
+Route::post('/set-session-data',  [OrderController::class, 'setSessionData'])->name('set.session.data');
 
 Route::get('/dashboard', function () {
     return view('userPanel.admin.admin');
@@ -54,13 +57,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/book/read/{encryptedId}', [UserPanelController::class, 'read'])
         ->name('myBooks.read')
         ->where('encryptedId', '[A-Za-z0-9]+'); // Adjust the pattern based on your use case
-
-
-
-
-
-
-
 
 
 
