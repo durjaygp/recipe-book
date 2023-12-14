@@ -50,12 +50,14 @@
         <div class="layer-two" style="background-image: url({{asset('front')}}/images/resource/category-pattern-1.png)"></div>
         <div class="auto-container">
             <div class="row clearfix">
-
+            @php
+                $about = \App\Models\About::find(1);
+            @endphp
                 <!-- Image Column -->
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="image">
-                            <img src="{{asset('front')}}/images/resource/about.png" alt="" />
+                            <img src="{{asset($about->image)}}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -65,13 +67,11 @@
                     <div class="inner-column">
                         <!-- Sec Title -->
                         <div class="sec-title">
-                            <div class="title">About us</div>
-                            <h2>Our philosophy</h2>
+                            <div class="title">{{$about->title}}</div>
+                            <h2>{{$about->header}}</h2>
                         </div>
-                        <div class="bold-text">Welcome to the wonderful world of beets! I am delighted you are here.</div>
                         <div class="text">
-                            <p>A lot of people ask me, "Why beets?" in which I respond with a cheeky grin, "'Beets' Me!" Actually, beets intrigue me as I think they are vibrantly diverse, spectacularly nutritious, and remarkably under-utilized. Perhaps you could say that I "root" for the underdog, er vegetable.</p>
-                            <p>I was raised to appreciate fruits and vegetables. Thanks, mom and dad! Although I cannot recall the specific incidents, apparently when I was a toddler, I loved "helping" my parents in the garden by eating all the strawberries: dirt, insects, and all. Yes – to this day, I still love fruits and veggies; the beet happens to be one of the many extraordinary vegetables that I adore.</p>
+                            <p>{{$about->description}}</p>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                 <div class="row clearfix">
                     <!-- Recipes Book -->
                     @php
-                    $books = \App\Models\Book::latest()->take(4)->get();
+                    $books = \App\Models\Book::latest()->where('status',1)->take(4)->get();
                     @endphp
                     @foreach($books as $row)
                     <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
@@ -138,7 +138,7 @@
         <div class="outer-container">
             <div class="clearfix row">
             @php
-                $recipes = \App\Models\Recipe::latest()->get();
+                $recipes = \App\Models\Recipe::latest()->take(4)->get();
             @endphp
             @foreach($recipes as $row)
                 <!-- Recipes Block -->

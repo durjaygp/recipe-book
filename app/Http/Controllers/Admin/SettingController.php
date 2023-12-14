@@ -24,6 +24,9 @@ class SettingController extends Controller
         $this->setting->keywords = $request->keywords;
         $this->setting->tags = $request->tags;
         $this->setting->url = $request->url;
+        $this->setting->email = $request->email;
+        $this->setting->address = $request->address;
+        $this->setting->phone = $request->phone;
         if ($request->file('website_logo')!=null){
             $this->setting->website_logo = $this->saveImage($request);
         }

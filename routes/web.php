@@ -33,6 +33,7 @@ Route::get('/blog', [HomeController::class,'blog'])->name('home.blogs');
 
 Route::get('/book/{slug}', [BookController::class,'details'])->name('book.details');
 Route::get('/contact-us', [PagesController::class,'contact'])->name('home.contact');
+Route::post('/contact/save', [HomeController::class,'contactMessage'])->name('contact.save');
 Route::post('/book/add-to-cart',[CartController::class,'cartToSave'])->name('cart.save');
 Route::get('/cart', [CartController::class,'index'])->name('home.cart');
 Route::get('/cart/remove/{id}', [CartController::class,'remove'])->name('cart.remove');
@@ -117,8 +118,13 @@ Route::middleware(['auth', 'isadmin'])->group(function(){
     Route::get('admin/website/settings/', [SettingController::class, 'index'])->name('admin.setting');
     Route::post('admin/website/settings/update', [SettingController::class, 'update'])->name('update.setting');
 
+    // ================= Contact Message =================
+    Route::get('/admin/contact/message',[AdminController::class,'message'])->name('contact.message');
+    Route::get('/admin/delete/message/{id}',[AdminController::class,'messageDelete'])->name('contact.message.delete');
+
     //================ Page Routes =====================
-    Route::get('admin/page/contact/', [PageController::class, 'about'])->name('page.about');
+    Route::get('admin/page/about/', [AdminController::class, 'homeAbout'])->name('page.homeAbout');
+    Route::post('admin/page/about/', [AdminController::class, 'homeAboutSave'])->name('page.homeAboutSave');
   //  Route::post('admin/website/settings/update', [SettingController::class, 'update'])->name('update.setting');
 
 

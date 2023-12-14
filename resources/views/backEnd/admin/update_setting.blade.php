@@ -46,7 +46,24 @@
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Website Name/Title</label>
                                     <input type="text" name="name" class="form-control" placeholder="Enter Website Name" value="{{$row->name}}">
                                 </div>
-
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Address</label>
+                                    <input type="text" name="address" class="form-control" placeholder="Enter address" value="{{$row->address}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Email</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Enter Email" value="{{$row->email}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Phone</label>
+                                    <input type="tel" name="phone" class="form-control" placeholder="Enter Phone" value="{{$row->phone}}">
+                                </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="mb-4">

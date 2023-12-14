@@ -120,15 +120,15 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Featured Section</label>
-                                    <select name="position" id="" class="form-select">
-                                        <option value="1">Slider / Featured</option>
-                                        <option value="2">Basic Normal Post</option>
-                                    </select>
-                                </div>
-                            </div>
+{{--                            <div class="col-lg-6">--}}
+{{--                                <div class="mb-4">--}}
+{{--                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Featured Section</label>--}}
+{{--                                    <select name="position" id="" class="form-select">--}}
+{{--                                        <option value="1">Slider / Featured</option>--}}
+{{--                                        <option value="2">Basic Normal Post</option>--}}
+{{--                                    </select>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
                             <div class="col-12">
                                 <div class="d-flex align-items-center gap-3">

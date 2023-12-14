@@ -105,6 +105,36 @@
                                                                                             <input type="text" id="c-reference" class="form-control" value="{{ $row->reference }}" disabled />
                                                                                         </div>
                                                                                     </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Price</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->price }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Reference</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->reference }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Country</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->country }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Address</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->address }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Description</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->description }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </div>
                                                                             </form>
                                                                         </div>

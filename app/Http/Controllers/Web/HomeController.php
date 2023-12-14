@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Book;
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Recipe;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -50,6 +51,22 @@ class HomeController extends Controller
             ->get();
 
         return view('frontEnd.recipe.search', compact('recipes', 'search'));
+    }
+
+    public function contactMessage(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'subject'=>'required',
+            'message'=>'required',
+        ]);
+        $message = new Contact();
+        $message->name = $request->name;
+        $message->email = $request->email;
+        $message->subject = $request->subject;
+        $message->message = $request->message;
+        $message->save();
+        return redirect()->back()->with('success','Message Send Successful');
     }
 
 
