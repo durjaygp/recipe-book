@@ -6,7 +6,7 @@
         <ul class="footer-nav">
             <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="{{route('home.books')}}">Books</a></li>
-            <li><a href="{{route('home.recipes')}}">Recipes</a></li>
+{{--            <li><a href="{{route('home.recipes')}}">Recipes</a></li>--}}
             <li><a href="{{route('home.blogs')}}">Blogs</a></li>
             <li><a href="{{route('home.contact')}}">Contact us</a></li>
         </ul>

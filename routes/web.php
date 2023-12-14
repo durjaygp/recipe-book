@@ -30,6 +30,7 @@ Route::get('/books', [BookController::class,'index'])->name('home.books');
 Route::get('/blog/{slug}', [HomeController::class,'blogDetails'])->name('home.blogDetails');
 Route::get('/category/{slug}', [HomeController::class,'category'])->name('home.category');
 Route::get('/blog', [HomeController::class,'blog'])->name('home.blogs');
+Route::get('/payfast', [HomeController::class,'pay'])->name('home.pay');
 
 Route::get('/book/{slug}', [BookController::class,'details'])->name('book.details');
 Route::get('/contact-us', [PagesController::class,'contact'])->name('home.contact');

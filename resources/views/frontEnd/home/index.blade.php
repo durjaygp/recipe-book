@@ -119,54 +119,54 @@
     </section>
     <!-- End Categories Section-->
 
-    <!-- Popular Recipes Section -->
-    <section class="popular-recipes-section">
-        <div class="auto-container">
-            <!-- Sec Title -->
-            <div class="sec-title">
-                <div class="clearfix">
-                    <div class="pull-left">
-                        <h2>Popular Recipes Posts</h2>
+{{--    <!-- Popular Recipes Section -->--}}
+{{--    <section class="popular-recipes-section">--}}
+{{--        <div class="auto-container">--}}
+{{--            <!-- Sec Title -->--}}
+{{--            <div class="sec-title">--}}
+{{--                <div class="clearfix">--}}
+{{--                    <div class="pull-left">--}}
+{{--                        <h2>Popular Recipes Posts</h2>--}}
 
-                    </div>
-                    <div class="pull-right">
-                        <a href="{{route('home.recipes')}}" class="theme-btn btn-style-one"><span class="txt">See all Post</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="outer-container">
-            <div class="clearfix row">
-            @php
-                $recipes = \App\Models\Recipe::latest()->take(4)->get();
-            @endphp
-            @foreach($recipes as $row)
-                <!-- Recipes Block -->
-                <div class="recipes-block col-lg-3 col-md-6 col-sm-12">
-                    <div class="inner-box">
-                        <div class="image">
-                            <a href="{{route('recipe.details',['id'=>$row->id,'slug'=>$row->slug,])}}"><img src="{{asset($row->image)}}" alt="{{$row->name}}" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <div class="author-image"><a href="#"><img src="{{$row->user->image}}" alt="" /></a></div>
-                            <div class="category">{{$row->category->name}}</div>
-                            <h4><a href="{{route('recipe.details',['id'=>$row->id,'slug'=>$row->slug,])}}">{{$row->name}}</a></h4>
-                            <div class="text">{{$row->description}}</div>
-                            <ul class="post-meta">
-                                <li><span class="icon flaticon-dish"></span>{{$row->ingredients}} ingredients</li>
-                                <li><span class="icon flaticon-clock-3"></span>{{$row->duration}} Min</li>
-                                <li><span class="icon flaticon-business-and-finance"></span>{{$row->peoples}} People</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+{{--                    </div>--}}
+{{--                    <div class="pull-right">--}}
+{{--                        <a href="{{route('home.recipes')}}" class="theme-btn btn-style-one"><span class="txt">See all Post</span></a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="outer-container">--}}
+{{--            <div class="clearfix row">--}}
+{{--            @php--}}
+{{--                $recipes = \App\Models\Recipe::latest()->take(4)->get();--}}
+{{--            @endphp--}}
+{{--            @foreach($recipes as $row)--}}
+{{--                <!-- Recipes Block -->--}}
+{{--                <div class="recipes-block col-lg-3 col-md-6 col-sm-12">--}}
+{{--                    <div class="inner-box">--}}
+{{--                        <div class="image">--}}
+{{--                            <a href="{{route('recipe.details',['id'=>$row->id,'slug'=>$row->slug,])}}"><img src="{{asset($row->image)}}" alt="{{$row->name}}" /></a>--}}
+{{--                        </div>--}}
+{{--                        <div class="lower-content">--}}
+{{--                            <div class="author-image"><a href="#"><img src="{{$row->user->image}}" alt="" /></a></div>--}}
+{{--                            <div class="category">{{$row->category->name}}</div>--}}
+{{--                            <h4><a href="{{route('recipe.details',['id'=>$row->id,'slug'=>$row->slug,])}}">{{$row->name}}</a></h4>--}}
+{{--                            <div class="text">{{$row->description}}</div>--}}
+{{--                            <ul class="post-meta">--}}
+{{--                                <li><span class="icon flaticon-dish"></span>{{$row->ingredients}} ingredients</li>--}}
+{{--                                <li><span class="icon flaticon-clock-3"></span>{{$row->duration}} Min</li>--}}
+{{--                                <li><span class="icon flaticon-business-and-finance"></span>{{$row->peoples}} People</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            @endforeach--}}
 
 
-            </div>
-        </div>
-    </section>
-    <!-- End Popular Recipes Section -->
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <!-- End Popular Recipes Section -->--}}
 
     <!-- Trending Recipes Section -->
     <section class="trending-recipes-section">

@@ -106,30 +106,38 @@
                         <span class="hide-menu">Website</span>
                     </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
-                      <span class="d-flex">
-                        <i class="ti ti-dna"></i>
-                      </span>
-                            <span class="hide-menu">Pages</span>
-                        </a>
-                        <ul aria-expanded="false" class="collapse first-level">
-                            <li class="sidebar-item">
-                                <a href="{{route('page.homeAbout')}}" class="sidebar-link">
-                                    <div class="round-16 d-flex align-items-center justify-content-center">
-                                        <i class="ti ti-circle"></i>
-                                    </div>
-                                    <span class="hide-menu">Home Page</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+{{--                    <li class="sidebar-item">--}}
+{{--                        <a class="sidebar-link has-arrow" href="#" aria-expanded="false">--}}
+{{--                      <span class="d-flex">--}}
+{{--                        <i class="ti ti-dna"></i>--}}
+{{--                      </span>--}}
+{{--                            <span class="hide-menu">Pages</span>--}}
+{{--                        </a>--}}
+{{--                        <ul aria-expanded="false" class="collapse first-level">--}}
+{{--                            <li class="sidebar-item">--}}
+{{--                                <a href="{{route('page.homeAbout')}}" class="sidebar-link">--}}
+{{--                                    <div class="round-16 d-flex align-items-center justify-content-center">--}}
+{{--                                        <i class="ti ti-circle"></i>--}}
+{{--                                    </div>--}}
+{{--                                    <span class="hide-menu">Home Page</span>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
 
                     <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{route('page.homeAbout')}}">
+                      <span>
+                        <i class="ti ti-user-bolt"></i>
+                      </span>
+                            <span class="hide-menu">About Section</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
                         <a class="sidebar-link" href="{{route('contact.message')}}">
-                  <span>
-                    <i class="ti ti-message-2-check"></i>
-                  </span>
+                      <span>
+                        <i class="ti ti-message-2-check"></i>
+                      </span>
                             <span class="hide-menu">Contact Message</span>
                         </a>
                     </li>

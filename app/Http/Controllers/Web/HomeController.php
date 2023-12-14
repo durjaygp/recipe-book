@@ -16,6 +16,9 @@ class HomeController extends Controller
     public function index(){
         return view('frontEnd.home.index');
     }
+    public function pay(){
+        return view('payfast');
+    }
 
     public function blogDetails($slug){
         $blog = Blog::where('slug',$slug)->first();

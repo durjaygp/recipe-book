@@ -26,18 +26,17 @@
                             <ul class="clearfix navigation">
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home') ? 'current' : '' }}"><a href="{{route('home')}}">Home</a></li>
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.books') ? 'current' : '' }}"><a href="{{route('home.books')}}">Books</a></li>
-                                <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.recipes') ? 'current' : '' }}"><a href="{{route('home.recipes')}}">Recipes</a></li>
-
-                                <li class="dropdown"><a href="#">Category</a>
-                                    <ul>
-                                        @php
-                                            $categories = \App\Models\Category::latest()->take(7)->get();
-                                        @endphp
-                                        @foreach($categories as $row)
-                                            <li><a href="{{route('home.category',$row->slug)}}">{{$row->name}}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </li>
+{{--                                <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.recipes') ? 'current' : '' }}"><a href="{{route('home.recipes')}}">Recipes</a></li>--}}
+{{--                                <li class="dropdown"><a href="#">Category</a>--}}
+{{--                                    <ul>--}}
+{{--                                        @php--}}
+{{--                                            $categories = \App\Models\Category::latest()->take(7)->get();--}}
+{{--                                        @endphp--}}
+{{--                                        @foreach($categories as $row)--}}
+{{--                                            <li><a href="{{route('home.category',$row->slug)}}">{{$row->name}}</a></li>--}}
+{{--                                        @endforeach--}}
+{{--                                    </ul>--}}
+{{--                                </li>--}}
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.blogs') ? 'current' : '' }}"><a href="{{route('home.blogs')}}">Blogs</a></li>
 
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.contact') ? 'current' : '' }}"><a href="{{route('home.contact')}}">Contact us</a></li>
