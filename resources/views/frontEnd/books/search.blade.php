@@ -4,48 +4,13 @@
 @endsection
 @section('content')
 
-    <!-- Product Form Section -->
-    <section class="product-form-section style-two">
-        <div class="auto-container">
-            <div class="inner-container margin-top">
-
-                <!-- Default Form -->
-                <div class="default-form">
-                    <form method="get" action="{{route('search.book')}}">
-                        <div class="clearfix">
-                            <!-- Form Group -->
-                            <div class="form-group col-lg-3 col-md-6 col-sm-12">
-                                <select class="custom-select-box">
-                                    <option>Books</option>
-                                </select>
-                            </div>
-
-                            <!-- Form Group -->
-                            <div class="form-group col-lg-7 col-md-6 col-sm-12">
-                                <input type="text" name="search" placeholder="Books Name" required>
-                            </div>
-
-                            <div class="form-group col-lg-2 col-md-12 col-sm-12">
-                                <button type="submit" class="theme-btn search-btn"><span class="fa fa-search"> Search</span></button>
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- End Keyword Section -->
-
-
     <!-- Books Section-->
     <section class="categories-section">
         <div class="auto-container">
 
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <h2> Your Search Results </h2>
+                <h2 style="margin-top:40px"> Your Search Results </h2>
             </div>
 
             <!-- Categories Tabs -->

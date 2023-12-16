@@ -4,7 +4,7 @@
     <!-- cart Section-->
     <section class="categories-section">
         <div class="auto-container">
-            <div class="row">
+            <div class="row" style="margin-top:40px;">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">

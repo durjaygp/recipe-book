@@ -1,37 +1,9 @@
 @extends('frontEnd.master')
-@section('title','Home')
+@section('title')
+    {{$website->name}}
+@endsection
 @section('content')
-    <!-- Books Section-->
-    <section class="categories-section">
-        <div class="auto-container">
 
-            <!-- Categories Tabs -->
-            <div class="related-items">
-                <div class="row clearfix">
-                    <!-- Recipes Book -->
-                    @php
-                        $books = \App\Models\Book::latest()->where('status',1)->take(8)->get();
-                    @endphp
-                    @foreach($books as $row)
-                        <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="{{route('book.details',$row->slug)}}"><img src="{{asset($row->image)}}" alt="" style="height: 400px!important;"/></a>
-                                </div>
-                                <div class="lower-content">
-                                    <h4><a href="{{route('book.details',$row->slug)}}">{{$row->name}}</a></h4>
-                                    <span class="text-success h4">R {{$row->price}}</span>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- End Categories Section-->
 
     <!-- End Keyword Section -->
     <!-- About Section -->
@@ -39,7 +11,7 @@
         <div class="layer-one" style="background-image: url({{asset('front')}}/images/resource/category-pattern-1.png)"></div>
         <div class="layer-two" style="background-image: url({{asset('front')}}/images/resource/category-pattern-1.png)"></div>
         <div class="auto-container">
-            <div class="row clearfix">
+            <div class="row clearfix" style="margin-top:50px;">
             @php
                 $about = \App\Models\About::find(1);
             @endphp
@@ -56,7 +28,7 @@
                 <div class="content-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <!-- Sec Title -->
-                        <div class="sec-title">
+                        <div class="sec-title mt-3">
                             <div class="title">{{$about->title}}</div>
                             <h2>{{$about->header}}</h2>
                         </div>
@@ -119,6 +91,55 @@
 {{--        </div>--}}
 {{--    </section>--}}
 {{--    <!-- End Popular Recipes Section -->--}}
+
+    @php
+    $book = \App\Models\Book::find(10);
+    @endphp
+    <section class="author-details-area">
+        <div class="container">
+            <div class="sec-title">
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <h2>Featured Book</h2>
+                    </div>
+                    <div class="pull-right">
+                        <a href="{{route('home.books')}}" class="theme-btn btn-style-one"><span class="txt">See all Books</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="author-details-col p-0">
+                        <div class="author-details-img">
+                            <img src="{{asset($book->image)}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="author-details-col author-details-content">
+                        <h2>{{$book->name}}</h2>
+                        <p>{{$book->description}}</p>
+                        <ul class="author-info">
+                            <li><i class="fa fa-coffee" aria-hidden="true"></i> {{$book->total_recipe}} Recipes</li>
+                            <li><i class="fa fa-pagelines" aria-hidden="true"></i> {{$book->pages}} Pages</li>
+                            <li><i class="fa fa-calendar" aria-hidden="true"></i> Published Date: {{$book->publish_date}}</li>
+                        </ul>
+                        <span class="text-success h4">R {{$book->price}}</span>
+                        <p></p>
+
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('addToCart{{$book->id}}').submit();" class="btn btn-success">Buy</a>
+                        <form method="post" action="{{route('cart.save')}}" id="addToCart{{$book->id}}" class="d-none">
+                            @csrf
+                            <input type="hidden" name="book_id" id="" value="{{$book->id}}">
+                            <input type="hidden" name="total_price" id="" value="{{$book->price}}">
+                            <input type="hidden" name="book_name" id="" value="{{$book->name}}">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Trending Recipes Section -->
     <section class="trending-recipes-section">

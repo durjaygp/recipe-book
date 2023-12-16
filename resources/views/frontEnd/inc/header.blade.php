@@ -6,14 +6,21 @@
             <div class="clearfix">
 
                 <div class="pull-left logo-box">
-                    <div class="logo"><a href="{{route('home')}}"><img src="{{asset($website->website_logo)}}" class="img-fluid" alt="{{asset($website->name)}}" title="{{asset($website->name)}}"></a></div>
+                    <div class="logo">
+
+                        <a href="{{route('home')}}" class="d-flex">
+                            <img src="{{asset($website->website_logo)}}" class="img-fluid" style="width:100px;" alt="{{asset($website->name)}}" title="{{asset($website->name)}}">
+                            <h2 class="css-font-durjay">Cindy's Simple Plates</h2>
+                        </a>
+
+                    </div>
                 </div>
 
                 <div class="clearfix nav-outer">
                     <!-- Mobile Navigation Toggler -->
                     <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
                     <!-- Main Menu -->
-                    <nav class="main-menu navbar-expand-md">
+                    <nav class="main-menu navbar-expand-md m-2">
                         <div class="navbar-header">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-bar"></span>
@@ -23,15 +30,14 @@
                         </div>
 
                         <div class="clearfix navbar-collapse show collapse" id="navbarSupportedContent">
+
                             <ul class="clearfix navigation">
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home') ? 'current' : '' }}"><a href="{{route('home')}}">Home</a></li>
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.books') ? 'current' : '' }}"><a href="{{route('home.books')}}">Books</a></li>
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.blogs') ? 'current' : '' }}"><a href="{{route('home.blogs')}}">Blogs</a></li>
-
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.contact') ? 'current' : '' }}"><a href="{{route('home.contact')}}">Contact us</a></li>
                             </ul>
                         </div>
-
                     </nav>
 
                     <!-- Outer Box -->
@@ -67,6 +73,18 @@
                                 <li><a href="{{ route('login') }}"><span class="icon fa fa-user"></span>Login</a></li>
                                 <li class="recipe"><a href="{{ route('register') }}"><span class="icon fa fa-user"></span>Register</a></li>
                             @endif
+
+                                <li class="">
+                                    <div class="input-group mb-3">
+                                        <select class="form-select" id="currency">
+
+                                            <option value="usd">ZAR</option>
+                                            <option value="usd">USD</option>
+                                            <option value="gbp">GBP</option>
+                                            <option value="euro">EURO</option>
+                                        </select>
+                                    </div>
+                                </li>
                         </ul>
                     </div>
 
