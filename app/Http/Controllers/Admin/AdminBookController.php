@@ -35,6 +35,7 @@ class AdminBookController extends Controller
                 Rule::unique('books', 'name'),
             ],
             'price' => 'required',
+            'print_price' => 'required',
             'image' => 'required',
             'status' => 'required',
         ];
@@ -44,6 +45,7 @@ class AdminBookController extends Controller
             'name.required' => 'Book name is required.',
             'crs_name.unique' => 'The Book is already available.',
             'price.required' => 'Price is required.',
+            'print_price.required' => 'Printing price is required.',
             'image.required' => 'Image is required.',
             'status.required' => 'Status is required.',
         ];
@@ -59,12 +61,14 @@ class AdminBookController extends Controller
         $book->name = $request->name;
         $book->slug = Str::slug($request->name, '-');
         $book->price = $request->price;
+        $book->print_price = $request->print_price;
         $book->publish_date = $request->publish_date;
         $book->pages = $request->pages;
         $book->total_recipe = $request->total_recipe;
         $book->description = $request->description;
         $book->body = $request->body;
         $book->status = $request->status;
+        $book->is_featured = $request->is_featured;
         // $course->image = $this->saveImage($request);
         if ($request->file('image')) {
             $book->image = $this->saveImage($request);

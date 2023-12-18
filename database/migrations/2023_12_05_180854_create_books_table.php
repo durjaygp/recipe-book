@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('slug');
             $table->string('price')->nullable();
+            $table->string('print_price')->nullable();
             $table->string('publish_date')->nullable();
             $table->string('pages')->nullable();
             $table->string('total_recipe')->nullable();
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->longText('body')->nullable();
             $table->text('image')->nullable();
             $table->string('status')->nullable();
+            $table->string('is_featured')->nullable();
             $table->timestamps();
         });
     }

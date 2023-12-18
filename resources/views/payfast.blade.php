@@ -28,9 +28,3 @@
 </body>
 </html>
 
-
-
-{{--https://sandbox.payfast.co.za/transactions--}}
-{{--durjay.seoexpate@gmail.com--}}
-{{--https://youtu.be/3dBxdvCmkOU--}}
-{{--Alternatively, you can create your own details at https://sandbox.payfast.co.za/--}}

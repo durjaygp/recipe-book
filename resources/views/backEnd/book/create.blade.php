@@ -41,7 +41,6 @@
                     <form method="post" action="{{route('book.save')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-
                             <div class="col-lg-6">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Book Name</label>
@@ -51,6 +50,12 @@
                             <div class="col-lg-6">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Price</label>
+                                    <input type="text" name="price" class="form-control" id="exampleInputtext" placeholder="20.10">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Printable Price <small class="text-primary">(Hard Copy Price)</small></label>
                                     <input type="text" name="price" class="form-control" id="exampleInputtext" placeholder="20.10">
                                 </div>
                             </div>
