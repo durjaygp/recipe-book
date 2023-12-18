@@ -66,5 +66,13 @@ class DatabaseSeeder extends Seeder
             'website_logo' => 'website_logo.jpg',
             'fav_icon' => 'fav_icon.jpg',
         ]);
+
+        \App\Models\About::create([
+            'id' => 1,
+            'title' => 'Website Name',
+            'header' => 'user@gmail.com',
+            'description' => 'footer Text',
+            'image' => 'woman.png',
+        ]);
     }
 }

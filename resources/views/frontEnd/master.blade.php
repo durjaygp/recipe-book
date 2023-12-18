@@ -92,9 +92,7 @@
             position:'topRight',
             message: '{{session()->get('warning')}}',
         });
-
     </script>
 @endif
 </body>
-
 </html>
