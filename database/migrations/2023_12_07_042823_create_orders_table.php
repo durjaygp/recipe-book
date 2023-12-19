@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('book_id')->references('id')->on('books')->nullable();
             $table->string('price')->nullable();
             $table->string('name')->nullable();
+            $table->string('phone')->nullable();
             $table->text('description')->nullable();
             $table->string('total_price')->nullable();
             $table->text('country')->nullable();

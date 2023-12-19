@@ -1,7 +1,7 @@
 <footer class="main-footer" style="background-image:url({{asset('front')}}/images/background/5.png)">
     <div class="auto-container">
         <div class="logo">
-            <a href="{{route('home')}}"><img src="{{asset($website->website_logo)}}" alt="" /></a>
+            <a href="{{route('home')}}"><img src="{{asset($website->website_logo)}}" alt="" class="img-fluid" width="200px"/></a>
         </div>
         <ul class="footer-nav">
             <li><a href="{{route('home')}}">Home</a></li>

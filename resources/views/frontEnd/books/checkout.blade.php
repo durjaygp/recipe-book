@@ -12,38 +12,42 @@
                         $user = \App\Models\User::find($userid);
                         $carts = \App\Models\Cart::where('user_id', Auth()->user()->id)->first();
                         @endphp
-                        <h4>Please fill up all fields</h4>
-                        <form id="paymentForm" action="https://www.payfast.co.za/eng/process" method="post" enctype="multipart/form-data">
+                        <h4>Please fill up all the fields</h4>
+                        <form id="paymentForm" action="https://sandbox.payfast.co.za/eng/process" method="post" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden" name="merchant_id" value="23719067">
-                            <input type="hidden" name="merchant_key" value="1ts6dekcwslkv">
-{{--                            <input type="hidden" name="merchant_id" value="10032130">--}}
-{{--                            <input type="hidden" name="merchant_key" value="6bbwbmnims8uz">--}}
+{{--         https://www.payfast.co.za/eng/process                    <input type="hidden" name="merchant_id" value="23719067">--}}
+{{--                            <input type="hidden" name="merchant_key" value="1ts6dekcwslkv">--}}
+                           <input type="hidden" name="merchant_id" value="10032130">
+                            <input type="hidden" name="merchant_key" value="6bbwbmnims8uz">
                             <input type="hidden" name="return_url" value="{{ route('payment.response') }}">
                             <input type="hidden" name="name_first" value="{{$user->name}}">
                             <input type="hidden" name="item_name" value="{{$carts->book_name}}">
                             <input type="hidden" name="email_address" value="{{$user->email}}">
                             <input type="hidden" name="m_payment_id" value="{{$carts->book_id}}">
-                            <input type="hidden" name="amount" value="{{$totalPrice}}">
+                            <input type="hidden" name="amount" value="{{$totalPrice + $shipPrice}}">
                             <div class="form-group mb-4">
-                                <label>Your Name</label>
+                                <label>Your Name <span class="text-danger">*</span></label>
                                 <input type="text" name="name" class="form-control" placeholder="{{$user->name}}" value="{{$user->name}}">
                             </div>
                             <div class="form-group mb-4">
-                                <label>Your Email</label>
+                                <label>Your Email <span class="text-danger">*</span></label>
                                 <input type="text" name="name" class="form-control" placeholder="{{$user->email}}" value="{{$user->email}}">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label>Your Phone <span class="text-danger">*</span></label>
+                                <input type="text" name="phone" class="form-control" placeholder="Enter Phone Number with Country Code" required>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group mb-4">
-                                        <label>Amount</label>
-                                        <input type="number" name="total_price" class="form-control" placeholder="Amount" value="{{$totalPrice}}" required>
+                                        <label>Amount <span class="text-danger">*</span></label>
+                                        <input type="number" name="total_price" class="form-control" placeholder="Amount" value="{{$totalPrice + $shipPrice}}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group mb-4">
-                                        <label>Country</label>
-                                        <select id="country" name="country" class="form-control">
+                                        <label>Country <span class="text-danger">*</span></label>
+                                        <select id="country" name="country" class="form-control" required>
                                             <option>Select</option>
                                             <option value="Afghanistan">Afghanistan</option>
                                             <option value="Åland Islands">Åland Islands</option>
@@ -294,12 +298,12 @@
                                 </div>
                             </div>
                             <div class="form-group mb-4">
-                                <label>Write Full Address</label>
-                                <input type="text" name="address" class="form-control" placeholder="Street Name, House Number, Address, City, ETC" required>
+                                <label>Write Full Address (Optional)  <small class="text-primary">(If you ordered Online Version, You don't need to fill this)</small></label>
+                                <input type="text" name="address" class="form-control" placeholder="Street Name, House Number, Address, City, ETC" >
                             </div>
                             <div class="form-group mb-4">
-                                <label>Short Message</label>
-                                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="4" placeholder="Write Here..." required></textarea>
+                                <label>Short Message (Optional)  <small class="text-primary">(If you ordered Online Version, You don't need to fill this)</small></label>
+                                <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="4" placeholder="Write Here..."></textarea>
                             </div>
 
                             <div class="col-md-12">

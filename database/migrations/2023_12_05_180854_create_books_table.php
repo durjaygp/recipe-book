@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('price')->nullable();
             $table->string('print_price')->nullable();
+            $table->string('shipping_price')->nullable();
             $table->string('publish_date')->nullable();
             $table->string('pages')->nullable();
             $table->string('total_recipe')->nullable();

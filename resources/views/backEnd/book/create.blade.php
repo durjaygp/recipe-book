@@ -41,22 +41,28 @@
                     <form method="post" action="{{route('book.save')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Book Name</label>
                                     <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Book Name">
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Price</label>
-                                    <input type="text" name="price" class="form-control" id="exampleInputtext" placeholder="20.10">
+                                    <input type="text" name="price" class="form-control" id="exampleInputtext" placeholder="200">
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="mb-4">
-                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Printable Price <small class="text-primary">(Hard Copy Price)</small></label>
-                                    <input type="text" name="price" class="form-control" id="exampleInputtext" placeholder="20.10">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Printable Total Price <small class="text-primary">(Hard Copy Price)</small></label>
+                                    <input type="text" name="print_price" class="form-control" id="exampleInputtext" placeholder="480">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Shipping Price</label>
+                                    <input type="text" name="shipping_price" class="form-control" id="exampleInputtext" placeholder="80">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -106,12 +112,22 @@
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Status</label>
                                     <select name="status" id="" class="form-select">
+                                        <option>Select</option>
                                         <option value="1">Publish</option>
                                         <option value="2">Draft/Unpublished</option>
                                     </select>
                                 </div>
                             </div>
-
+                            <div class="col-lg-6">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Home Page Featured</label>
+                                    <select name="is_featured" id="" class="form-select">
+                                        <option>Select</option>
+                                        <option value="1">Yes</option>
+                                        <option value="2">No</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="col-12">
                                 <div class="d-flex align-items-center gap-3">
                                     <button class="btn btn-primary">Submit</button>

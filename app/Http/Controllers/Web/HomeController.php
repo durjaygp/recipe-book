@@ -14,8 +14,10 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        return view('frontEnd.home.index');
+        $books = Book::latest()->where('is_featured',1)->take(1)->get();
+        return view('frontEnd.home.index',compact('books'));
     }
+
     public function pay(){
         return view('payfast');
     }

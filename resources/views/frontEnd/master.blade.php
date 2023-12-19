@@ -62,6 +62,7 @@
 <script src="{{asset('front')}}/js/jquery-ui.js"></script>
 <script src="{{asset('front')}}/js/script.js"></script>
 <script src="{{asset('/')}}iziToast/dist/js/iziToast.min.js"></script>
+@yield('script')
 @if($errors->any())
     @foreach($errors->all() as $error)
         <script>

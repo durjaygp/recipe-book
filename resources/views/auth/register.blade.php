@@ -56,31 +56,22 @@
 @section('content')
 
     <!-- Page Title -->
-    <section class="page-title" style="background-image:url({{asset('front')}}/images/background/17.png)">
+    <section class="page-title">
         <div class="auto-container">
-            <h1>Register</h1>
+            <h1 style="color: #D6BC94;">Register</h1>
+            <h1 class="text-black"><a href="{{route('login')}}">Or Login</a></h1>
         </div>
     </section>
     <!--End Page Title-->
 
     <!-- Register Container -->
     <div class="register-container margin">
-        <div class="top-layer" style="background-image:url({{asset('front')}}/images/background/20.png)"></div>
-        <div class="bottom-layer" style="background-image:url({{asset('front')}}/images/background/21.png)"></div>
         <div class="auto-container">
             <div class="inner-container">
                 <div class="row clearfix">
 
                     <!-- Image Column -->
-                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="inner-column">
-                            <div class="image">
-                                <img src="{{asset('front')}}/images/resource/contact.jpg" alt="" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Form Column -->
+             <div class="col-lg-3"></div>
                     <div class="form-column col-lg-6 col-md-12 col-sm-12">
                         <div class="inner-column">
                             <div class="pattern-layer" style="background-image:url({{asset('front')}}/images/background/18.png)"></div>
@@ -127,6 +118,10 @@
 
                         </div>
                     </div>
+             <div class="col-lg-3"></div>
+
+                    <!-- Form Column -->
+
 
                 </div>
             </div>

@@ -69,9 +69,9 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\About::create([
             'id' => 1,
-            'title' => 'Website Name',
-            'header' => 'user@gmail.com',
-            'description' => 'footer Text',
+            'title' => 'About Me',
+            'header' => 'lorem Ipsum is simply dummy',
+            'description' => 'lorem Ipsum is simply dummy text of the printing and typesetting industrylorem Ipsum is simply dummy text of the printing and typesetting industrylorem Ipsum is simply dummy text of the printing and typesetting industrylorem Ipsum is simply dummy text of the printing and typesetting industrylorem Ipsum is simply dummy text of the printing and typesetting industry ',
             'image' => 'woman.png',
         ]);
     }

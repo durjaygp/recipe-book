@@ -60,11 +60,12 @@ class AdminBookController extends Controller
         $book = new Book();
         $book->name = $request->name;
         $book->slug = Str::slug($request->name, '-');
-        $book->price = $request->price;
         $book->print_price = $request->print_price;
         $book->publish_date = $request->publish_date;
         $book->pages = $request->pages;
+        $book->price = $request->price;
         $book->total_recipe = $request->total_recipe;
+        $book->shipping_price = $request->shipping_price;
         $book->description = $request->description;
         $book->body = $request->body;
         $book->status = $request->status;
@@ -151,12 +152,15 @@ class AdminBookController extends Controller
         $book->name = $request->name;
         $book->slug = Str::slug($request->name, '-');
         $book->price = $request->price;
+        $book->total_recipe = $request->total_recipe;
+        $book->shipping_price = $request->shipping_price;
         $book->publish_date = $request->publish_date;
         $book->pages = $request->pages;
         $book->total_recipe = $request->total_recipe;
         $book->description = $request->description;
         $book->body = $request->body;
         $book->status = $request->status;
+        $book->is_featured = $request->is_featured;
 //        // $course->image = $this->saveImage($request);
 //        if ($request->file('image')) {
 //            $book->image = $this->saveImage($request);

@@ -50,7 +50,11 @@
                                         <th>Image</th>
                                         <th>Name</th>
                                         <th>Price</th>
+                                        <th>Hard <br> Copy <br> Price</th>
+                                        <th>Shipping <br> Price</th>
                                         <th>Description</th>
+                                        <th>Status</th>
+                                        <th>Home <br>Page <br> Featured</th>
                                         <th>Action</th>
                                     </tr>
                                     <!-- end row -->
@@ -61,9 +65,35 @@
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td><img src="{{asset($row->image)}}" alt="" class="img-fluid"></td>
-                                        <td>{{$row->name}}</td>
+                                        <td>{{\Illuminate\Support\Str::limit($row->name,20)}}</td>
                                         <td>{{$row->price}}</td>
+                                        <td>{{$row->print_price}}</td>
+                                        <td>{{$row->shipping_price}}</td>
                                         <td>{{\Illuminate\Support\Str::limit($row->description,20)}}</td>
+                                        <td>
+                                            @if($row->status == 1)
+                                                <div class="text-success">
+                                                    Active
+                                                </div>
+                                            @elseif($row->status == 2)
+                                                <span class="text-danger">
+                                                    Inactive
+                                                </span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($row->is_featured == 1)
+                                                <div class="text-success">
+                                                    Active
+                                                </div>
+                                            @elseif($row->is_featured == 2)
+                                                <span class="text-danger">
+                                                    Inactive
+                                                </span>
+                                            @endif
+
+                                        </td>
+
                                         <td>
                                             <div class="action-btn">
                                                 <a href="{{route('book.edit',$row->id)}}" class="btn btn-sm btn-primary">

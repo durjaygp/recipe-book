@@ -45,7 +45,7 @@
                                         <th>#</th>
                                         <th>Image</th>
                                         <th>Name</th>
-                                        <th>Price</th>
+{{--                                        <th>Price</th>--}}
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -58,7 +58,7 @@
                                             <td>{{$loop->iteration}}</td>
                                             <td><img src="{{asset($row->books->image)}}" alt="" class="img-fluid w-50"></td>
                                             <td>{{$row->books->name}}</td>
-                                            <td>{{$row->books->price}}</td>
+{{--                                            <td>{{$row->books->price}}</td>--}}
                                             <td>
                                                 @if($row->status == 0)
                                                     <span class="text-success">Approved</span>

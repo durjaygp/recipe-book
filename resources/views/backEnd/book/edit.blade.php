@@ -42,17 +42,29 @@
                         @csrf
                         <div class="row">
 
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Book Name</label>
                                     <input type="text" name="name" class="form-control" id="exampleInputtext" placeholder="Book Name" value="{{$book->name}}">
                                     <input type="hidden" name="id" class="form-control"  value="{{$book->id}}">
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Price</label>
                                     <input type="text" name="price" class="form-control" id="exampleInputtext" placeholder="20.10" value="{{$book->price}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Printable Total Price <small class="text-primary">(Hard Copy Price)</small></label>
+                                    <input type="text" name="print_price" class="form-control" id="exampleInputtext" placeholder="480" value="{{$book->print_price}}">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Shipping Price</label>
+                                    <input type="text" name="shipping_price" class="form-control" id="exampleInputtext" placeholder="80" value="{{$book->shipping_price}}">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -116,8 +128,19 @@
                                 <div class="mb-4">
                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Status</label>
                                     <select name="status" id="" class="form-select">
-                                        <option value="1" @if($book->status == 1)@endif>Publish</option>
-                                        <option value="2" @if($book->status == 2)@endif>Draft/Unpublished</option>
+                                        <option>Select</option>
+                                        <option value="1" @if($book->status == 1) selected @endif>Publish</option>
+                                        <option value="2" @if($book->status == 2) selected @endif>Draft/Unpublished</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-4">
+                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Home Page Featured</label>
+                                    <select name="is_featured" id="" class="form-select">
+                                        <option>Select</option>
+                                        <option value="1" @if($book->is_featured == 1) selected @endif >Yes</option>
+                                        <option value="2" @if($book->is_featured == 2) selected @endif >No</option>
                                     </select>
                                 </div>
                             </div>

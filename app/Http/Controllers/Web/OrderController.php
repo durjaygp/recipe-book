@@ -18,7 +18,8 @@ class OrderController extends Controller
     public function checkout(){
         $totalPrice = Cart::where('user_id', Auth()->user()->id)->sum('total_price');
         $carts = Cart::latest()->where('user_id', Auth()->user()->id)->get();
-        return view('frontEnd.books.checkout',compact('totalPrice','carts'));
+        $shipPrice = Cart::where('user_id', Auth()->user()->id)->sum('shipping_price');
+        return view('frontEnd.books.checkout',compact('totalPrice','carts','shipPrice'));
     }
 
 
@@ -54,6 +55,7 @@ class OrderController extends Controller
             "user_{$userId}_description" => $request->description,
             "user_{$userId}_address" => $request->address,
             "user_{$userId}_country" => $request->country,
+            "user_{$userId}_phone" => $request->phone,
         ]);
 
         return response()->json(['message' => 'Session data set successfully']);
@@ -65,6 +67,7 @@ class OrderController extends Controller
             "user_{$userId}_description" => $request->description,
             "user_{$userId}_address" => $request->address,
             "user_{$userId}_country" => $request->country,
+            "user_{$userId}_phone" => $request->phone,
         ]);
 
         return redirect('https://sandbox.payfast.co.za/eng/process');
@@ -88,11 +91,13 @@ class OrderController extends Controller
             $description = session("user_{$userId}_description");
             $address = session("user_{$userId}_address");
             $country = session("user_{$userId}_country");
+            $phone = session("user_{$userId}_phone");
 
             // Use session data in the order
             $order->description = $description;
             $order->country = $country;
             $order->address = $address;
+            $order->phone = $phone;
 
             $order->status = 0;
             $order->save();
@@ -103,6 +108,7 @@ class OrderController extends Controller
             "user_{$userId}_description",
             "user_{$userId}_address",
             "user_{$userId}_country",
+            "user_{$userId}_phone",
         ]);
 
         Cart::where('user_id', $userId)->delete();

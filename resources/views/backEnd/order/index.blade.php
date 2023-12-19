@@ -68,7 +68,83 @@
                                                     <span class="text-warning">Pending</span>
                                             @endif
                                             <td>
-                                                <div class="action-btn">
+                                                <div class="action-btn">    <a href="javascript:void(0)" id="btn-add-contact" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#addContactModal{{$row->id}}">
+                                                        <i class="ti ti-eye text-white me-1 fs-5"></i>
+                                                    </a>
+
+                                                    <div class="modal fade" id="addContactModal{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="addContactModalTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header d-flex align-items-center">
+                                                                    <h5 class="modal-title">Payment Details</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <div class="add-contact-box">
+                                                                        <div class="add-contact-content">
+                                                                            <form>
+                                                                                <div class="row">
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-name">Name</label>
+                                                                                            <input type="text" id="c-name" class="form-control" value="{{ $row->name }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-account">Account Number</label>
+                                                                                            <input type="text" id="c-account" class="form-control" value="{{ $row->account }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Reference</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->reference }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Price</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->price }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Reference</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->reference }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Country</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->country }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Address</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->address }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="mb-3 contact-name">
+                                                                                            <label for="c-reference">Description</label>
+                                                                                            <input type="text" id="c-reference" class="form-control" value="{{ $row->description }}" disabled />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button class="btn btn-danger rounded-pill px-4" data-bs-dismiss="modal"> Close </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
                                                     <a href="javascript:void(0)" class="btn btn-sm btn-primary">
                                                         <i class="ti ti-pencil fs-5"></i>
                                                     </a>

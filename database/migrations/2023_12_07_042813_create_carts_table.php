@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('book_id')->references('id')->on('books')->nullable();
             $table->string('total_price');
             $table->string('book_name');
+            $table->string('shipping_price')->nullable();
             $table->timestamps();
         });
     }

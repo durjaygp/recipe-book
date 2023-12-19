@@ -14,16 +14,17 @@ class CartController extends Controller
     public function index(){
         $carts = Cart::latest()->where('user_id', Auth()->user()->id)->get();
         $totalPrice = Cart::where('user_id', Auth()->user()->id)->sum('total_price');
-        return view('frontEnd.books.cart',compact('carts','totalPrice'));
+        $shipPrice = Cart::where('user_id', Auth()->user()->id)->sum('shipping_price');
+        return view('frontEnd.books.cart',compact('carts','totalPrice','shipPrice'));
     }
     public function cartToSave(Request $request)
     {
-        if(Auth::check()){
+        if (Auth::check()) {
             $cartChk = Cart::where('user_id', Auth::user()->id)
-                ->where('book_id', $request->book_id) // Use 'book_id' instead of 'id'
+                ->where('book_id', $request->book_id)
                 ->first();
 
-            if($cartChk){
+            if ($cartChk) {
                 return redirect(route('home.cart'))->with('warning', 'This book is already in your cart');
             } else {
                 $cart = new Cart();
@@ -31,6 +32,15 @@ class CartController extends Controller
                 $cart->book_id = $request->book_id;
                 $cart->total_price = $request->total_price;
                 $cart->book_name = $request->book_name;
+
+                // Check if the checkbox is selected
+                if ($request->has('select_print_price')) {
+                    $cart->shipping_price = $request->shipping_price;
+                } else {
+                    // Set a default shipping_price or leave it out depending on your logic
+                    // $cart->shipping_price = $defaultShippingPrice;
+                }
+
                 $cart->save();
                 return redirect(route('home.cart'))->with('success', 'Book added to Cart Successfully');
             }
