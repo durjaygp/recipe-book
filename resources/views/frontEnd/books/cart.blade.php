@@ -43,14 +43,14 @@
                         <div class="card-footer">
                             <div class="text-center">
                                 <div class="text-primary">
-                                    <h3>Product Price: R {{$totalPrice}}</h3>
+                                    <h3 class="text-cindy">Product Price: R {{$totalPrice}}</h3>
                                     @if($shipPrice != 0)
-                                        <h3>Shipping Price: R {{$shipPrice}}</h3>
+                                        <h3 class="text-cindy">Shipping Price: R {{$shipPrice}}</h3>
                                     @else
 
                                     @endif
                                     <hr>
-                                <h1> Total Payment Price =    {{$totalPrice + $shipPrice}}</h1>
+                                <h1 class="text-cindy"> Total Payment Price =    {{$totalPrice + $shipPrice}}</h1>
 
                                 </div>
                                 <a href="{{route('home.checkout')}}" class="btn btn-success">Checkout</a>

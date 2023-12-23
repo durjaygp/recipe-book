@@ -10,7 +10,7 @@
 
                         <a href="{{route('home')}}" class="d-flex">
                             <img src="{{asset($website->website_logo)}}" class="img-fluid" style="width:100px;" alt="{{asset($website->name)}}" title="{{asset($website->name)}}">
-                            <h2 class="css-font-durjay">Cindy's Simple Plates</h2>
+                            <h3 class="css-font-durjay">Cindy's Simple Plates</h3>
                         </a>
 
                     </div>
@@ -28,6 +28,64 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
+                        <style>
+                            .d-select {
+                                appearance: none;
+                                -webkit-appearance: none;
+                                padding: 10px;
+                                font-size: 16px;
+                                border: 1px solid #ccc;
+                                border-radius: 5px;
+                                background-color: #fff;
+                                cursor: pointer;
+                                padding-left: 40px; /* Space for the image */
+                                background-repeat: no-repeat;
+                                background-position: 10px center;
+                            }
+
+                            .d-select:focus {
+                                border-color: #4CAF50;
+                                box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
+                            }
+
+                            #currency option[value="zar"] {
+                                background-image: url('{{ asset('zar.svg') }}');
+                                background-size: 20px; /* Adjust the size of the image */
+                                padding-left: 30px; /* Adjust space for the smaller image */
+                            }
+                        </style>
+
+                        <script>
+                            document.addEventListener("DOMContentLoaded", function() {
+                                var currencySelect = document.getElementById("currency");
+
+                                currencySelect.addEventListener("change", function() {
+                                    var selectedOption = currencySelect.options[currencySelect.selectedIndex];
+                                    var selectedValue = selectedOption.value;
+                                    var selectedText = selectedOption.text;
+
+                                    // Update background image based on the selected currency
+                                    currencySelect.style.backgroundImage = "url('" + getCurrencyFlag(selectedValue) + "')";
+                                    currencySelect.title = selectedText;
+                                });
+
+                                // Function to get the path to the currency flag image
+                                function getCurrencyFlag(currency) {
+                                    switch (currency) {
+                                        case "zar":
+                                            return "{{ asset('zar.svg') }}";
+                                        case "usd":
+                                            return "{{ asset('usa.svg') }}";
+                                        case "gbp":
+                                            return "{{ asset('uk.svg') }}";
+                                        case "euro":
+                                            return "{{ asset('europe.svg') }}";
+                                        default:
+                                            return "";
+                                    }
+                                }
+                            });
+                        </script>
 
                         <div class="clearfix navbar-collapse show collapse" id="navbarSupportedContent">
 
@@ -36,7 +94,17 @@
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.books') ? 'current' : '' }}"><a href="{{route('home.books')}}">Books</a></li>
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.blogs') ? 'current' : '' }}"><a href="{{route('home.blogs')}}">Blogs</a></li>
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.contact') ? 'current' : '' }}"><a href="{{route('home.contact')}}">Contact us</a></li>
+                                <li class="">
+                                    <select class="d-select" id="currency">
+                                        <option value="zar">ZAR</option>
+                                        <option value="usd">USD</option>
+                                        <option value="gbp">GBP</option>
+                                        <option value="euro">EURO</option>
+                                    </select>
+                                </li>
+
                             </ul>
+
                         </div>
                     </nav>
 
@@ -74,17 +142,6 @@
                                 <li class="recipe"><a href="{{ route('register') }}"><span class="icon fa fa-user"></span>Register</a></li>
                             @endif
 
-                                <li class="">
-                                    <div class="input-group mb-3">
-                                        <select class="form-select" id="currency">
-
-                                            <option value="usd">ZAR</option>
-                                            <option value="usd">USD</option>
-                                            <option value="gbp">GBP</option>
-                                            <option value="euro">EURO</option>
-                                        </select>
-                                    </div>
-                                </li>
                         </ul>
                     </div>
 

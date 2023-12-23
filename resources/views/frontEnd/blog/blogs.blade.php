@@ -18,12 +18,12 @@
                                         <a href="{{route('home.blogDetails',$row->slug)}}"><img src="{{asset($row->image)}}" alt="" /></a>
                                     </div>
                                     <div class="lower-content">
-                                        <h3><a href="blog-single.html">{{$row->name}}</a></h3>
+                                        <h3><a href="{{route('home.blogDetails',$row->slug)}}">{{$row->name}}</a></h3>
                                         <ul class="post-info">
                                             <li>{{\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $row->created_at)->format('M d, Y h:i A')}}</li>
                                             <li>By: {{$row->user->name}}</li>
                                         </ul>
-                                        <div class="text">{{$row->description}}</div>
+                                        <div class="text">{{\Illuminate\Support\Str::limit($row->description,35)}}</div>
                                     </div>
                                 </div>
                             </div>
