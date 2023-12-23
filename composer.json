@@ -8,6 +8,7 @@
         "php": "^8.1",
         "amrshawky/laravel-currency": "^6.0",
         "davcpas1234/laravelpdfviewer": "^1.0",
+        "everapi/currencyapi-php": "^1.0",
         "goodnesskay/laravelpdfviewer": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",

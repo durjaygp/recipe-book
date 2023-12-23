@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\AdminRecipeController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\PageController;
-
+use App\Http\Controllers\CurrencyController;
 
 
 
@@ -32,20 +32,28 @@ Route::get('/category/{slug}', [HomeController::class,'category'])->name('home.c
 Route::get('/blog', [HomeController::class,'blog'])->name('home.blogs');
 //Route::get('/payfast', [HomeController::class,'pay'])->name('home.pay');
 Route::get('/success', [HomeController::class,'success'])->name('home.success');
+Route::get('/currency',[CurrencyController::class,'currency'])->name('test');
+Route::get('/convert-currency/{amount}/{fromCurrency}/{toCurrency}', [CurrencyController::class, 'currency']);
 
 Route::get('/book/{slug}', [BookController::class,'details'])->name('book.details');
 Route::get('/contact-us', [PagesController::class,'contact'])->name('home.contact');
 Route::post('/contact/save', [HomeController::class,'contactMessage'])->name('contact.save');
 Route::post('/book/add-to-cart',[CartController::class,'cartToSave'])->name('cart.save');
+
 Route::get('/cart', [CartController::class,'index'])->name('home.cart');
 Route::get('/cart/remove/{id}', [CartController::class,'remove'])->name('cart.remove');
+
 Route::get('/search/book',[HomeController::class,'searchBooks'])->name('search.book');
 Route::get('/search/recipe',[HomeController::class,'searchRecipe'])->name('search.recipe');
 
 Route::get('/checkout', [OrderController::class,'checkout'])->name('home.checkout');
 Route::post('/checkout/save', [OrderController::class,'checkoutSave'])->name('checkout.save');
+
+//Route::get('/payment/response', [OrderController::class, 'handlePaymentResponse'])->name('payment.response');
+//Route::post('/set-session-data',  [OrderController::class, 'setSessionData'])->name('set.session.data');
+
 Route::get('/payment/response', [OrderController::class, 'handlePaymentResponse'])->name('payment.response');
-Route::post('/set-session-data',  [OrderController::class, 'setSessionData'])->name('set.session.data');
+Route::post('/set-session-data',  [OrderController::class, 'setCacheData'])->name('set.session.data');
 
 Route::get('/dashboard', function () {
     return view('userPanel.admin.admin');

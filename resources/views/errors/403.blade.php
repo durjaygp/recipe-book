@@ -1,14 +1,6 @@
 @extends('frontEnd.master')
 @section('title','404')
 @section('content')
-    <!-- Page Title -->
-    <section class="page-title" style="background-image:url({{asset('front')}}/images/background/17.png)">
-        <div class="auto-container">
-            <h1>403</h1>
-        </div>
-    </section>
-    <!--End Page Title-->
-
     <!--Error Section-->
     <section class="error-section">
         <div class="auto-container">

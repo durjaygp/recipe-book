@@ -48,29 +48,75 @@ class OrderController extends Controller
 //        Cart::where('user_id', Auth::user()->id)->delete();
 //        return redirect('https://sandbox.payfast.co.za/eng/process'); // Redirect to the payment gateway
 //    }
-    public function setSessionData(Request $request)
+//    public function setSessionData(Request $request)
+//    {
+//        $userId = Auth()->user()->id;
+//        session([
+//            "user_{$userId}_description" => $request->description,
+//            "user_{$userId}_address" => $request->address,
+//            "user_{$userId}_country" => $request->country,
+//            "user_{$userId}_phone" => $request->phone,
+//        ]);
+//
+//        return response()->json(['message' => 'Session data set successfully']);
+//    }
+//
+//    public function handlePaymentResponse(Request $request)
+//    {
+//        $userId = Auth()->user()->id;
+//        $carts = Cart::where('user_id', $userId)->get();
+//        $totalPrice = Cart::where('user_id', $userId)->sum('total_price');
+//
+//        foreach ($carts as $row) {
+//            $order = new Order();
+//            $order->user_id = $userId;
+//            $order->book_id = $row->book_id;
+//            $order->price = $row->book->price;
+//            $order->name = $row->book->name;
+//            $order->total_price = $totalPrice;
+//
+//            // Retrieve session data
+//            $description = session("user_{$userId}_description");
+//            $address = session("user_{$userId}_address");
+//            $country = session("user_{$userId}_country");
+//            $phone = session("user_{$userId}_phone");
+//
+//            // Use session data in the order
+//            $order->description = $description;
+//            $order->country = $country;
+//            $order->address = $address;
+//            $order->phone = $phone;
+//
+//            $order->status = 0;
+//            $order->save();
+//        }
+//
+//        // Clear session data after using it
+//        session()->forget([
+//            "user_{$userId}_description",
+//            "user_{$userId}_address",
+//            "user_{$userId}_country",
+//            "user_{$userId}_phone",
+//        ]);
+//
+//        Cart::where('user_id', $userId)->delete();
+//
+//        return redirect(route('dashboard'))->with('success', 'Payment Recorded');
+//    }
+//
+
+    public function setCacheData(Request $request)
     {
         $userId = Auth()->user()->id;
-        session([
-            "user_{$userId}_description" => $request->description,
-            "user_{$userId}_address" => $request->address,
-            "user_{$userId}_country" => $request->country,
-            "user_{$userId}_phone" => $request->phone,
-        ]);
+        $cacheKeyPrefix = "user_{$userId}_";
 
-        return response()->json(['message' => 'Session data set successfully']);
-    }
-    public function checkoutSave(Request $request)
-    {
-        $userId = Auth()->user()->id;
-        session([
-            "user_{$userId}_description" => $request->description,
-            "user_{$userId}_address" => $request->address,
-            "user_{$userId}_country" => $request->country,
-            "user_{$userId}_phone" => $request->phone,
-        ]);
+        // Store data in cache with a key and expiration time (in minutes)
+        Cache::put($cacheKeyPrefix . 'description', $request->description, 60);
+        Cache::put($cacheKeyPrefix . 'address', $request->address, 60);
+        Cache::put($cacheKeyPrefix . 'country', $request->country, 60);
+        Cache::put($cacheKeyPrefix . 'phone', $request->phone, 60);
 
-        return redirect('https://sandbox.payfast.co.za/eng/process');
+        return response()->json(['message' => 'Cache data set successfully']);
     }
 
     public function handlePaymentResponse(Request $request)
@@ -87,13 +133,13 @@ class OrderController extends Controller
             $order->name = $row->book->name;
             $order->total_price = $totalPrice;
 
-            // Retrieve session data
-            $description = session("user_{$userId}_description");
-            $address = session("user_{$userId}_address");
-            $country = session("user_{$userId}_country");
-            $phone = session("user_{$userId}_phone");
+            // Retrieve cache data
+            $description = Cache::get("user_{$userId}_description");
+            $address = Cache::get("user_{$userId}_address");
+            $country = Cache::get("user_{$userId}_country");
+            $phone = Cache::get("user_{$userId}_phone");
 
-            // Use session data in the order
+            // Use cache data in the order
             $order->description = $description;
             $order->country = $country;
             $order->address = $address;
@@ -103,8 +149,8 @@ class OrderController extends Controller
             $order->save();
         }
 
-        // Clear session data after using it
-        session()->forget([
+        // Clear cache data after using it
+        Cache::forget([
             "user_{$userId}_description",
             "user_{$userId}_address",
             "user_{$userId}_country",
@@ -116,8 +162,17 @@ class OrderController extends Controller
         return redirect(route('dashboard'))->with('success', 'Payment Recorded');
     }
 
+    public function checkoutSave(Request $request)
+    {
+        $userId = Auth()->user()->id;
+        session([
+            "user_{$userId}_description" => $request->description,
+            "user_{$userId}_address" => $request->address,
+            "user_{$userId}_country" => $request->country,
+            "user_{$userId}_phone" => $request->phone,
+        ]);
 
-
-
+        return redirect('https://sandbox.payfast.co.za/eng/process');
+    }
 
 }

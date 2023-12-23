@@ -10,7 +10,7 @@
 
                         <a href="{{route('home')}}" class="d-flex">
                             <img src="{{asset($website->website_logo)}}" class="img-fluid" style="width:100px;" alt="{{asset($website->name)}}" title="{{asset($website->name)}}">
-                            <h3 class="css-font-durjay">Cindy's Simple Plates</h3>
+                           <b><h3 class="css-font-durjay" style="margin-top: 18px;">Cindy's Simple Plate</h3></b>
                         </a>
 
                     </div>
@@ -55,38 +55,6 @@
                             }
                         </style>
 
-                        <script>
-                            document.addEventListener("DOMContentLoaded", function() {
-                                var currencySelect = document.getElementById("currency");
-
-                                currencySelect.addEventListener("change", function() {
-                                    var selectedOption = currencySelect.options[currencySelect.selectedIndex];
-                                    var selectedValue = selectedOption.value;
-                                    var selectedText = selectedOption.text;
-
-                                    // Update background image based on the selected currency
-                                    currencySelect.style.backgroundImage = "url('" + getCurrencyFlag(selectedValue) + "')";
-                                    currencySelect.title = selectedText;
-                                });
-
-                                // Function to get the path to the currency flag image
-                                function getCurrencyFlag(currency) {
-                                    switch (currency) {
-                                        case "zar":
-                                            return "{{ asset('zar.svg') }}";
-                                        case "usd":
-                                            return "{{ asset('usa.svg') }}";
-                                        case "gbp":
-                                            return "{{ asset('uk.svg') }}";
-                                        case "euro":
-                                            return "{{ asset('europe.svg') }}";
-                                        default:
-                                            return "";
-                                    }
-                                }
-                            });
-                        </script>
-
                         <div class="clearfix navbar-collapse show collapse" id="navbarSupportedContent">
 
                             <ul class="clearfix navigation">
@@ -94,20 +62,50 @@
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.books') ? 'current' : '' }}"><a href="{{route('home.books')}}">Books</a></li>
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.blogs') ? 'current' : '' }}"><a href="{{route('home.blogs')}}">Blogs</a></li>
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.contact') ? 'current' : '' }}"><a href="{{route('home.contact')}}">Contact us</a></li>
-                                <li class="">
-                                    <select class="d-select" id="currency">
-                                        <option value="zar">ZAR</option>
-                                        <option value="usd">USD</option>
-                                        <option value="gbp">GBP</option>
-                                        <option value="euro">EURO</option>
-                                    </select>
-                                </li>
+{{--                                <li class="">--}}
+{{--                                    <select class="d-select" id="currency">--}}
+{{--                                        <option value="zar">ZAR</option>--}}
+{{--                                        <option value="usd">USD</option>--}}
+{{--                                        <option value="gbp">GBP</option>--}}
+{{--                                        <option value="euro">EURO</option>--}}
+{{--                                    </select>--}}
+{{--                                </li>--}}
 
                             </ul>
 
                         </div>
                     </nav>
+{{--                    <script>--}}
+{{--                        document.addEventListener("DOMContentLoaded", function() {--}}
+{{--                            var currencySelect = document.getElementById("currency");--}}
 
+{{--                            currencySelect.addEventListener("change", function() {--}}
+{{--                                var selectedOption = currencySelect.options[currencySelect.selectedIndex];--}}
+{{--                                var selectedValue = selectedOption.value;--}}
+{{--                                var selectedText = selectedOption.text;--}}
+
+{{--                                // Update background image based on the selected currency--}}
+{{--                                currencySelect.style.backgroundImage = "url('" + getCurrencyFlag(selectedValue) + "')";--}}
+{{--                                currencySelect.title = selectedText;--}}
+{{--                            });--}}
+
+{{--                            // Function to get the path to the currency flag image--}}
+{{--                            function getCurrencyFlag(currency) {--}}
+{{--                                switch (currency) {--}}
+{{--                                    case "zar":--}}
+{{--                                        return "{{ asset('zar.svg') }}";--}}
+{{--                                    case "usd":--}}
+{{--                                        return "{{ asset('usa.svg') }}";--}}
+{{--                                    case "gbp":--}}
+{{--                                        return "{{ asset('uk.svg') }}";--}}
+{{--                                    case "euro":--}}
+{{--                                        return "{{ asset('europe.svg') }}";--}}
+{{--                                    default:--}}
+{{--                                        return "";--}}
+{{--                                }--}}
+{{--                            }--}}
+{{--                        });--}}
+{{--                    </script>--}}
                     <!-- Outer Box -->
                     <div class="outer-box">
                         <!-- Search Box -->
@@ -159,7 +157,8 @@
 
         <nav class="menu-box">
             <div class="nav-logo"><a href="{{route('home')}}"><img src="{{asset($website->website_logo)}}" alt="" title=""></a></div>
-            <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
+            <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+            </div>
         </nav>
     </div><!-- End Mobile Menu -->
 

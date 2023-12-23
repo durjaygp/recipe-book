@@ -81,8 +81,14 @@
 }
 .css-font-durjay {
     font-family: 'Mr Dafoe', cursive;
-    font-size: 35px!important;
+    font-size: 30px!important;
 }
+@media only screen and (max-width: 767px) {
+    .css-font-durjay {
+        font-size: 25px!important; /* Font size for mobile devices */
+    }
+}
+
 /***
 
 ====================================================================

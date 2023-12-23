@@ -23,6 +23,8 @@ class AdminOrderController extends Controller
         return redirect()->back()->with('success','Deleted Successfully');
     }
 
+
+
     public function orderStatus($id){
         $order = Order::find($id);
         $order->status = 0;

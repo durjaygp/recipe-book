@@ -143,12 +143,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
-
-                                                    <a href="javascript:void(0)" class="btn btn-sm btn-primary">
-                                                        <i class="ti ti-pencil fs-5"></i>
-                                                    </a>
-                                                    <a href="{{ route('book.delete', $row->id) }}"
+                                                    <a href="{{ route('order.delete', $row->id) }}"
                                                        onclick="event.preventDefault();
                                                            if (confirm('Are you sure you want to delete?'))
                                                            document.getElementById('delete-form-{{ $row->id }}').submit();"

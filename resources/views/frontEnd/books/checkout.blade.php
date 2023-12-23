@@ -13,7 +13,7 @@
                         $carts = \App\Models\Cart::where('user_id', Auth()->user()->id)->first();
                         @endphp
                         <h4>Please fill up all the fields</h4>
-                        <form id="paymentForm" action="https://sandbox.payfast.co.za/eng/process" method="post" enctype="multipart/form-data">
+                        <form id="ffForm" action="https://sandbox.payfast.co.za/eng/process" method="post" enctype="multipart/form-data">
                             @csrf
 {{--         https://www.payfast.co.za/eng/process                    <input type="hidden" name="merchant_id" value="23719067">--}}
 {{--                            <input type="hidden" name="merchant_key" value="1ts6dekcwslkv">--}}
@@ -298,11 +298,11 @@
                                 </div>
                             </div>
                             <div class="form-group mb-4">
-                                <label>Write Full Address (Optional)  <small class="text-primary">(If you ordered Online Version, You don't need to fill this)</small></label>
+                                <label>Write Full Address (Optional)  <small class="text-primary">(If you ordered Online Book, You don't need to fill this)</small></label>
                                 <input type="text" name="address" class="form-control" placeholder="Street Name, House Number, Address, City, ETC" >
                             </div>
                             <div class="form-group mb-4">
-                                <label>Short Message (Optional)  <small class="text-primary">(If you ordered Online Version, You don't need to fill this)</small></label>
+                                <label>Short Message (Optional)  <small class="text-primary">(If you ordered Online Book, You don't need to fill this)</small></label>
                                 <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="4" placeholder="Write Here..."></textarea>
                             </div>
 
@@ -316,16 +316,38 @@
         </div>
     </section>
 
-
-@endsection
-
-@section('script')
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $("#submitForm").on("click", function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#paymentForm").on("submit", function (e) {
+                e.preventDefault(); // Prevent the default form submission
+
                 // Get form data
-                var formData = $("#paymentForm").serialize();
+                var formData = $(this).serialize();
+
+                // Make AJAX request to set session data
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('set.session.data') }}",
+                    data: formData,
+                    success: function (response) {
+                        // Handle success if needed
+                        console.log(response);
+                    },
+                    error: function (error) {
+                        // Handle error if needed
+                        console.log(error);
+                    },
+                });
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            $("#ffForm").on("submit", function (e) {
+                e.preventDefault(); // Prevent the default form submission
+
+                // Get form data
+                var formData = $(this).serialize();
 
                 // Make AJAX request to set session data
                 $.ajax({
@@ -344,4 +366,6 @@
             });
         });
     </script>
-    @endsection
+
+
+@endsection
