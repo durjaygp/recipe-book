@@ -49,11 +49,11 @@ Route::get('/search/recipe',[HomeController::class,'searchRecipe'])->name('searc
 Route::get('/checkout', [OrderController::class,'checkout'])->name('home.checkout');
 Route::post('/checkout/save', [OrderController::class,'checkoutSave'])->name('checkout.save');
 
-//Route::get('/payment/response', [OrderController::class, 'handlePaymentResponse'])->name('payment.response');
-//Route::post('/set-session-data',  [OrderController::class, 'setSessionData'])->name('set.session.data');
-
 Route::get('/payment/response', [OrderController::class, 'handlePaymentResponse'])->name('payment.response');
-Route::post('/set-session-data',  [OrderController::class, 'setCacheData'])->name('set.session.data');
+Route::post('/set-session-data',  [OrderController::class, 'setSessionData'])->name('set.session.data');
+
+//Route::get('/payment/response', [OrderController::class, 'handlePaymentResponse'])->name('payment.response');
+//Route::post('/set-session-data',  [OrderController::class, 'setCacheData'])->name('set.session.data');
 
 Route::get('/dashboard', function () {
     return view('userPanel.admin.admin');
