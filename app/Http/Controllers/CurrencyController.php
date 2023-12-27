@@ -37,8 +37,10 @@ class CurrencyController extends Controller
         }
     }
 
-
-
-
+    public function setCurrency(Request $request)
+    {
+        session(['currency' => $request->input('currency')]);
+        return response()->json(['success' => true]);
+    }
 
 }

@@ -64,6 +64,10 @@
                 </div>
             </div>
             @foreach($books as $book)
+            @php
+            $convertedAmount = convertCurrency(app(\App\Services\ExchangeRatesService::class), $book->print_price);
+            $onlinePrice = convertCurrency(app(\App\Services\ExchangeRatesService::class), $book->price);
+            @endphp
             <div class="row">
                 <div class="col-lg-6">
                     <div class="author-details-col p-0">
@@ -83,10 +87,12 @@
                         </ul>
                         <form method="post" action="{{ route('cart.save') }}" id="addToCart{{ $book->id }}">
 
-                            <span class="text-success h4">Online: R {{ $book->price }}</span>
+                            <span class="text-success h4">Online: R {{ round($onlinePrice, 2) }}</span>
                             <br>
-                            <span class="text-success h4">Hard Copy Price: R {{ $book->print_price }}</span>
+                            <span class="text-success h4">Hard Copy Price: R {{ round($convertedAmount, 2) }}</span>
                             <p></p>
+
+                            
 
                             <div class="form-check">
                                 <input type="checkbox" name="select_print_price" id="selectPrintPrice" class="form-check-input">
@@ -107,7 +113,7 @@
 
                             <!-- Hidden input fields for price and print_price -->
                             <input type="hidden" name="price" id="onlinePrice" value="{{ $book->price }}">
-                            <input type="hidden" name="print_price" id="printPrice" value="{{ $book->print_price }}">
+                            <input type="hidden" name="print_price" id="printPrice" value="{{ $convertedAmount }}">
 
                         </form>
 

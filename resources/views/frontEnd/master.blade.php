@@ -99,5 +99,27 @@
         });
     </script>
 @endif
+<script>
+    $(document).ready(function () {
+        var selectedCurrency = '{{ session('currency', 'USD') }}';
+        $('#currency').val(selectedCurrency);
+        $('#currency').change(function () {
+            var newCurrency = $(this).val();
+            var data = {
+                _token: '{{ csrf_token() }}',
+                currency: newCurrency
+            };
+
+            $.ajax({
+                url: '/set-currency',
+                method: 'POST',
+                data: data,
+                success: function () {
+                    location.reload();
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

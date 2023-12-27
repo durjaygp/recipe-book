@@ -51,6 +51,7 @@ Route::post('/checkout/save', [OrderController::class,'checkoutSave'])->name('ch
 
 Route::get('/payment/response', [OrderController::class, 'handlePaymentResponse'])->name('payment.response');
 Route::post('/set-session-data',  [OrderController::class, 'setSessionData'])->name('set.session.data');
+Route::post('/set-currency', [CurrencyController::class, 'setCurrency']);
 
 //Route::get('/payment/response', [OrderController::class, 'handlePaymentResponse'])->name('payment.response');
 //Route::post('/set-session-data',  [OrderController::class, 'setCacheData'])->name('set.session.data');
