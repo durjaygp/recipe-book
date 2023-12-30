@@ -20,7 +20,7 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\CurrencyController;
 use App\Http\Controllers\Admin\CurrencyLogoController;
-
+use App\Http\Controllers\SocialController;
 
 // =============== Home Routes ===============
 Route::get('/', [HomeController::class,'index'])->name('home');
@@ -134,6 +134,8 @@ Route::middleware(['auth', 'isadmin'])->group(function(){
   //  Route::post('admin/website/settings/update', [SettingController::class, 'update'])->name('update.setting');
 
     Route::resource('currency-logo',CurrencyLogoController::class);
+    Route::resource('socials',SocialController::class);
+
 
 
 

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CurrencyLogo;
 use App\Models\Social;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class SocialController extends Controller
 {
@@ -12,7 +15,8 @@ class SocialController extends Controller
      */
     public function index()
     {
-        //
+        $socials = Social::latest()->get();
+        return view('backEnd.socials.index',compact('socials'));
     }
 
     /**
@@ -20,7 +24,7 @@ class SocialController extends Controller
      */
     public function create()
     {
-        //
+        return view('backEnd.socials.create');
     }
 
     /**
@@ -28,7 +32,37 @@ class SocialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            // Validation
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|string|max:255',
+                'icon' => 'required',
+                'link' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            // Create or update your CurrencyLogo model here
+            $currencyLogo = new Social();
+            $currencyLogo->name = $request->name;
+            $currencyLogo->icon = $request->icon;
+            $currencyLogo->link = $request->link;
+            $currencyLogo->status = $request->status;
+            $currencyLogo->save();
+
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Social created successfully');
+
+        } catch (QueryException $e) {
+            // Handle database-related errors
+            return redirect()->back()->with('error', 'Database error: ' . $e->getMessage());
+
+        } catch (\Exception $e) {
+            // Handle other general errors
+            return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
+        }
     }
 
     /**
@@ -58,8 +92,24 @@ class SocialController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Social $social)
+    public function destroy(string $id)
     {
-        //
+        try {
+
+            // Create or update your CurrencyLogo model here
+            $currencyLogo = Social::find($id);
+            $currencyLogo->delete();
+
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Deleted successfully');
+
+        } catch (QueryException $e) {
+            // Handle database-related errors
+            return redirect()->back()->with('error', 'Database error: ' . $e->getMessage());
+
+        } catch (\Exception $e) {
+            // Handle other general errors
+            return redirect()->back()->with('error', 'Error: ' . $e->getMessage());
+        }
     }
 }
