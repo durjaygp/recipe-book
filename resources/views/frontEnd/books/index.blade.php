@@ -13,6 +13,10 @@
                         $books = \App\Models\Book::latest()->where('status',1)->get();
                     @endphp
                     @foreach($books as $row)
+                        @php
+                           // $convertedAmount = convertCurrency(app(\App\Services\ExchangeRatesService::class), $row->print_price);
+                            $onlinePrice = convertCurrency(app(\App\Services\ExchangeRatesService::class), $row->price);
+                        @endphp
                         <div class="recipes-block style-two col-lg-3 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image">
@@ -20,7 +24,7 @@
                                 </div>
                                 <div class="lower-content">
                                     <h4><a href="{{route('book.details',$row->slug)}}">{{$row->name}}</a></h4>
-                                    <span class="text-success h4">R {{$row->price}}</span>
+                                    <span class="text-success h4">R {{$onlinePrice}}</span>
                                 </div>
                             </div>
                         </div>

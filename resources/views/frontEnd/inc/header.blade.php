@@ -64,7 +64,7 @@
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.contact') ? 'current' : '' }}"><a href="{{route('home.contact')}}">Contact us</a></li>
                                 <li class="">
                                     <select class="d-select" id="currency">
-                                        <option value="ZAR">ZAR</option>
+                                        <option value="ZAR" selected>ZAR</option>
                                         <option value="USD">USD</option>
                                         <option value="GBP">GBP</option>
                                         <option value="EUR">EURO</option>
