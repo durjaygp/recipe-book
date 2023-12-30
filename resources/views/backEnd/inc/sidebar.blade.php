@@ -59,6 +59,14 @@
                             <span class="hide-menu">Order</span>
                         </a>
                     </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{route('currency-logo.index')}}" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-currency-euro"></i>
+                  </span>
+                            <span class="hide-menu">Currency Logo</span>
+                        </a>
+                    </li>
                     <!-- =================== -->
 
                     <!-- =================== -->

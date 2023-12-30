@@ -1,49 +1,3 @@
-/* Spcica HTML Template */
-
-/************ TABLE OF CONTENTS ***************
-1. Fonts
-2. Reset
-3. Global
-4. Main Header / Header Two / Three
-5. Main Slider
-6. Services Section
-7. About Section
-8. Call To Action Section
-9. Projects Section
-10. Call To Action Section Two
-11. Expert Section
-12. Clients Section
-13. Two Fullwidth Column Section
-14. Clients Section / Style Two
-15. Main Footer / Style Two / Style Three
-16. Industrial Section
-17. Choose Section
-18. Process Section
-19. FullWidth Process Section
-20. Faq Section
-21. Testimonial Section
-22. Blogs Section
-23. NewsLetter Section / Style Two
-24. Feature Section
-25. Counter Section
-26. Pricing Section
-27. Contact Form Section
-28. Page Title
-29. Comming Soon Section
-30. Services Single Section
-31. Project Detail Section
-32. Shop Items
-33. Shoping Cart Section
-34. Checkout Section
-35. Shop Detail Section
-36. Our Blogs Section
-37. Blog Detail Section
-38. Sidebar Widgets
-39. Contact Info Section
-40. Map Section
-
-**********************************************/
-
 @import url('https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans:300,400,600,700,800|Playfair+Display:400,700,900|Work+Sans:300,400,500,600,700,800&amp;display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
 
@@ -82,6 +36,7 @@
 .css-font-durjay {
     font-family: 'Mr Dafoe', cursive;
     font-size: 30px!important;
+    color:#D6BC94;
 }
 @media only screen and (max-width: 767px) {
     .css-font-durjay {
@@ -120,7 +75,6 @@ body {
 a{
 	text-decoration:none;
 	cursor:pointer;
-	color:#D6BC94;
 }
 
 button,

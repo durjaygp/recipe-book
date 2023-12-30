@@ -3,6 +3,10 @@
     {{$book->name}}
 @endsection
 @section('content')
+    @php
+        $convertedAmount = convertCurrency(app(\App\Services\ExchangeRatesService::class), $book->print_price);
+        $onlinePrice = convertCurrency(app(\App\Services\ExchangeRatesService::class), $book->price);
+    @endphp
     <!-- Author Details Start -->
     <section class="author-details-area">
         <div class="container">
@@ -25,19 +29,19 @@
                         </ul>
                         <form method="post" action="{{ route('cart.save') }}" id="addToCart{{ $book->id }}">
 
-                            <span class="text-success h4">Online: R {{ $book->price }}</span>
+                            <span class="text-success h4">Online: <span class="currencySymbol">R</span>{{ $onlinePrice }}</span>
                             <br>
-                            <span class="text-success h4">Hard Copy Price: R {{ $book->print_price }}</span>
+                            <span class="text-success h4">Hard Copy Price: <span class="currencySymbol">R</span>{{ $convertedAmount }}</span>
                             <p></p>
 
                             <div class="form-check">
                                 <input type="checkbox" name="select_print_price" id="selectPrintPrice" class="form-check-input">
-                                <label class="form-check-label" for="selectPrintPrice">Select Hard Copy Price</label>
+                                <label class="form-check-label" for="selectPrintPrice">Select Hard Copy</label>
                             </div>
 
                             <div id="shipPriceDiv" style="display: none;">
                                 <label for="shipPrice">Shipping Price:</label>
-                                <input type="text" name="shipping_price" id="shipPrice" value=" {{ $book->shipping_price }}">
+                                <input type="text" name="shipping_price" id="shipPrice" value="{{ $book->shipping_price }}">
                             </div>
 
                             <a href="#" onclick="event.preventDefault(); updateTotalPrice();" class="btn btn-success">Buy</a>
@@ -97,6 +101,11 @@
             </div>
         </div>
     </section>
-
+    @php
+        $logos = \App\Models\CurrencyLogo::all();
+    @endphp
+    @foreach($logos as $row)
+        <span id="currencySymbol-{{$row->name}}" data-symbol="{{$row->logo}}"></span>
+    @endforeach
 
 @endsection

@@ -12,6 +12,9 @@
                         $user = \App\Models\User::find($userid);
                         $carts = \App\Models\Cart::where('user_id', Auth()->user()->id)->first();
                         @endphp
+                        @php
+                            $onlinePrice = convertCurrency(app(\App\Services\ExchangeRatesService::class), $totalPrice + $shipPrice);
+                        @endphp
                         <h4>Please fill up all the fields</h4>
                         <form id="paymentForm" action="https://sandbox.payfast.co.za/eng/process" method="post" enctype="multipart/form-data">
                             @csrf
@@ -40,8 +43,10 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group mb-4">
-                                        <label>Amount <span class="text-danger">*</span></label>
-                                        <input type="number" name="total_price" class="form-control" placeholder="Amount" value="{{$totalPrice + $shipPrice}}" readonly>
+                                        <label>Amount <span class="text-success">(<span class="currencySymbol">R</span>)</span></label>
+
+                                        <input type="number" name="show" class="form-control" placeholder="Amount" value="{{$onlinePrice}}" readonly>
+                                        <input type="hidden" name="total_price" class="form-control" placeholder="Amount" value="{{$totalPrice + $shipPrice}}" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -315,6 +320,12 @@
             </div>
         </div>
     </section>
+    @php
+        $logos = \App\Models\CurrencyLogo::all();
+    @endphp
+    @foreach($logos as $row)
+        <span id="currencySymbol-{{$row->name}}" data-symbol="{{$row->logo}}"></span>
+    @endforeach
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
@@ -340,7 +351,4 @@
             });
         });
     </script>
-
-
-
 @endsection

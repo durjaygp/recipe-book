@@ -22,10 +22,16 @@
                                 </thead>
                                 <tbody class="table-group-divider">
                                 @foreach($carts as $row)
+                                    @php
+                                      //  $convertedAmount = convertCurrency(app(\App\Services\ExchangeRatesService::class), $book->print_price);
+                                        $onlinePrice = convertCurrency(app(\App\Services\ExchangeRatesService::class), $row->total_price);
+                                        $onlinePrice1 = convertCurrency(app(\App\Services\ExchangeRatesService::class), $totalPrice);
+                                        $shPrice = convertCurrency(app(\App\Services\ExchangeRatesService::class), $shipPrice);
+                                    @endphp
                                 <tr>
                                     <th scope="row">{{$loop->iteration}}</th>
                                     <td>{{$row->book_name}}</td>
-                                    <td>{{$row->total_price}}</td>
+                                    <td>{{$onlinePrice}}</td>
                                     <td><a href="#" onclick="event.preventDefault();
                                             if (confirm('Are you sure you want to Remove?'))
                                             document.getElementById('delete-form-{{ $row->id }}').submit();" class="btn btn-danger"><i class="fa fa-trash"></i> Remove</a>
@@ -43,14 +49,14 @@
                         <div class="card-footer">
                             <div class="text-center">
                                 <div class="text-primary">
-                                    <h3 class="text-cindy">Product Price: R {{$totalPrice}}</h3>
+                                    <h3 class="text-cindy">Product Price: <span class="currencySymbol">R</span> {{$onlinePrice1}}</h3>
                                     @if($shipPrice != 0)
-                                        <h3 class="text-cindy">Shipping Price: R {{$shipPrice}}</h3>
+                                        <h3 class="text-cindy">Shipping Price: <span class="currencySymbol">R</span> {{$shPrice}}</h3>
                                     @else
 
                                     @endif
                                     <hr>
-                                <h1 class="text-cindy"> Total Payment Price =    {{$totalPrice + $shipPrice}}</h1>
+                                <h1 class="text-cindy"> Total Payment Price =  <span class="currencySymbol">R</span>  {{$onlinePrice1 + $shPrice}}</h1>
 
                                 </div>
                                 <a href="{{route('home.checkout')}}" class="btn btn-success">Checkout</a>
@@ -67,6 +73,11 @@
     </section>
     <!-- End Categories Section-->
 
-
+    @php
+        $logos = \App\Models\CurrencyLogo::all();
+    @endphp
+    @foreach($logos as $row)
+        <span id="currencySymbol-{{$row->name}}" data-symbol="{{$row->logo}}"></span>
+    @endforeach
 
 @endsection

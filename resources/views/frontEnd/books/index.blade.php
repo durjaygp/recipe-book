@@ -24,12 +24,17 @@
                                 </div>
                                 <div class="lower-content">
                                     <h4><a href="{{route('book.details',$row->slug)}}">{{$row->name}}</a></h4>
-                                    <span class="text-success h4">R {{$onlinePrice}}</span>
+                                    <span class="text-success h4"><span class="currencySymbol">R</span>{{$onlinePrice}}</span>
                                 </div>
                             </div>
                         </div>
                     @endforeach
-
+                    @php
+                        $logos = \App\Models\CurrencyLogo::all();
+                    @endphp
+                    @foreach($logos as $row)
+                        <span id="currencySymbol-{{$row->name}}" data-symbol="{{$row->logo}}"></span>
+                    @endforeach
                 </div>
 
             </div>

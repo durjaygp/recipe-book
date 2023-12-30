@@ -38,7 +38,6 @@
                                 border-radius: 5px;
                                 background-color: #fff;
                                 cursor: pointer;
-                                padding-left: 40px; /* Space for the image */
                                 background-repeat: no-repeat;
                                 background-position: 10px center;
                             }
@@ -46,12 +45,6 @@
                             .d-select:focus {
                                 border-color: #4CAF50;
                                 box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
-                            }
-
-                            #currency option[value="zar"] {
-                                background-image: url('{{ asset('zar.svg') }}');
-                                background-size: 20px; /* Adjust the size of the image */
-                                padding-left: 30px; /* Adjust space for the smaller image */
                             }
                         </style>
 
@@ -63,49 +56,22 @@
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.blogs') ? 'current' : '' }}"><a href="{{route('home.blogs')}}">Blogs</a></li>
                                 <li class="{{ (\Illuminate\Support\Facades\Request::route() && \Illuminate\Support\Facades\Request::route()->getName() == 'home.contact') ? 'current' : '' }}"><a href="{{route('home.contact')}}">Contact us</a></li>
                                 <li class="">
+                                    @php
+                                        $logos = \App\Models\CurrencyLogo::all();
+                                    @endphp
                                     <select class="d-select" id="currency">
-                                        <option value="ZAR" selected>ZAR</option>
-                                        <option value="USD">USD</option>
-                                        <option value="GBP">GBP</option>
-                                        <option value="EUR">EURO</option>
+                                        @foreach($logos as $row)
+                                            <option value="{{$row->name}}" data-symbol="{{$row->logo}}" @if($row->name == 'ZAR') selected @endif >{{$row->logo}} - {{$row->name}}</option>
+                                        @endforeach
                                     </select>
+
+
                                 </li>
 
                             </ul>
 
                         </div>
                     </nav>
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            var currencySelect = document.getElementById("currency");
-
-                            currencySelect.addEventListener("change", function() {
-                                var selectedOption = currencySelect.options[currencySelect.selectedIndex];
-                                var selectedValue = selectedOption.value;
-                                var selectedText = selectedOption.text;
-
-                                // Update background image based on the selected currency
-                                currencySelect.style.backgroundImage = "url('" + getCurrencyFlag(selectedValue) + "')";
-                                currencySelect.title = selectedText;
-                            });
-
-                            // Function to get the path to the currency flag image
-                            function getCurrencyFlag(currency) {
-                                switch (currency) {
-                                    case "zar":
-                                        return "{{ asset('zar.svg') }}";
-                                    case "usd":
-                                        return "{{ asset('usa.svg') }}";
-                                    case "gbp":
-                                        return "{{ asset('uk.svg') }}";
-                                    case "euro":
-                                        return "{{ asset('europe.svg') }}";
-                                    default:
-                                        return "";
-                                }
-                            }
-                        });
-                    </script>
                     <!-- Outer Box -->
                     <div class="outer-box">
                         <!-- Search Box -->
@@ -163,3 +129,24 @@
     </div><!-- End Mobile Menu -->
 
 </header>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    // Add this in the head section of your HTML file
+
+    $(document).ready(function () {
+        // Function to update currency symbol
+        function updateCurrencySymbol() {
+            var selectedCurrency = $('#currency').val();
+            var currencySymbol = $('#currencySymbol-' + selectedCurrency).data('symbol');
+            $('.currencySymbol').text(currencySymbol);
+        }
+
+        // Event listener for currency selector change
+        $('#currency').change(function () {
+            updateCurrencySymbol();
+        });
+
+        // Initial update based on default selection
+        updateCurrencySymbol();
+    });
+</script>

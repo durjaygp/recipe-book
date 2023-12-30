@@ -19,7 +19,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\CurrencyController;
-
+use App\Http\Controllers\Admin\CurrencyLogoController;
 
 
 // =============== Home Routes ===============
@@ -132,6 +132,8 @@ Route::middleware(['auth', 'isadmin'])->group(function(){
     Route::get('admin/page/about/', [AdminController::class, 'homeAbout'])->name('page.homeAbout');
     Route::post('admin/page/about/', [AdminController::class, 'homeAboutSave'])->name('page.homeAboutSave');
   //  Route::post('admin/website/settings/update', [SettingController::class, 'update'])->name('update.setting');
+
+    Route::resource('currency-logo',CurrencyLogoController::class);
 
 
 
